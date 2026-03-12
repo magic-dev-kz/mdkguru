@@ -43,3 +43,24 @@ body {
   box-shadow: 0 0 30px rgba(153, 69, 255, 0.1);
   border-color: #9945FF;
 }
+
+/* Lazy loading for all prose images */
+.prose img {
+  loading: lazy;
+  content-visibility: auto;
+}
+
+/* Optimize rendering */
+img {
+  content-visibility: auto;
+}
+
+/* Reduce layout shift */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Font loading optimization */
+@font-face {
+  font-display: swap;
+}

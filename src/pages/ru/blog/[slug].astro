@@ -24,7 +24,7 @@ const { Content } = await post.render();
 
       <!-- Cover image -->
       {post.data.image && (
-        <img src={post.data.image} alt={post.data.title} class="w-full rounded-xl mb-8 aspect-video object-cover" />
+        <img src={post.data.image} alt={post.data.title} loading="lazy" decoding="async" width="1200" height="630" class="w-full rounded-xl mb-8 aspect-video object-cover" />
       )}
 
       <!-- Header -->
