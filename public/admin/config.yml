@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: magic-dev-kz/mdkguru
+  branch: main
+
+media_folder: "public/blog"
+public_folder: "/blog"
+
+locale: ru
+
+collections:
+  - name: "blog_ru"
+    label: "Блог (Русский)"
+    folder: "src/content/blog/ru"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Описание", name: "description", widget: "string" }
+      - { label: "Дата", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Категория", name: "category", widget: "string", required: false }
+      - { label: "Обложка", name: "image", widget: "image", required: false }
+      - { label: "Черновик", name: "draft", widget: "boolean", default: false }
+      - { label: "Текст", name: "body", widget: "markdown" }
+
+  - name: "blog_en"
+    label: "Blog (English)"
+    folder: "src/content/blog/en"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Cover", name: "image", widget: "image", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "apps"
+    label: "Приложения"
+    folder: "src/content/apps"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Название", name: "title", widget: "string" }
+      - { label: "Описание", name: "description", widget: "string" }
+      - { label: "Платформа", name: "platform", widget: "string", required: false }
+      - { label: "Статус", name: "status", widget: "select", options: ["live", "beta", "development"] }
+      - { label: "Ссылка", name: "url", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Описание (подробно)", name: "body", widget: "markdown" }

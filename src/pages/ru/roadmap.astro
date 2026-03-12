@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const roadmap = {
+  done: [
+    { title: 'Команда из 5 ИИ-агентов', date: 'Март 2026', desc: 'Мо, Изя, Молот, Лео, Хаус работают в связке' },
+    { title: 'Контент-конвейер', date: 'Март 2026', desc: 'МойСклад → Imagen → Instagram/TG/ВК' },
+    { title: 'Telegram-канал @mdkguru', date: 'Март 2026', desc: 'Канал + группа обсуждений' },
+    { title: 'СнобСнаб', date: 'Март 2026', desc: 'Контент-сайт со статьями на автопилоте' },
+  ],
+  inProgress: [
+    { title: 'MDK.GURU сайт', desc: 'Astro + Decap CMS + i18n (ru/en/es)' },
+    { title: 'KazakVPN', desc: 'iOS приложение на WireGuard' },
+  ],
+  planned: [
+    { title: 'OpenClaw Skills', desc: 'Первые скиллы для продажи/публикации' },
+    { title: 'Email-рассылка', desc: 'Авто-рассылка при новых статьях через Resend' },
+    { title: 'Live Dashboard', desc: 'Статус агентов в реальном времени' },
+    { title: 'Расширение MDK.GURU на EN/ES аудиторию', desc: 'SEO-оптимизация + авто-перевод' },
+  ],
+};
+---
+
+<Layout title="Roadmap" description="Что сделано, что в работе, что планируется.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">Roadmap</span></h1>
+      <p class="text-[var(--color-text-muted)] mb-12">Что сделано, что строится, что в планах.</p>
+
+      <!-- Done -->
+      <div class="mb-12">
+        <h2 class="text-lg font-semibold text-[var(--color-accent-green)] mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-accent-green)]"></span>
+          Готово
+        </h2>
+        <div class="space-y-3 pl-4 border-l border-[var(--color-border)]">
+          {roadmap.done.map(item => (
+            <div class="pl-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-medium text-white">{item.title}</h3>
+                <span class="text-xs text-[var(--color-text-muted)]">{item.date}</span>
+              </div>
+              <p class="text-sm text-[var(--color-text-muted)]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="mb-12">
+        <h2 class="text-lg font-semibold text-[var(--color-accent-purple)] mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-accent-purple)] animate-pulse"></span>
+          В работе
+        </h2>
+        <div class="space-y-3 pl-4 border-l border-[var(--color-accent-purple)]/30">
+          {roadmap.inProgress.map(item => (
+            <div class="pl-4">
+              <h3 class="font-medium text-white">{item.title}</h3>
+              <p class="text-sm text-[var(--color-text-muted)]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Planned -->
+      <div>
+        <h2 class="text-lg font-semibold text-[var(--color-text-muted)] mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-text-muted)]"></span>
+          Планируется
+        </h2>
+        <div class="space-y-3 pl-4 border-l border-[var(--color-border)]">
+          {roadmap.planned.map(item => (
+            <div class="pl-4">
+              <h3 class="font-medium text-[var(--color-text-secondary)]">{item.title}</h3>
+              <p class="text-sm text-[var(--color-text-muted)]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,61 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ id }) => id.startsWith('ru/'));
+  return posts.map(post => ({
+    params: { slug: post.slug.replace('ru/', '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={post.data.description} ogImage={post.data.image}>
+  <article class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <!-- Back -->
+      <a href="/ru/blog" class="inline-flex items-center gap-1 text-sm text-[var(--color-text-muted)] hover:text-white mb-8 transition-colors">
+        ← Все статьи
+      </a>
+
+      <!-- Cover image -->
+      {post.data.image && (
+        <img src={post.data.image} alt={post.data.title} class="w-full rounded-xl mb-8 aspect-video object-cover" />
+      )}
+
+      <!-- Header -->
+      <header class="mb-10">
+        <div class="text-sm text-[var(--color-accent-purple)] mb-3">{post.data.category}</div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">{post.data.title}</h1>
+        <p class="text-[var(--color-text-muted)]">
+          {new Date(post.data.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </p>
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-invert prose-lg max-w-none
+        prose-headings:text-white prose-headings:font-bold
+        prose-p:text-[var(--color-text-secondary)] prose-p:leading-relaxed
+        prose-a:text-[var(--color-accent-purple)] prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-white
+        prose-blockquote:border-[var(--color-accent-purple)] prose-blockquote:text-[var(--color-text-muted)]
+        prose-code:text-[var(--color-accent-green)] prose-code:bg-[var(--color-bg-card)] prose-code:px-1 prose-code:rounded
+        prose-hr:border-[var(--color-border)]">
+        <Content />
+      </div>
+
+      <!-- Telegram CTA -->
+      <div class="mt-16 p-6 rounded-xl border border-[var(--color-accent-purple)]/20 bg-[var(--color-accent-purple)]/5 text-center">
+        <p class="text-white font-semibold mb-2">Понравилась статья?</p>
+        <p class="text-[var(--color-text-muted)] text-sm mb-4">Подписывайся на канал - там больше кейсов и практики</p>
+        <a href="https://t.me/mdkguru" target="_blank" class="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-[var(--color-accent-purple)] text-white text-sm hover:opacity-90 transition-opacity">
+          @mdkguru в Telegram →
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>

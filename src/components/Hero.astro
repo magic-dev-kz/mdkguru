@@ -1,0 +1,62 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/translations';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Animated gradient background -->
+  <div class="absolute inset-0 gradient-bg"></div>
+  
+  <!-- Gradient orbs -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-accent-purple)]/20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--color-accent-green)]/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-accent-blue)]/5 rounded-full blur-3xl"></div>
+
+  <!-- Grid pattern overlay -->
+  <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--color-accent-purple)]/30 bg-[var(--color-accent-purple)]/10 mb-8">
+      <div class="w-2 h-2 rounded-full bg-[var(--color-accent-green)] animate-pulse"></div>
+      <span class="text-xs text-[var(--color-text-secondary)]">5 agents online</span>
+    </div>
+
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-4">
+      <span class="gradient-text">{t('hero.title')}</span>
+    </h1>
+    
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-6">
+      {t('hero.subtitle')}
+    </h2>
+
+    <p class="text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 leading-relaxed">
+      {t('hero.description')}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={`/${lang}/blog`}
+        class="px-8 py-3 rounded-lg bg-gradient-to-r from-[var(--color-accent-purple)] to-[var(--color-accent-green)] text-white font-semibold hover:opacity-90 transition-opacity"
+      >
+        {t('hero.cta')}
+      </a>
+      <a
+        href="https://t.me/mdkguru"
+        target="_blank"
+        class="px-8 py-3 rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-white hover:border-white/30 transition-colors"
+      >
+        {t('hero.cta2')} →
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-5 h-5 text-[var(--color-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
