@@ -26,6 +26,7 @@ export default defineConfig({
     locales: ['ru', 'en', 'es'],
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
   },
 });
