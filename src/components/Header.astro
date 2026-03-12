@@ -16,7 +16,9 @@ const navItems = [
 <header class="fixed top-0 w-full z-50 border-b border-border bg-bg-primary/80 backdrop-blur-xl">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href={`/${lang}`} class="text-xl font-bold gradient-text">MDK.GURU</a>
+      <a href={`/${lang}`} class="flex items-center">
+        <img src="/logo.svg" alt="MDK.GURU" class="h-8 w-auto" />
+      </a>
 
       <nav class="hidden md:flex items-center gap-6">
         {navItems.map(item => (
