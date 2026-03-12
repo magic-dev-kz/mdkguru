@@ -5,13 +5,27 @@ const t = useTranslations(lang);
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0 gradient-bg"></div>
-  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-purple/20 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-green/10 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+  <!-- Animated mesh gradient background (Solana-style) -->
+  <div class="absolute inset-0 hero-gradient"></div>
 
+  <!-- Floating gradient blobs -->
+  <div class="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-30 bg-purple-600 blob-1"></div>
+  <div class="absolute w-[500px] h-[500px] rounded-full blur-[120px] opacity-20 bg-emerald-400 blob-2"></div>
+  <div class="absolute w-[400px] h-[400px] rounded-full blur-[100px] opacity-15 bg-cyan-400 blob-3"></div>
+  <div class="absolute w-[300px] h-[300px] rounded-full blur-[80px] opacity-20 bg-violet-500 blob-4"></div>
+
+  <!-- Radial light burst -->
+  <div class="absolute inset-0 bg-radial-light"></div>
+
+  <!-- Noise texture overlay -->
+  <div class="absolute inset-0 noise-overlay"></div>
+
+  <!-- Subtle grid -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px); background-size: 80px 80px;"></div>
+
+  <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent-purple/30 bg-accent-purple/10 mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent-purple/30 bg-accent-purple/10 mb-8 backdrop-blur-sm">
       <div class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></div>
       <span class="text-xs text-text-secondary">5 agents online</span>
     </div>
@@ -23,12 +37,81 @@ const t = useTranslations(lang);
     <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">{t('hero.description')}</p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href={`/${lang}/blog`} class="px-8 py-3 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity">
+      <a href={`/${lang}/blog`} class="px-8 py-3 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity hover:shadow-lg hover:shadow-accent-purple/25">
         {t('hero.cta')}
       </a>
-      <a href="https://t.me/mdkguru" target="_blank" class="px-8 py-3 rounded-lg border border-border text-text-secondary hover:text-white hover:border-white/30 transition-colors">
+      <a href="https://t.me/mdkguru" target="_blank" class="px-8 py-3 rounded-lg border border-border text-text-secondary hover:text-white hover:border-white/30 transition-all backdrop-blur-sm">
         {t('hero.cta2')} →
       </a>
     </div>
   </div>
+
+  <!-- Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent"></div>
 </section>
+
+<style>
+  .hero-gradient {
+    background: #0e0e10;
+  }
+
+  /* Floating blob animations - Solana style organic movement */
+  .blob-1 {
+    top: -10%;
+    left: -5%;
+    animation: blob-float-1 20s ease-in-out infinite;
+  }
+  .blob-2 {
+    bottom: -15%;
+    right: -10%;
+    animation: blob-float-2 25s ease-in-out infinite;
+  }
+  .blob-3 {
+    top: 30%;
+    right: 10%;
+    animation: blob-float-3 18s ease-in-out infinite;
+  }
+  .blob-4 {
+    bottom: 20%;
+    left: 15%;
+    animation: blob-float-4 22s ease-in-out infinite;
+  }
+
+  @keyframes blob-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(100px, 80px) scale(1.1); }
+    50% { transform: translate(50px, 150px) scale(0.95); }
+    75% { transform: translate(-30px, 60px) scale(1.05); }
+  }
+
+  @keyframes blob-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-80px, -60px) scale(1.15); }
+    50% { transform: translate(-120px, -30px) scale(0.9); }
+    75% { transform: translate(-40px, -90px) scale(1.1); }
+  }
+
+  @keyframes blob-float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-60px, 40px) scale(1.1); }
+    66% { transform: translate(40px, -30px) scale(0.95); }
+  }
+
+  @keyframes blob-float-4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(70px, -50px) scale(1.05); }
+    66% { transform: translate(-40px, 60px) scale(1.1); }
+  }
+
+  /* Radial light from center - like Solana's hero glow */
+  .bg-radial-light {
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(153, 69, 255, 0.08) 0%, rgba(20, 241, 149, 0.03) 40%, transparent 70%);
+  }
+
+  /* Noise texture for depth */
+  .noise-overlay {
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+</style>
