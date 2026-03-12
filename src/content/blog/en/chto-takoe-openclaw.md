@@ -3,7 +3,7 @@ title: "What is OpenClaw and why I stopped just 'using AI'"
 description: "How an entrepreneur from Russia built a team of 5 AI agents on his MacBook in 3 days - and they now work 24/7"
 date: "2026-03-12"
 category: "OpenClaw"
-image: "/blog/openclaw-intro.jpg"
+image: "/blog/openclaw-intro.png"
 ---
 
 > Six months ago I was chatting with ChatGPT. At first it seemed like the future. Then it started lying to me using my own facts.

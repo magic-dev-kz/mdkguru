@@ -3,7 +3,7 @@ title: "Qué es OpenClaw y por qué dejé de simplemente 'usar inteligencia arti
 description: "Cómo un emprendedor de Rusia construyó un equipo de 5 agentes IA en su MacBook en 3 días - y ahora trabajan 24/7"
 date: "2026-03-12"
 category: "OpenClaw"
-image: "/blog/openclaw-intro.jpg"
+image: "/blog/openclaw-intro.png"
 ---
 
 > Hace seis meses hablaba con ChatGPT. Al principio parecía el futuro. Luego empezó a mentirme usando mis propios datos.
