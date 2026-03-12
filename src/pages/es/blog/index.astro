@@ -14,7 +14,7 @@ const posts = (await getCollection('blog', ({ id }) => id.startsWith('es/'))).so
       <p class="text-text-muted mb-12">Practice, cases, lessons. Sin relleno.</p>
       <div class="space-y-6">
         {posts.map(post => (
-          <a href={`/es/blog/${post.slug.replace('es/', '')}`} class="block card-hover p-6 rounded-xl border border-border bg-bg-card group">
+          <a href={`/es/blog/${post.id.replace('es/', '').replace('.md', '')}`} class="block card-hover p-6 rounded-xl border border-border bg-bg-card group">
             <h2 class="text-xl font-semibold text-white group-hover:text-accent-green transition-colors mb-2">{post.data.title}</h2>
             <p class="text-text-muted text-sm">{post.data.description}</p>
           </a>

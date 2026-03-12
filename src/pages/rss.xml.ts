@@ -12,7 +12,7 @@ export async function GET(context: any) {
       title: post.data.title,
       pubDate: new Date(post.data.date),
       description: post.data.description,
-      link: `/ru/blog/${post.slug.replace('ru/', '')}/`,
+      link: `/ru/blog/${post.id.replace('ru/', '').replace('.md', '')}/`,
     })),
     customData: '<language>ru-RU</language>',
   });
