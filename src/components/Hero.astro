@@ -4,24 +4,35 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Animated mesh gradient background (Solana-style) -->
-  <div class="absolute inset-0 hero-gradient"></div>
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0E0E10]">
 
-  <!-- Floating gradient blobs - vivid & visible -->
-  <div class="absolute w-[700px] h-[700px] rounded-full blur-[100px] bg-purple-600 blob-1" style="opacity: 0.45;"></div>
-  <div class="absolute w-[600px] h-[600px] rounded-full blur-[100px] bg-emerald-400 blob-2" style="opacity: 0.3;"></div>
-  <div class="absolute w-[500px] h-[500px] rounded-full blur-[80px] bg-cyan-500 blob-3" style="opacity: 0.25;"></div>
-  <div class="absolute w-[400px] h-[400px] rounded-full blur-[60px] bg-violet-500 blob-4" style="opacity: 0.35;"></div>
+  <!-- 1. Bottom gradient glow (Solana colors) -->
+  <div class="absolute bottom-0 left-0 w-full h-[80%]
+              bg-[radial-gradient(ellipse_at_center_bottom,_rgba(153,69,255,0.35)_0%,_rgba(20,241,149,0.15)_40%,_transparent_70%)]
+              blur-[40px] z-0 glow-pulse"></div>
 
-  <!-- Radial light burst -->
-  <div class="absolute inset-0 bg-radial-light"></div>
+  <!-- 2. Perspective grid -->
+  <div class="absolute inset-0 z-0 flex justify-center">
+    <div class="absolute top-0 w-[200%] h-[200%]"
+         style="
+           background-image:
+             linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+           background-size: 60px 60px;
+           transform: perspective(600px) rotateX(70deg) translateY(-100px) scale(2);
+           transform-origin: top center;
+         ">
+    </div>
+  </div>
 
-  <!-- Noise texture overlay -->
-  <div class="absolute inset-0 noise-overlay"></div>
+  <!-- 3. Top fade (grid disappears into darkness) -->
+  <div class="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-[#0E0E10] to-transparent z-0"></div>
 
-  <!-- Subtle grid -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px); background-size: 80px 80px;"></div>
+  <!-- 4. Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent z-[1]"></div>
+
+  <!-- 5. Noise texture -->
+  <div class="absolute inset-0 noise-overlay z-0"></div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
@@ -30,11 +41,11 @@ const t = useTranslations(lang);
       <span class="text-xs text-text-secondary">5 agents online</span>
     </div>
 
-    <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-4">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-4 tracking-tight drop-shadow-xl">
       <span class="gradient-text">{t('hero.title')}</span>
     </h1>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-6">{t('hero.subtitle')}</h2>
-    <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">{t('hero.description')}</p>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-6 drop-shadow-md">{t('hero.subtitle')}</h2>
+    <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">{t('hero.description')}</p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href={`/${lang}/blog`} class="px-8 py-3 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity hover:shadow-lg hover:shadow-accent-purple/25">
@@ -45,70 +56,20 @@ const t = useTranslations(lang);
       </a>
     </div>
   </div>
-
-  <!-- Bottom fade -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent"></div>
 </section>
 
 <style>
-  .hero-gradient {
-    background: #0e0e10;
+  /* Subtle glow pulsation */
+  .glow-pulse {
+    animation: glow-breathe 6s ease-in-out infinite;
   }
 
-  /* Floating blob animations - Solana style organic movement */
-  .blob-1 {
-    top: -15%;
-    left: -10%;
-    animation: blob-float-1 8s ease-in-out infinite;
-  }
-  .blob-2 {
-    bottom: -10%;
-    right: -5%;
-    animation: blob-float-2 10s ease-in-out infinite;
-  }
-  .blob-3 {
-    top: 20%;
-    right: 5%;
-    animation: blob-float-3 7s ease-in-out infinite;
-  }
-  .blob-4 {
-    bottom: 15%;
-    left: 10%;
-    animation: blob-float-4 9s ease-in-out infinite;
+  @keyframes glow-breathe {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
   }
 
-  @keyframes blob-float-1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(150px, 100px) scale(1.2); }
-    50% { transform: translate(80px, 200px) scale(0.9); }
-    75% { transform: translate(-50px, 80px) scale(1.15); }
-  }
-
-  @keyframes blob-float-2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-120px, -80px) scale(1.2); }
-    50% { transform: translate(-180px, -40px) scale(0.85); }
-    75% { transform: translate(-60px, -120px) scale(1.15); }
-  }
-
-  @keyframes blob-float-3 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(-100px, 60px) scale(1.2); }
-    66% { transform: translate(60px, -50px) scale(0.9); }
-  }
-
-  @keyframes blob-float-4 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(100px, -70px) scale(1.15); }
-    66% { transform: translate(-60px, 80px) scale(1.2); }
-  }
-
-  /* Radial light from center */
-  .bg-radial-light {
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(153, 69, 255, 0.15) 0%, rgba(20, 241, 149, 0.06) 40%, transparent 70%);
-  }
-
-  /* Noise texture for depth */
+  /* Noise texture */
   .noise-overlay {
     opacity: 0.02;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
