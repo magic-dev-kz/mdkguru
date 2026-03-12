@@ -71,6 +71,15 @@ const articleSchema = article ? JSON.stringify({
     <title>{title} | MDK.GURU</title>
   </head>
   <body class="min-h-screen flex flex-col">
+    <!-- Global SVG gradient for icons -->
+    <svg width="0" height="0" class="absolute">
+      <defs>
+        <linearGradient id="solanaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#9945FF" />
+          <stop offset="100%" stop-color="#14F195" />
+        </linearGradient>
+      </defs>
+    </svg>
     <Header />
     <main class="flex-1">
       <slot />
