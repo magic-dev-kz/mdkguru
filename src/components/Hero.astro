@@ -8,21 +8,20 @@ const t = useTranslations(lang);
   <!-- Animated mesh gradient background (Solana-style) -->
   <div class="absolute inset-0 hero-gradient"></div>
 
-  <!-- Vertical gradient stripes - animated -->
-  <div class="absolute inset-0 stripe-container">
-    <div class="stripe stripe-1"></div>
-    <div class="stripe stripe-2"></div>
-    <div class="stripe stripe-3"></div>
-    <div class="stripe stripe-4"></div>
-    <div class="stripe stripe-5"></div>
-    <div class="stripe stripe-6"></div>
-  </div>
+  <!-- Floating gradient blobs - vivid & visible -->
+  <div class="absolute w-[700px] h-[700px] rounded-full blur-[100px] bg-purple-600 blob-1" style="opacity: 0.45;"></div>
+  <div class="absolute w-[600px] h-[600px] rounded-full blur-[100px] bg-emerald-400 blob-2" style="opacity: 0.3;"></div>
+  <div class="absolute w-[500px] h-[500px] rounded-full blur-[80px] bg-cyan-500 blob-3" style="opacity: 0.25;"></div>
+  <div class="absolute w-[400px] h-[400px] rounded-full blur-[60px] bg-violet-500 blob-4" style="opacity: 0.35;"></div>
 
   <!-- Radial light burst -->
   <div class="absolute inset-0 bg-radial-light"></div>
 
   <!-- Noise texture overlay -->
   <div class="absolute inset-0 noise-overlay"></div>
+
+  <!-- Subtle grid -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px); background-size: 80px 80px;"></div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
@@ -57,84 +56,56 @@ const t = useTranslations(lang);
   }
 
   /* Floating blob animations - Solana style organic movement */
-  /* Vertical gradient stripes */
-  .stripe-container {
-    overflow: hidden;
+  .blob-1 {
+    top: -15%;
+    left: -10%;
+    animation: blob-float-1 8s ease-in-out infinite;
+  }
+  .blob-2 {
+    bottom: -10%;
+    right: -5%;
+    animation: blob-float-2 10s ease-in-out infinite;
+  }
+  .blob-3 {
+    top: 20%;
+    right: 5%;
+    animation: blob-float-3 7s ease-in-out infinite;
+  }
+  .blob-4 {
+    bottom: 15%;
+    left: 10%;
+    animation: blob-float-4 9s ease-in-out infinite;
   }
 
-  .stripe {
-    position: absolute;
-    top: -20%;
-    bottom: -20%;
-    width: 200px;
-    filter: blur(80px);
+  @keyframes blob-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(150px, 100px) scale(1.2); }
+    50% { transform: translate(80px, 200px) scale(0.9); }
+    75% { transform: translate(-50px, 80px) scale(1.15); }
   }
 
-  .stripe-1 {
-    left: 5%;
-    background: linear-gradient(180deg, transparent, #9945FF, transparent);
-    opacity: 0.35;
-    animation: stripe-shift-1 8s ease-in-out infinite;
-  }
-  .stripe-2 {
-    left: 25%;
-    background: linear-gradient(180deg, transparent, #14F195, transparent);
-    opacity: 0.25;
-    animation: stripe-shift-2 10s ease-in-out infinite;
-  }
-  .stripe-3 {
-    left: 45%;
-    background: linear-gradient(180deg, transparent, #7B3FE4, #00D1FF, transparent);
-    opacity: 0.3;
-    animation: stripe-shift-3 7s ease-in-out infinite;
-  }
-  .stripe-4 {
-    left: 60%;
-    background: linear-gradient(180deg, transparent, #14F195, transparent);
-    opacity: 0.2;
-    animation: stripe-shift-4 12s ease-in-out infinite;
-  }
-  .stripe-5 {
-    left: 75%;
-    background: linear-gradient(180deg, transparent, #9945FF, #14F195, transparent);
-    opacity: 0.3;
-    animation: stripe-shift-5 9s ease-in-out infinite;
-  }
-  .stripe-6 {
-    left: 90%;
-    background: linear-gradient(180deg, transparent, #00D1FF, transparent);
-    opacity: 0.2;
-    animation: stripe-shift-6 11s ease-in-out infinite;
+  @keyframes blob-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-120px, -80px) scale(1.2); }
+    50% { transform: translate(-180px, -40px) scale(0.85); }
+    75% { transform: translate(-60px, -120px) scale(1.15); }
   }
 
-  @keyframes stripe-shift-1 {
-    0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.35; }
-    50% { transform: translateY(-60px) scaleY(1.1); opacity: 0.5; }
+  @keyframes blob-float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-100px, 60px) scale(1.2); }
+    66% { transform: translate(60px, -50px) scale(0.9); }
   }
-  @keyframes stripe-shift-2 {
-    0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.25; }
-    50% { transform: translateY(80px) scaleY(1.15); opacity: 0.4; }
-  }
-  @keyframes stripe-shift-3 {
-    0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.3; }
-    50% { transform: translateY(-40px) scaleY(1.2); opacity: 0.45; }
-  }
-  @keyframes stripe-shift-4 {
-    0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.2; }
-    50% { transform: translateY(50px) scaleY(1.1); opacity: 0.35; }
-  }
-  @keyframes stripe-shift-5 {
-    0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.3; }
-    50% { transform: translateY(-70px) scaleY(1.15); opacity: 0.45; }
-  }
-  @keyframes stripe-shift-6 {
-    0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.2; }
-    50% { transform: translateY(40px) scaleY(1.1); opacity: 0.3; }
+
+  @keyframes blob-float-4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, -70px) scale(1.15); }
+    66% { transform: translate(-60px, 80px) scale(1.2); }
   }
 
   /* Radial light from center */
   .bg-radial-light {
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(153, 69, 255, 0.12) 0%, rgba(20, 241, 149, 0.05) 40%, transparent 70%);
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(153, 69, 255, 0.15) 0%, rgba(20, 241, 149, 0.06) 40%, transparent 70%);
   }
 
   /* Noise texture for depth */
