@@ -1,0 +1,36 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ id }) => id.startsWith('en/'));
+  return posts.map(post => ({
+    params: { slug: post.slug.replace('en/', '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={post.data.description} ogImage={post.data.image}>
+  <article class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/en/blog" class="inline-flex items-center gap-1 text-sm text-text-muted hover:text-white mb-8 transition-colors">← All posts</a>
+      {post.data.image && <img src={post.data.image} alt={post.data.title} class="w-full rounded-xl mb-8 aspect-video object-cover" />}
+      <header class="mb-10">
+        <div class="text-sm text-accent-purple mb-3">{post.data.category}</div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">{post.data.title}</h1>
+        <p class="text-text-muted">{new Date(post.data.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+      </header>
+      <div class="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-text-secondary prose-a:text-accent-purple prose-strong:text-white prose-blockquote:border-accent-purple prose-code:text-accent-green prose-hr:border-border">
+        <Content />
+      </div>
+      <div class="mt-16 p-6 rounded-xl border border-accent-purple/20 bg-accent-purple/5 text-center">
+        <p class="text-white font-semibold mb-2">Liked the article?</p>
+        <a href="https://t.me/mdkguru" target="_blank" class="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-accent-purple text-white text-sm hover:opacity-90 transition-opacity">@mdkguru on Telegram →</a>
+      </div>
+    </div>
+  </article>
+</Layout>
