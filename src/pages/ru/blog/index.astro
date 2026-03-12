@@ -2,9 +2,18 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog', ({ id }) => id.startsWith('ru/'))).sort(
+const allPosts = await getCollection('blog');
+const posts = allPosts.filter(p => {
+  const ident = p.id || p.slug || '';
+  return ident.startsWith('ru/') || ident.startsWith('ru\\');
+}).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+
+function getSlug(post: any) {
+  const ident = post.id || post.slug || '';
+  return ident.replace(/^ru[/\\]/, '').replace(/\.md$/, '');
+}
 ---
 
 <Layout title="Блог" description="Практика, кейсы, грабли. Без воды.">
@@ -17,7 +26,7 @@ const posts = (await getCollection('blog', ({ id }) => id.startsWith('ru/'))).so
 
       <div class="space-y-6">
         {posts.map(post => (
-          <a href={`/ru/blog/${post.id.replace('ru/', '').replace('.md', '')}`} class="block card-hover p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] group">
+          <a href={`/ru/blog/${getSlug(post)}`} class="block card-hover p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] group">
             <div class="flex items-start justify-between gap-4">
               <div>
                 <h2 class="text-xl font-semibold text-white group-hover:text-[var(--color-accent-green)] transition-colors mb-2">

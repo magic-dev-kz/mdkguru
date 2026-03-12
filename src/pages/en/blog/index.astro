@@ -2,9 +2,18 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog', ({ id }) => id.startsWith('en/'))).sort(
+const allPosts = await getCollection('blog');
+const posts = allPosts.filter(p => {
+  const ident = p.id || p.slug || '';
+  return ident.startsWith('en/') || ident.startsWith('en\\');
+}).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+
+function getSlug(post: any) {
+  const ident = post.id || post.slug || '';
+  return ident.replace(/^en[/\\]/, '').replace(/\.md$/, '');
+}
 ---
 
 <Layout title="Blog" description="Practice, cases, lessons. No fluff.">
@@ -14,7 +23,7 @@ const posts = (await getCollection('blog', ({ id }) => id.startsWith('en/'))).so
       <p class="text-text-muted mb-12">Practice, cases, lessons. No fluff.</p>
       <div class="space-y-6">
         {posts.map(post => (
-          <a href={`/en/blog/${post.id.replace('en/', '').replace('.md', '')}`} class="block card-hover p-6 rounded-xl border border-border bg-bg-card group">
+          <a href={`/en/blog/${getSlug(post)}`} class="block card-hover p-6 rounded-xl border border-border bg-bg-card group">
             <h2 class="text-xl font-semibold text-white group-hover:text-accent-green transition-colors mb-2">{post.data.title}</h2>
             <p class="text-text-muted text-sm">{post.data.description}</p>
           </a>

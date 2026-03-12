@@ -3,11 +3,19 @@ import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ id }) => id.startsWith('es/'));
-  return posts.map(post => ({
-    params: { slug: post.id.replace('es/', '').replace('.md', '') },
-    props: { post },
-  }));
+  const allPosts = await getCollection('blog');
+  const posts = allPosts.filter(p => {
+    const ident = p.id || p.slug || '';
+    return ident.startsWith('es/') || ident.startsWith('es\\');
+  });
+  return posts.map(post => {
+    const ident = post.id || post.slug || '';
+    const slug = ident.replace(/^es[/\\]/, '').replace(/\.md$/, '');
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
 }
 
 const { post } = Astro.props;
@@ -17,7 +25,7 @@ const { Content } = await post.render();
 <Layout title={post.data.title} description={post.data.description} ogImage={post.data.image} article={{ date: post.data.date, category: post.data.category }}>
   <article class="pt-24 min-h-screen">
     <div class="max-w-3xl mx-auto px-4 py-16">
-      <a href="/es/blog" class="inline-flex items-center gap-1 text-sm text-text-muted hover:text-white mb-8 transition-colors">← Todos los posts</a>
+      <a href="/es/blog" class="inline-flex items-center gap-1 text-sm text-text-muted hover:text-white mb-8 transition-colors">← Todos los artículos</a>
       {post.data.image && <img src={post.data.image} alt={post.data.title} loading="lazy" decoding="async" width="1200" height="630" class="w-full rounded-xl mb-8 aspect-video object-cover" />}
       <header class="mb-10">
         <div class="text-sm text-accent-purple mb-3">{post.data.category}</div>

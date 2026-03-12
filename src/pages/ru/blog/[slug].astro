@@ -3,11 +3,16 @@ import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ id }) => id.startsWith('ru/'));
-  return posts.map(post => ({
-    params: { slug: post.id.replace('ru/', '').replace('.md', '') },
-    props: { post },
-  }));
+  const allPosts = await getCollection('blog');
+  const posts = allPosts.filter(p => {
+    const ident = p.id || p.slug || '';
+    return ident.startsWith('ru/') || ident.startsWith('ru\\');
+  });
+  return posts.map(post => {
+    const ident = post.id || post.slug || '';
+    const slug = ident.replace(/^ru[/\\]/, '').replace(/\.md$/, '');
+    return { params: { slug }, props: { post } };
+  });
 }
 
 const { post } = Astro.props;
