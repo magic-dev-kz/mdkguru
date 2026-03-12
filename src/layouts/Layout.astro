@@ -8,10 +8,34 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  article?: { date?: string; category?: string; };
 }
 
-const { title, description = 'MDK.GURU - Один человек. Пять ИИ-агентов. Бесконечные возможности.', ogImage } = Astro.props;
+const { title, description = 'MDK.GURU - Один человек. Пять ИИ-агентов. Бесконечные возможности.', ogImage, article } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const canonicalUrl = new URL(Astro.url.pathname, 'https://mdk.guru').href;
+
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MDK.GURU",
+  "url": "https://mdk.guru",
+  "description": "Один человек. Пять ИИ-агентов. Бесконечные возможности.",
+  "author": { "@type": "Person", "name": "Ilya Chernyak" },
+  "inLanguage": ["ru", "en", "es"],
+});
+
+const articleSchema = article ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": ogImage ? `https://mdk.guru${ogImage}` : "https://mdk.guru/og-image.png",
+  "datePublished": article.date,
+  "author": { "@type": "Person", "name": "Ilya Chernyak" },
+  "publisher": { "@type": "Organization", "name": "MDK.GURU", "logo": { "@type": "ImageObject", "url": "https://mdk.guru/favicon.svg" } },
+  "mainEntityOfPage": canonicalUrl,
+}) : null;
 ---
 
 <!doctype html>
@@ -24,7 +48,20 @@ const lang = getLangFromUrl(Astro.url);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage || 'https://mdk.guru/og-image.png'} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="MDK.GURU" />
+    <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : lang === 'es' ? 'es_ES' : 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage ? `https://mdk.guru${ogImage}` : 'https://mdk.guru/og-image.png'} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="ru" href={`https://mdk.guru/ru${Astro.url.pathname.replace(/^\/(ru|en|es)/, '')}`} />
+    <link rel="alternate" hreflang="en" href={`https://mdk.guru/en${Astro.url.pathname.replace(/^\/(ru|en|es)/, '')}`} />
+    <link rel="alternate" hreflang="es" href={`https://mdk.guru/es${Astro.url.pathname.replace(/^\/(ru|en|es)/, '')}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://mdk.guru/ru${Astro.url.pathname.replace(/^\/(ru|en|es)/, '')}`} />
+    <script type="application/ld+json" set:html={websiteSchema} />
+    {articleSchema && <script type="application/ld+json" set:html={articleSchema} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" />
