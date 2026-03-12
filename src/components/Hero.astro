@@ -8,11 +8,11 @@ const t = useTranslations(lang);
   <!-- Animated mesh gradient background (Solana-style) -->
   <div class="absolute inset-0 hero-gradient"></div>
 
-  <!-- Floating gradient blobs -->
-  <div class="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-30 bg-purple-600 blob-1"></div>
-  <div class="absolute w-[500px] h-[500px] rounded-full blur-[120px] opacity-20 bg-emerald-400 blob-2"></div>
-  <div class="absolute w-[400px] h-[400px] rounded-full blur-[100px] opacity-15 bg-cyan-400 blob-3"></div>
-  <div class="absolute w-[300px] h-[300px] rounded-full blur-[80px] opacity-20 bg-violet-500 blob-4"></div>
+  <!-- Floating gradient blobs - vivid & visible -->
+  <div class="absolute w-[700px] h-[700px] rounded-full blur-[100px] bg-purple-600 blob-1" style="opacity: 0.45;"></div>
+  <div class="absolute w-[600px] h-[600px] rounded-full blur-[100px] bg-emerald-400 blob-2" style="opacity: 0.3;"></div>
+  <div class="absolute w-[500px] h-[500px] rounded-full blur-[80px] bg-cyan-500 blob-3" style="opacity: 0.25;"></div>
+  <div class="absolute w-[400px] h-[400px] rounded-full blur-[60px] bg-violet-500 blob-4" style="opacity: 0.35;"></div>
 
   <!-- Radial light burst -->
   <div class="absolute inset-0 bg-radial-light"></div>
@@ -57,55 +57,55 @@ const t = useTranslations(lang);
 
   /* Floating blob animations - Solana style organic movement */
   .blob-1 {
-    top: -10%;
-    left: -5%;
-    animation: blob-float-1 20s ease-in-out infinite;
+    top: -15%;
+    left: -10%;
+    animation: blob-float-1 8s ease-in-out infinite;
   }
   .blob-2 {
-    bottom: -15%;
-    right: -10%;
-    animation: blob-float-2 25s ease-in-out infinite;
+    bottom: -10%;
+    right: -5%;
+    animation: blob-float-2 10s ease-in-out infinite;
   }
   .blob-3 {
-    top: 30%;
-    right: 10%;
-    animation: blob-float-3 18s ease-in-out infinite;
+    top: 20%;
+    right: 5%;
+    animation: blob-float-3 7s ease-in-out infinite;
   }
   .blob-4 {
-    bottom: 20%;
-    left: 15%;
-    animation: blob-float-4 22s ease-in-out infinite;
+    bottom: 15%;
+    left: 10%;
+    animation: blob-float-4 9s ease-in-out infinite;
   }
 
   @keyframes blob-float-1 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(100px, 80px) scale(1.1); }
-    50% { transform: translate(50px, 150px) scale(0.95); }
-    75% { transform: translate(-30px, 60px) scale(1.05); }
+    25% { transform: translate(150px, 100px) scale(1.2); }
+    50% { transform: translate(80px, 200px) scale(0.9); }
+    75% { transform: translate(-50px, 80px) scale(1.15); }
   }
 
   @keyframes blob-float-2 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-80px, -60px) scale(1.15); }
-    50% { transform: translate(-120px, -30px) scale(0.9); }
-    75% { transform: translate(-40px, -90px) scale(1.1); }
+    25% { transform: translate(-120px, -80px) scale(1.2); }
+    50% { transform: translate(-180px, -40px) scale(0.85); }
+    75% { transform: translate(-60px, -120px) scale(1.15); }
   }
 
   @keyframes blob-float-3 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(-60px, 40px) scale(1.1); }
-    66% { transform: translate(40px, -30px) scale(0.95); }
+    33% { transform: translate(-100px, 60px) scale(1.2); }
+    66% { transform: translate(60px, -50px) scale(0.9); }
   }
 
   @keyframes blob-float-4 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(70px, -50px) scale(1.05); }
-    66% { transform: translate(-40px, 60px) scale(1.1); }
+    33% { transform: translate(100px, -70px) scale(1.15); }
+    66% { transform: translate(-60px, 80px) scale(1.2); }
   }
 
-  /* Radial light from center - like Solana's hero glow */
+  /* Radial light from center */
   .bg-radial-light {
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(153, 69, 255, 0.08) 0%, rgba(20, 241, 149, 0.03) 40%, transparent 70%);
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(153, 69, 255, 0.15) 0%, rgba(20, 241, 149, 0.06) 40%, transparent 70%);
   }
 
   /* Noise texture for depth */
