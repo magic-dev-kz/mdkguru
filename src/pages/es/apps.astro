@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const apps = [
+  { icon: '🛒', title: 'SnobSnab', desc: 'Sitio de contenido autogenerado para materiales de construcción.', status: 'live', url: 'https://www.snobsnab.ru', stack: 'Astro + Vercel + AI Pipeline' },
+  { icon: '🌐', title: 'MDK.GURU', desc: 'Este sitio. Estudio de una persona + IA. Blog, apps, skills.', status: 'live', url: 'https://mdk.guru', stack: 'Astro + Tailwind + Decap CMS' },
+  { icon: '🔐', title: 'KazakVPN', desc: 'Cliente VPN para iOS con WireGuard.', status: 'development', stack: 'SwiftUI + WireGuardKit' },
+];
+
+const statusLabels: Record<string, { text: string; color: string }> = {
+  live: { text: 'Activo', color: 'bg-accent-green/20 text-accent-green' },
+  development: { text: 'En desarrollo', color: 'bg-accent-purple/20 text-accent-purple' },
+};
+---
+
+<Layout title="Apps" description="Proyectos del estudio MDK.GURU.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">Apps</span></h1>
+      <p class="text-text-muted mb-12">Construido por una persona + equipo IA.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {apps.map(app => (
+          <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
+            <span class="text-3xl">{app.icon}</span>
+            <h3 class="text-lg font-bold text-white mt-3 mb-2">{app.title}</h3>
+            <p class="text-sm text-text-muted mb-3">{app.desc}</p>
+            <p class="text-xs text-text-muted">{app.stack}</p>
+            {app.url && <a href={app.url} target="_blank" class="inline-block mt-3 text-sm text-accent-purple hover:underline">Abrir →</a>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

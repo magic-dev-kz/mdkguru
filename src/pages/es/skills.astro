@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const skills = [
+  { icon: '📰', title: 'Content Pipeline', desc: 'Generación automática de artículos: investigación → texto → portada → publicación.', status: 'Producción' },
+  { icon: '📊', title: 'Sales Analytics', desc: 'Integración API MoySklad. KPI diarios, márgenes, informes automáticos.', status: 'Producción' },
+  { icon: '🤖', title: 'Agent Monitoring', desc: 'Monitoreo de agentes IA: estado de APIs, cron jobs, diagnóstico.', status: 'Producción' },
+  { icon: '📸', title: 'Instagram Automation', desc: 'Publicación automática, Stories, gestión de seguidores.', status: 'Producción' },
+  { icon: '🧠', title: 'Vector Memory', desc: 'PostgreSQL + pgvector para búsqueda semántica en historial.', status: 'Producción' },
+];
+---
+
+<Layout title="OpenClaw Skills" description="Herramientas y automatizaciones para OpenClaw.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">OpenClaw Skills</span></h1>
+      <p class="text-text-muted mb-12">Herramientas y automatizaciones. Algunas serán open source.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skills.map(skill => (
+          <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
+            <div class="text-2xl mb-3">{skill.icon}</div>
+            <h3 class="text-lg font-bold text-white mb-2">{skill.title}</h3>
+            <p class="text-sm text-text-muted mb-3">{skill.desc}</p>
+            <span class="text-xs text-accent-green">{skill.status}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

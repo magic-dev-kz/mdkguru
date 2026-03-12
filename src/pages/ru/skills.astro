@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const skills = [
+  {
+    icon: '📰',
+    title: 'Content Pipeline',
+    desc: 'Автоматическая генерация статей: исследование темы (Gemini) → текст (Claude) → обложка (Imagen) → публикация на сайт.',
+    status: 'Используется в СнобСнаб',
+  },
+  {
+    icon: '📊',
+    title: 'МойСклад Analytics',
+    desc: 'Подключение к API МойСклад, ежедневная аналитика продаж, KPI, маржа. Автоматические утренние отчёты.',
+    status: 'Используется в IZI и Imperia',
+  },
+  {
+    icon: '🤖',
+    title: 'Agent Monitoring',
+    desc: 'Система мониторинга ИИ-агентов: здоровье API, статус кронов, диагностика. Единый утренний отчёт.',
+    status: 'Боевой режим',
+  },
+  {
+    icon: '📸',
+    title: 'Instagram Automation',
+    desc: 'Публикация постов, Stories, управление подписками. Контент из МойСклад → обработка → Instagram.',
+    status: 'Используется в IZI',
+  },
+  {
+    icon: '💳',
+    title: 'QR Payment',
+    desc: 'Фото счёта → OCR → QR-код стандарта ЦБ РФ ST00012 → оплата в банковском приложении.',
+    status: 'MVP готов',
+  },
+  {
+    icon: '🧠',
+    title: 'Vector Memory',
+    desc: 'PostgreSQL + pgvector для семантического поиска по истории. Агент ищет по смыслу, а не по ключевым словам.',
+    status: 'Боевой режим',
+  },
+];
+---
+
+<Layout title="OpenClaw Скиллы" description="Инструменты и автоматизации, которые я создаю для OpenClaw.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">OpenClaw Скиллы</span></h1>
+      <p class="text-text-muted mb-12">Инструменты и автоматизации. Часть выложу в открытый доступ.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skills.map(skill => (
+          <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
+            <div class="text-2xl mb-3">{skill.icon}</div>
+            <h3 class="text-lg font-bold text-white mb-2">{skill.title}</h3>
+            <p class="text-sm text-text-muted mb-3">{skill.desc}</p>
+            <span class="text-xs text-accent-green">{skill.status}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 p-6 rounded-xl border border-dashed border-border text-center">
+        <p class="text-text-muted">Скоро здесь появятся скиллы для скачивания 🚀</p>
+        <p class="text-xs text-text-muted mt-2">Подписывайся на <a href="https://t.me/mdkguru" class="text-accent-purple hover:underline">@mdkguru</a> чтобы не пропустить</p>
+      </div>
+    </div>
+  </div>
+</Layout>

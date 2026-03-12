@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const apps = [
+  {
+    icon: '🛒',
+    title: 'СнобСнаб',
+    desc: 'Контент-сайт для строительных материалов. Статьи генерируются автоматически: Gemini исследует тему, Claude пишет текст, Imagen создаёт обложку.',
+    status: 'live',
+    url: 'https://www.snobsnab.ru',
+    stack: 'Astro + Vercel + Gemini + Claude + Imagen',
+  },
+  {
+    icon: '🌐',
+    title: 'MDK.GURU',
+    desc: 'Этот сайт. Студия одного человека + ИИ. Блог, приложения, скиллы. Три языка, CMS для редактирования.',
+    status: 'live',
+    url: 'https://mdk.guru',
+    stack: 'Astro + Tailwind + Decap CMS + Vercel',
+  },
+  {
+    icon: '🔐',
+    title: 'KazakVPN',
+    desc: 'iOS VPN-клиент на WireGuard. Простой интерфейс, быстрое подключение.',
+    status: 'development',
+    stack: 'SwiftUI + WireGuardKit',
+  },
+  {
+    icon: '📱',
+    title: 'QR-оплата по фото',
+    desc: 'Фото счёта → распознавание реквизитов → QR-код для оплаты в банковском приложении. Стандарт ЦБ РФ ST00012.',
+    status: 'development',
+    stack: 'Python + qrcode + OCR',
+  },
+];
+
+const statusLabels: Record<string, { text: string; color: string }> = {
+  live: { text: 'Live', color: 'bg-accent-green/20 text-accent-green' },
+  beta: { text: 'Beta', color: 'bg-accent-blue/20 text-accent-blue' },
+  development: { text: 'В разработке', color: 'bg-accent-purple/20 text-accent-purple' },
+};
+---
+
+<Layout title="Приложения" description="Проекты студии MDK.GURU - сайты, приложения, инструменты.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">Приложения</span></h1>
+      <p class="text-text-muted mb-12">Проекты, которые делает один человек + ИИ-команда.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {apps.map(app => (
+          <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
+            <div class="flex items-start justify-between mb-3">
+              <span class="text-3xl">{app.icon}</span>
+              <span class={`text-xs px-2 py-1 rounded-full ${statusLabels[app.status].color}`}>
+                {statusLabels[app.status].text}
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">{app.title}</h3>
+            <p class="text-sm text-text-muted mb-3">{app.desc}</p>
+            <p class="text-xs text-text-muted">{app.stack}</p>
+            {app.url && (
+              <a href={app.url} target="_blank" class="inline-block mt-3 text-sm text-accent-purple hover:underline">
+                Открыть →
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

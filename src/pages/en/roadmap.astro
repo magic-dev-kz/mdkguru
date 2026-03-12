@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const roadmap = {
+  done: [
+    { title: '5 AI Agents Team', date: 'Mar 2026', desc: 'Mo, Izya, Molot, Leo, House working together' },
+    { title: 'Content Pipeline', date: 'Mar 2026', desc: 'MoySklad → Imagen → Instagram/TG/VK' },
+    { title: 'Telegram @mdkguru', date: 'Mar 2026', desc: 'Channel + discussion group' },
+    { title: 'SnobSnab', date: 'Mar 2026', desc: 'Auto-generated content site' },
+  ],
+  inProgress: [
+    { title: 'MDK.GURU website', desc: 'Astro + Decap CMS + i18n (ru/en/es)' },
+    { title: 'KazakVPN', desc: 'iOS app on WireGuard' },
+  ],
+  planned: [
+    { title: 'OpenClaw Skills', desc: 'First skills for public release' },
+    { title: 'Email newsletter', desc: 'Auto-send on new articles via Resend' },
+    { title: 'Live Dashboard', desc: 'Real-time agent status' },
+  ],
+};
+---
+
+<Layout title="Roadmap" description="What's done, in progress, and planned.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">Roadmap</span></h1>
+      <p class="text-text-muted mb-12">What's built, what's next.</p>
+
+      <div class="mb-12">
+        <h2 class="text-lg font-semibold text-accent-green mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-accent-green"></span> Done
+        </h2>
+        <div class="space-y-3 pl-4 border-l border-border">
+          {roadmap.done.map(item => (
+            <div class="pl-4">
+              <div class="flex items-center justify-between"><h3 class="font-medium text-white">{item.title}</h3><span class="text-xs text-text-muted">{item.date}</span></div>
+              <p class="text-sm text-text-muted">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-lg font-semibold text-accent-purple mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-accent-purple animate-pulse"></span> In Progress
+        </h2>
+        <div class="space-y-3 pl-4 border-l border-accent-purple/30">
+          {roadmap.inProgress.map(item => (
+            <div class="pl-4"><h3 class="font-medium text-white">{item.title}</h3><p class="text-sm text-text-muted">{item.desc}</p></div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold text-text-muted mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-text-muted"></span> Planned
+        </h2>
+        <div class="space-y-3 pl-4 border-l border-border">
+          {roadmap.planned.map(item => (
+            <div class="pl-4"><h3 class="font-medium text-text-secondary">{item.title}</h3><p class="text-sm text-text-muted">{item.desc}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
