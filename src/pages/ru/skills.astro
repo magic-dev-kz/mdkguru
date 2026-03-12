@@ -1,55 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+const skillIcons = {
+  content: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`,
+  analytics: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><line x1="2" y1="22" x2="22" y2="22"></line></svg>`,
+  monitoring: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line><path d="M10 6h8"></path><path d="M10 18h8"></path></svg>`,
+  factory: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg>`,
+  instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`,
+  multiplatform: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>`,
+  qr: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><path d="M9 3v4"></path><path d="M15 3v4"></path><path d="M9 21v-4"></path><path d="M15 21v-4"></path></svg>`,
+  memory: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M12 5v13"></path></svg>`,
+};
+
 const skills = [
-  {
-    icon: '📰',
-    title: 'Content Pipeline',
-    desc: 'Автоматическая генерация статей: исследование темы (Gemini) → текст (Claude) → обложка (Imagen) → публикация на сайт.',
-    status: 'Используется в СнобСнаб',
-  },
-  {
-    icon: '📊',
-    title: 'МойСклад Analytics',
-    desc: 'Подключение к API МойСклад, ежедневная аналитика продаж, KPI, маржа. Автоматические утренние отчёты.',
-    status: 'Используется в IZI и Imperia',
-  },
-  {
-    icon: '🤖',
-    title: 'Agent Monitoring',
-    desc: 'Система мониторинга ИИ-агентов: здоровье API, статус кронов, диагностика. Единый утренний отчёт.',
-    status: 'Боевой режим',
-  },
-  {
-    icon: '🏭',
-    title: 'Контент-завод',
-    desc: 'Полный цикл: МойСклад → товарные карточки → 3 формата (вертикальный, горизонтальный, квадратный) → публикация в Instagram, Telegram и ВК одновременно.',
-    status: 'Используется в IZI',
-  },
-  {
-    icon: '📸',
-    title: 'Instagram Automation',
-    desc: 'Посты, Stories, Reels. Автопубликация, управление подписками, аналитика охватов. Работает через Telethon + Bot API.',
-    status: 'Используется в IZI',
-  },
-  {
-    icon: '📢',
-    title: 'Мультиплатформа VK + TG',
-    desc: 'Одна единица контента → адаптация под формат каждой площадки → автопубликация в ВКонтакте и Telegram-канал.',
-    status: 'Используется в IZI',
-  },
-  {
-    icon: '💳',
-    title: 'QR Payment',
-    desc: 'Фото счёта → OCR → QR-код стандарта ЦБ РФ ST00012 → оплата в банковском приложении.',
-    status: 'MVP готов',
-  },
-  {
-    icon: '🧠',
-    title: 'Vector Memory',
-    desc: 'PostgreSQL + pgvector для семантического поиска по истории. Агент ищет по смыслу, а не по ключевым словам.',
-    status: 'Боевой режим',
-  },
+  { iconKey: 'content', title: 'Content Pipeline', desc: 'Автоматическая генерация статей: исследование темы (Gemini) → текст (Claude) → обложка (Imagen) → публикация на сайт.', status: 'Используется в СнобСнаб' },
+  { iconKey: 'analytics', title: 'МойСклад Analytics', desc: 'Подключение к API МойСклад, ежедневная аналитика продаж, KPI, маржа. Автоматические утренние отчёты.', status: 'Используется в IZI и Imperia' },
+  { iconKey: 'monitoring', title: 'Agent Monitoring', desc: 'Система мониторинга ИИ-агентов: здоровье API, статус кронов, диагностика. Единый утренний отчёт.', status: 'Боевой режим' },
+  { iconKey: 'factory', title: 'Контент-завод', desc: 'Полный цикл: МойСклад → товарные карточки → 3 формата → публикация в Instagram, Telegram и ВК одновременно.', status: 'Используется в IZI' },
+  { iconKey: 'instagram', title: 'Instagram Automation', desc: 'Посты, Stories, Reels. Автопубликация, управление подписками, аналитика охватов. Через Telethon + Bot API.', status: 'Используется в IZI' },
+  { iconKey: 'multiplatform', title: 'Мультиплатформа VK + TG', desc: 'Одна единица контента → адаптация под формат площадки → автопубликация в ВКонтакте и Telegram-канал.', status: 'Используется в IZI' },
+  { iconKey: 'qr', title: 'QR Payment', desc: 'Фото счёта → OCR → QR-код стандарта ЦБ РФ ST00012 → оплата в банковском приложении.', status: 'MVP готов' },
+  { iconKey: 'memory', title: 'Vector Memory', desc: 'PostgreSQL + pgvector для семантического поиска по истории. Агент ищет по смыслу, а не по ключевым словам.', status: 'Боевой режим' },
 ];
 ---
 
@@ -62,7 +33,7 @@ const skills = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map(skill => (
           <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
-            <div class="text-2xl mb-3">{skill.icon}</div>
+            <div class="w-10 h-10 mb-3" set:html={skillIcons[skill.iconKey]} />
             <h3 class="text-lg font-bold text-white mb-2">{skill.title}</h3>
             <p class="text-sm text-text-muted mb-3">{skill.desc}</p>
             <span class="text-xs text-accent-green">{skill.status}</span>

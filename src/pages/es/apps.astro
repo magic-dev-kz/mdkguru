@@ -2,9 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 
 const apps = [
-  { icon: '🛒', title: 'SnobSnab', desc: 'Sitio de contenido autogenerado para materiales de construcción.', status: 'live', url: 'https://www.snobsnab.ru', stack: 'Astro + Vercel + AI Pipeline' },
-  { icon: '🌐', title: 'MDK.GURU', desc: 'Este sitio. Estudio de una persona + IA. Blog, apps, skills.', status: 'live', url: 'https://mdk.guru', stack: 'Astro + Tailwind + Decap CMS' },
-  { icon: '🔐', title: 'KazakVPN', desc: 'Cliente VPN para iOS con WireGuard.', status: 'development', stack: 'SwiftUI + WireGuardKit' },
+  { iconKey: 'snobsnab', icon: '🛒', title: 'SnobSnab', desc: 'Sitio de contenido autogenerado para materiales de construcción.', status: 'live', url: 'https://www.snobsnab.ru', stack: 'Astro + Vercel + AI Pipeline' },
+  { iconKey: 'mdkguru', icon: '🌐', title: 'MDK.GURU', desc: 'Este sitio. Estudio de una persona + IA. Blog, apps, skills.', status: 'live', url: 'https://mdk.guru', stack: 'Astro + Tailwind + Decap CMS' },
+  { iconKey: 'kazakvpn', icon: '🔐', title: 'KazakVPN', desc: 'Cliente VPN para iOS con WireGuard.', status: 'development', stack: 'SwiftUI + WireGuardKit' },
 ];
 
 const statusLabels: Record<string, { text: string; color: string }> = {
