@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import rehypeMdkEmoji from './src/plugins/rehype-mdk-emoji.mjs';
+import remarkMdkEmoji from './src/plugins/remark-mdk-emoji.mjs';
 
 export default defineConfig({
   site: 'https://mdk.guru',
   markdown: {
-    rehypePlugins: [rehypeMdkEmoji],
+    remarkPlugins: [remarkMdkEmoji],
   },
   integrations: [
     tailwind(),

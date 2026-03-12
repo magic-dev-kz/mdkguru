@@ -1,8 +1,8 @@
 /**
- * Rehype plugin: replaces emoji in text nodes with MDK.GURU SVG icons
+ * Remark plugin: replaces emoji in text nodes with MDK.GURU SVG icons
+ * Works at the remark (MDAST) level before conversion to HTML
  */
 import { visit } from 'unist-util-visit';
-import { fromHtml } from 'hast-util-from-html';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -14,9 +14,9 @@ const emojiMap = JSON.parse(readFileSync(join(__dirname, 'mdk_emoji_map.json'), 
 const emojiKeys = Object.keys(emojiMap).sort((a, b) => b.length - a.length);
 const emojiPattern = emojiKeys.map(e => e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
 
-export default function rehypeMdkEmoji() {
+export default function remarkMdkEmoji() {
   return (tree) => {
-    const nodesToReplace = [];
+    const replacements = [];
 
     visit(tree, 'text', (node, index, parent) => {
       if (!parent || index === null || index === undefined || !node.value) return;
@@ -25,17 +25,17 @@ export default function rehypeMdkEmoji() {
       const parts = node.value.split(regex);
       if (parts.length <= 1) return;
 
-      nodesToReplace.push({ node, index, parent, parts });
+      replacements.push({ index, parent, parts });
     });
 
-    // Process in reverse to keep indices valid
-    for (let i = nodesToReplace.length - 1; i >= 0; i--) {
-      const { index, parent, parts } = nodesToReplace[i];
+    // Process in reverse order
+    for (let i = replacements.length - 1; i >= 0; i--) {
+      const { index, parent, parts } = replacements[i];
       const newChildren = [];
       for (const part of parts) {
         if (emojiMap[part]) {
-          const svgTree = fromHtml(emojiMap[part], { fragment: true });
-          newChildren.push(...svgTree.children);
+          // Insert as raw HTML node in MDAST
+          newChildren.push({ type: 'html', value: emojiMap[part] });
         } else if (part) {
           newChildren.push({ type: 'text', value: part });
         }
