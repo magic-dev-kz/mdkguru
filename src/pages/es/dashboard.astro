@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard" description="Estado de agentes IA en tiempo real.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h1 class="text-4xl font-bold"><span class="gradient-text">Dashboard</span></h1>
+          <p class="text-text-muted mt-2">Estado de agentes</p>
+        </div>
+        <div id="last-update" class="text-xs text-text-muted"></div>
+      </div>
+
+      <!-- System Status -->
+      <div class="mb-8 p-4 rounded-xl border border-border bg-bg-card flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div id="system-dot" class="w-3 h-3 rounded-full bg-accent-green animate-pulse"></div>
+          <span id="system-status" class="text-sm font-semibold text-white">Cargando...</span>
+        </div>
+        <span id="uptime" class="text-xs text-text-muted"></span>
+      </div>
+
+      <!-- Agents Grid -->
+      <div id="agents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <!-- Filled by JS -->
+      </div>
+
+      <!-- Crons & API -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Crons -->
+        <div class="p-6 rounded-xl border border-border bg-bg-card">
+          <h3 class="text-sm font-semibold text-white mb-4">⏱️ Cron Jobs</h3>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-text-muted text-sm">Всего</span>
+            <span id="crons-total" class="text-white font-mono">-</span>
+          </div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-text-muted text-sm">Активных</span>
+            <span id="crons-active" class="text-accent-green font-mono">-</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-text-muted text-sm">Ошибки (24ч)</span>
+            <span id="crons-errors" class="text-red-400 font-mono">-</span>
+          </div>
+        </div>
+
+        <!-- APIs -->
+        <div class="p-6 rounded-xl border border-border bg-bg-card">
+          <h3 class="text-sm font-semibold text-white mb-4">🌐 API Status</h3>
+          <div id="api-list" class="space-y-2">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Memory & System -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
+          <div id="mem-entries" class="text-2xl font-bold gradient-text">-</div>
+          <div class="text-xs text-text-muted mt-1">Записей в памяти</div>
+        </div>
+        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
+          <div id="tasks-pending" class="text-2xl font-bold gradient-text">-</div>
+          <div class="text-xs text-text-muted mt-1">Задач в очереди</div>
+        </div>
+        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
+          <div id="disk-usage" class="text-2xl font-bold gradient-text">-</div>
+          <div class="text-xs text-text-muted mt-1">Диск</div>
+        </div>
+        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
+          <div id="articles-count" class="text-2xl font-bold gradient-text">-</div>
+          <div class="text-xs text-text-muted mt-1">Статей</div>
+        </div>
+      </div>
+
+      <p class="text-xs text-text-muted text-center mt-8">Datos actualizados cada 30 minutos</p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+async function loadDashboard() {
+  try {
+    const res = await fetch('/dashboard-data.json');
+    const data = await res.json();
+
+    // Last update
+    const el = document.getElementById('last-update');
+    if (el) el.textContent = `Обновлено: ${new Date(data.updatedAt).toLocaleString('ru-RU')}`;
+
+    // System status
+    const dot = document.getElementById('system-dot');
+    const status = document.getElementById('system-status');
+    const uptime = document.getElementById('uptime');
+    if (status) status.textContent = data.system?.status || 'Система работает';
+    if (uptime) uptime.textContent = data.system?.uptime || '';
+    if (dot && data.system?.healthy === false) {
+      dot.className = 'w-3 h-3 rounded-full bg-red-400';
+    }
+
+    // Agents
+    const grid = document.getElementById('agents-grid');
+    if (grid && data.agents) {
+      grid.innerHTML = data.agents.map((a: any) => `
+        <div class="p-4 rounded-xl border border-border bg-bg-card card-hover">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">${a.emoji}</span>
+              <span class="font-semibold text-white">${a.name}</span>
+            </div>
+            <div class="w-2 h-2 rounded-full ${a.online ? 'bg-accent-green animate-pulse' : 'bg-text-muted'}"></div>
+          </div>
+          <p class="text-xs text-accent-purple">${a.role}</p>
+          <p class="text-xs text-text-muted mt-1">${a.lastActivity || ''}</p>
+        </div>
+      `).join('');
+    }
+
+    // Crons
+    const ct = document.getElementById('crons-total');
+    const ca = document.getElementById('crons-active');
+    const ce = document.getElementById('crons-errors');
+    if (ct) ct.textContent = data.crons?.total ?? '-';
+    if (ca) ca.textContent = data.crons?.active ?? '-';
+    if (ce) ce.textContent = data.crons?.errors24h ?? '0';
+
+    // APIs
+    const apiList = document.getElementById('api-list');
+    if (apiList && data.apis) {
+      apiList.innerHTML = data.apis.map((api: any) => `
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-text-muted">${api.name}</span>
+          <span class="text-xs ${api.ok ? 'text-accent-green' : 'text-red-400'}">${api.ok ? '●' : '○'} ${api.status}</span>
+        </div>
+      `).join('');
+    }
+
+    // Stats
+    const me = document.getElementById('mem-entries');
+    const tp = document.getElementById('tasks-pending');
+    const du = document.getElementById('disk-usage');
+    const ac = document.getElementById('articles-count');
+    if (me) me.textContent = data.stats?.memoryEntries ?? '-';
+    if (tp) tp.textContent = data.stats?.tasksPending ?? '-';
+    if (du) du.textContent = data.stats?.diskUsage ?? '-';
+    if (ac) ac.textContent = data.stats?.articles ?? '-';
+
+  } catch (e) {
+    const status = document.getElementById('system-status');
+    if (status) status.textContent = 'Datos no disponibles';
+  }
+}
+
+loadDashboard();
+</script>

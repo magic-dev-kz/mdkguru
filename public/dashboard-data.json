@@ -1,0 +1,98 @@
+{
+  "updatedAt": "2026-03-12T18:26:17.533221",
+  "system": {
+    "status": "Все системы работают",
+    "healthy": true,
+    "uptime": "Uptime: 1 day"
+  },
+  "agents": [
+    {
+      "name": "Мо",
+      "emoji": "⚙️",
+      "role": "COO",
+      "online": true,
+      "lastActivity": "Активен сейчас"
+    },
+    {
+      "name": "Изя",
+      "emoji": "🎬",
+      "role": "SMM",
+      "online": true,
+      "lastActivity": "Активен сейчас"
+    },
+    {
+      "name": "Молот",
+      "emoji": "🔨",
+      "role": "Scout",
+      "online": false,
+      "lastActivity": "Нет данных"
+    },
+    {
+      "name": "Лео",
+      "emoji": "📐",
+      "role": "Design",
+      "online": true,
+      "lastActivity": "Активен сейчас"
+    },
+    {
+      "name": "Хаус",
+      "emoji": "🩺",
+      "role": "SRE",
+      "online": false,
+      "lastActivity": "Был 2д назад"
+    }
+  ],
+  "crons": {
+    "total": 26,
+    "active": 26,
+    "errors24h": 0
+  },
+  "apis": [
+    {
+      "name": "Claude (CCProxy)",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "Gemini",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "Telegram Bot",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "МойСклад IZI",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "МойСклад Imperia",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "Vercel",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "status": "OK"
+    },
+    {
+      "name": "ElevenLabs",
+      "ok": true,
+      "status": "OK"
+    }
+  ],
+  "stats": {
+    "memoryEntries": 900,
+    "tasksPending": 0,
+    "diskUsage": "20% (14Gi/228Gi)",
+    "articles": 1
+  }
+}
