@@ -5,8 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>MDK.GURU CMS</title>
+    <style>
+      body { background: #0e0e10; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    </style>
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@3.10.1/dist/decap-cms.js"></script>
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'magic-dev-kz/mdkguru',
+            branch: 'main',
+            base_url: 'https://mdk.guru',
+            auth_endpoint: '/api/auth',
+          },
+          media_folder: 'public/blog',
+          public_folder: '/blog',
+          locale: 'ru',
+          collections: [
+            {
+              name: 'blog-ru',
+              label: 'Блог (RU)',
+              folder: 'src/content/blog/ru',
+              create: true,
+              extension: 'md',
+              fields: [
+                { label: 'Заголовок', name: 'title', widget: 'string' },
+                { label: 'Описание', name: 'description', widget: 'string' },
+                { label: 'Дата', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' },
+                { label: 'Категория', name: 'category', widget: 'string', required: false },
+                { label: 'Обложка', name: 'image', widget: 'image', required: false },
+                { label: 'Черновик', name: 'draft', widget: 'boolean', default: false, required: false },
+                { label: 'Текст', name: 'body', widget: 'markdown' },
+              ],
+            },
+            {
+              name: 'blog-en',
+              label: 'Blog (EN)',
+              folder: 'src/content/blog/en',
+              create: true,
+              extension: 'md',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Description', name: 'description', widget: 'string' },
+                { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' },
+                { label: 'Category', name: 'category', widget: 'string', required: false },
+                { label: 'Cover', name: 'image', widget: 'image', required: false },
+                { label: 'Draft', name: 'draft', widget: 'boolean', default: false, required: false },
+                { label: 'Body', name: 'body', widget: 'markdown' },
+              ],
+            },
+            {
+              name: 'blog-es',
+              label: 'Blog (ES)',
+              folder: 'src/content/blog/es',
+              create: true,
+              extension: 'md',
+              fields: [
+                { label: 'Título', name: 'title', widget: 'string' },
+                { label: 'Descripción', name: 'description', widget: 'string' },
+                { label: 'Fecha', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' },
+                { label: 'Categoría', name: 'category', widget: 'string', required: false },
+                { label: 'Portada', name: 'image', widget: 'image', required: false },
+                { label: 'Borrador', name: 'draft', widget: 'boolean', default: false, required: false },
+                { label: 'Texto', name: 'body', widget: 'markdown' },
+              ],
+            },
+          ],
+        },
+      });
+    </script>
   </body>
 </html>
