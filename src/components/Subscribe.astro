@@ -3,9 +3,33 @@ import { getLangFromUrl } from '../i18n/translations';
 const lang = getLangFromUrl(Astro.url);
 
 const texts = {
-  ru: { title: 'Не пропусти новые кейсы', desc: 'Подписывайся на канал - практика, грабли, инструменты. Без воды.', btn: 'Подписаться на @mdkguru' },
-  en: { title: "Don't miss new cases", desc: 'Subscribe to the channel - practice, mistakes, tools. No fluff.', btn: 'Subscribe to @mdkguru' },
-  es: { title: 'No te pierdas nuevos casos', desc: 'Suscríbete al canal - práctica, errores, herramientas. Sin relleno.', btn: 'Suscribirse a @mdkguru' },
+  ru: {
+    title: 'Не пропусти новые кейсы',
+    desc: 'Подписывайся на рассылку - новые статьи, практика, инструменты. Без спама.',
+    placeholder: 'Email',
+    btn: 'Подписаться',
+    success: 'Готово! Проверь почту 🎉',
+    error: 'Что-то пошло не так. Попробуй ещё раз.',
+    tg: 'или подписывайся в Telegram →',
+  },
+  en: {
+    title: "Don't miss new cases",
+    desc: 'Subscribe - new articles, practice, tools. No spam.',
+    placeholder: 'Email',
+    btn: 'Subscribe',
+    success: 'Done! Check your inbox 🎉',
+    error: 'Something went wrong. Try again.',
+    tg: 'or subscribe on Telegram →',
+  },
+  es: {
+    title: 'No te pierdas nuevos casos',
+    desc: 'Suscríbete - nuevos artículos, práctica, herramientas. Sin spam.',
+    placeholder: 'Email',
+    btn: 'Suscribirse',
+    success: '¡Listo! Revisa tu correo 🎉',
+    error: 'Algo salió mal. Intenta de nuevo.',
+    tg: 'o suscríbete en Telegram →',
+  },
 };
 const t = texts[lang] || texts.ru;
 ---
@@ -15,16 +39,67 @@ const t = texts[lang] || texts.ru;
     <div class="p-8 rounded-2xl border border-accent-purple/20 bg-gradient-to-br from-accent-purple/5 to-accent-green/5">
       <h2 class="text-2xl font-bold text-white mb-3">{t.title}</h2>
       <p class="text-text-muted mb-6">{t.desc}</p>
-      <a
-        href="https://t.me/mdkguru"
-        target="_blank"
-        class="inline-flex items-center gap-3 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity"
-      >
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-        </svg>
-        {t.btn}
+
+      <form id="subscribe-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+        <input
+          type="email"
+          id="email-input"
+          placeholder={t.placeholder}
+          required
+          class="flex-1 px-4 py-3 rounded-lg bg-bg-primary border border-border text-white placeholder-text-muted focus:outline-none focus:border-accent-purple transition-colors"
+        />
+        <button
+          type="submit"
+          id="submit-btn"
+          class="px-6 py-3 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity whitespace-nowrap"
+        >
+          {t.btn}
+        </button>
+      </form>
+
+      <div id="form-message" class="text-sm hidden mb-4"></div>
+
+      <a href="https://t.me/mdkguru" target="_blank" class="text-sm text-text-muted hover:text-accent-purple transition-colors">
+        {t.tg}
       </a>
     </div>
   </div>
 </section>
+
+<script define:vars={{ success: t.success, error: t.error }}>
+  document.getElementById('subscribe-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('email-input');
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('form-message');
+    const email = input?.value;
+
+    if (!email) return;
+
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        msg.textContent = success;
+        msg.className = 'text-sm text-accent-green mb-4';
+        input.value = '';
+      } else {
+        msg.textContent = error;
+        msg.className = 'text-sm text-red-400 mb-4';
+      }
+    } catch {
+      msg.textContent = error;
+      msg.className = 'text-sm text-red-400 mb-4';
+    }
+
+    btn.disabled = false;
+    btn.textContent = e.target.querySelector('button').dataset.label || 'OK';
+  });
+</script>
