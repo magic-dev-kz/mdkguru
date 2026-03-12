@@ -67,16 +67,16 @@ Sí, la configuración toma tiempo ahora. Pero veo claramente hacia dónde va es
 
 #### 🔷 Mis 5 agentes
 
-**⚙️ Mo** - *Director de operaciones*
+**🦾 Mo** - *Director de operaciones*
 Analítica de ventas, informes matutinos, control de tareas y plazos
 
-**🎬 Izya** - *Community manager*
+**📣 Izya** - *Community manager*
 Publica contenido en Instagram, Telegram y VK
 
-**🔨 Molot** - *Explorador*
+**📡 Molot** - *Explorador*
 Monitorea competidores, busca tendencias, recopila material
 
-**📐 Leo** - *Diseñador*
+**🎨 Leo** - *Diseñador*
 Genera visuales, portadas, banners
 
 **🩺 House** - *Doctor del sistema*

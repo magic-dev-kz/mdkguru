@@ -67,16 +67,16 @@ Yes, setup takes time right now. But I clearly see where this is going. It's a n
 
 #### 🔷 My 5 agents
 
-**⚙️ Mo** - *COO*
+**🦾 Mo** - *COO*
 Sales analytics, morning reports, task and deadline control
 
-**🎬 Izya** - *SMM manager*
+**📣 Izya** - *SMM manager*
 Publishes content on Instagram, Telegram and VK
 
-**🔨 Molot** - *scout*
+**📡 Molot** - *scout*
 Monitors competitors, finds trends, gathers material
 
-**📐 Leo** - *designer*
+**🎨 Leo** - *designer*
 Generates visuals, covers, banners
 
 **🩺 House** - *system doctor*
