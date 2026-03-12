@@ -1,17 +1,11 @@
 ---
-interface Props {
-  emoji: string;
-  name: string;
-  role: string;
-  description: string;
-}
-
+interface Props { emoji: string; name: string; role: string; description: string; }
 const { emoji, name, role, description } = Astro.props;
 ---
 
-<div class="card-hover p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+<div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
   <div class="text-3xl mb-3">{emoji}</div>
   <h3 class="text-lg font-bold text-white mb-1">{name}</h3>
-  <p class="text-sm text-[var(--color-accent-purple)] mb-2">{role}</p>
-  <p class="text-sm text-[var(--color-text-muted)]">{description}</p>
+  <p class="text-sm text-accent-purple mb-2">{role}</p>
+  <p class="text-sm text-text-muted">{description}</p>
 </div>

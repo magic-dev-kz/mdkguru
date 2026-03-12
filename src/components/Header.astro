@@ -13,41 +13,32 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 w-full z-50 border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/80 backdrop-blur-xl">
+<header class="fixed top-0 w-full z-50 border-b border-border bg-bg-primary/80 backdrop-blur-xl">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
-      <a href={`/${lang}`} class="flex items-center gap-2 group">
-        <span class="text-xl font-bold gradient-text">MDK.GURU</span>
-      </a>
+      <a href={`/${lang}`} class="text-xl font-bold gradient-text">MDK.GURU</a>
 
-      <!-- Navigation -->
       <nav class="hidden md:flex items-center gap-6">
         {navItems.map(item => (
-          <a href={item.href} class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors">
+          <a href={item.href} class="text-sm text-text-secondary hover:text-white transition-colors">
             {item.label}
           </a>
         ))}
       </nav>
 
-      <!-- Language Switcher -->
       <div class="flex items-center gap-2">
         {Object.entries(languages).map(([code, name]) => (
           <a
             href={Astro.url.pathname.replace(`/${lang}`, `/${code}`)}
             class:list={[
               'text-xs px-2 py-1 rounded transition-colors',
-              code === lang
-                ? 'bg-[var(--color-accent-purple)]/20 text-[var(--color-accent-purple)]'
-                : 'text-[var(--color-text-muted)] hover:text-white'
+              code === lang ? 'bg-accent-purple/20 text-accent-purple' : 'text-text-muted hover:text-white'
             ]}
           >
             {code.toUpperCase()}
           </a>
         ))}
-
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-btn" class="md:hidden ml-2 p-2 text-[var(--color-text-secondary)]">
+        <button id="mobile-menu-btn" class="md:hidden ml-2 p-2 text-text-secondary">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -56,13 +47,10 @@ const navItems = [
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-bg-primary">
     <div class="px-4 py-3 space-y-2">
       {navItems.map(item => (
-        <a href={item.href} class="block text-sm text-[var(--color-text-secondary)] hover:text-white py-2">
-          {item.label}
-        </a>
+        <a href={item.href} class="block text-sm text-text-secondary hover:text-white py-2">{item.label}</a>
       ))}
     </div>
   </div>

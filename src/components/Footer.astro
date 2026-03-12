@@ -1,50 +1,33 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/translations';
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]">
+<footer class="border-t border-border bg-bg-primary">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Brand -->
       <div>
         <span class="text-lg font-bold gradient-text">MDK.GURU</span>
-        <p class="mt-2 text-sm text-[var(--color-text-muted)]">
-          {t('hero.title')}<br/>{t('hero.subtitle')}
-        </p>
+        <p class="mt-2 text-sm text-text-muted">{t('hero.title')}<br/>{t('hero.subtitle')}</p>
       </div>
-
-      <!-- Links -->
       <div>
         <h4 class="text-sm font-semibold text-white mb-3">Links</h4>
         <div class="space-y-2">
-          <a href={`/${lang}/blog`} class="block text-sm text-[var(--color-text-muted)] hover:text-white transition-colors">{t('nav.blog')}</a>
-          <a href={`/${lang}/apps`} class="block text-sm text-[var(--color-text-muted)] hover:text-white transition-colors">{t('nav.apps')}</a>
-          <a href={`/${lang}/skills`} class="block text-sm text-[var(--color-text-muted)] hover:text-white transition-colors">{t('nav.skills')}</a>
-          <a href={`/${lang}/roadmap`} class="block text-sm text-[var(--color-text-muted)] hover:text-white transition-colors">{t('nav.roadmap')}</a>
+          <a href={`/${lang}/blog`} class="block text-sm text-text-muted hover:text-white transition-colors">{t('nav.blog')}</a>
+          <a href={`/${lang}/apps`} class="block text-sm text-text-muted hover:text-white transition-colors">{t('nav.apps')}</a>
+          <a href={`/${lang}/skills`} class="block text-sm text-text-muted hover:text-white transition-colors">{t('nav.skills')}</a>
         </div>
       </div>
-
-      <!-- Telegram -->
       <div>
         <h4 class="text-sm font-semibold text-white mb-3">Telegram</h4>
-        <a
-          href="https://t.me/mdkguru"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-accent-purple)]/10 border border-[var(--color-accent-purple)]/30 text-[var(--color-accent-purple)] hover:bg-[var(--color-accent-purple)]/20 transition-colors text-sm"
-        >
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-          </svg>
+        <a href="https://t.me/mdkguru" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-purple/10 border border-accent-purple/30 text-accent-purple hover:bg-accent-purple/20 transition-colors text-sm">
           {t('footer.telegram')}
         </a>
       </div>
     </div>
-
-    <div class="mt-8 pt-8 border-t border-[var(--color-border)] text-center">
-      <p class="text-xs text-[var(--color-text-muted)]">{t('footer.copyright')}</p>
+    <div class="mt-8 pt-8 border-t border-border text-center">
+      <p class="text-xs text-text-muted">{t('footer.copyright')}</p>
     </div>
   </div>
 </footer>

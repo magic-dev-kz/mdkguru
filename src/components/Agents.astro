@@ -1,7 +1,6 @@
 ---
 import AgentCard from './AgentCard.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/translations';
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -11,44 +10,16 @@ const t = useTranslations(lang);
     <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">
       <span class="gradient-text">{t('features.title')}</span>
     </h2>
-    <p class="text-center text-[var(--color-text-muted)] mb-12 max-w-xl mx-auto">
-      24/7. {lang === 'ru' ? 'Без выходных. Без зарплаты.' : lang === 'es' ? 'Sin descanso. Sin salario.' : 'No days off. No salary.'}
-    </p>
+    <p class="text-center text-text-muted mb-12">24/7. {lang === 'ru' ? 'Без выходных. Без зарплаты.' : lang === 'es' ? 'Sin descanso. Sin salario.' : 'No days off. No salary.'}</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <AgentCard
-        emoji="⚙️"
-        name={lang === 'ru' ? 'Мо' : lang === 'es' ? 'Mo' : 'Mo'}
-        role="COO"
-        description={t('features.mo')}
-      />
-      <AgentCard
-        emoji="🎬"
-        name={lang === 'ru' ? 'Изя' : lang === 'es' ? 'Izya' : 'Izya'}
-        role="SMM"
-        description={t('features.izya')}
-      />
-      <AgentCard
-        emoji="🔨"
-        name={lang === 'ru' ? 'Молот' : lang === 'es' ? 'Molot' : 'Molot'}
-        role="Scout"
-        description={t('features.molot')}
-      />
-      <AgentCard
-        emoji="📐"
-        name={lang === 'ru' ? 'Лео' : lang === 'es' ? 'Leo' : 'Leo'}
-        role="Design"
-        description={t('features.leo')}
-      />
-      <AgentCard
-        emoji="🩺"
-        name={lang === 'ru' ? 'Хаус' : lang === 'es' ? 'House' : 'House'}
-        role="SRE"
-        description={t('features.house')}
-      />
-      <!-- Empty card for grid balance -->
-      <div class="card-hover p-6 rounded-xl border border-dashed border-[var(--color-border)] bg-transparent flex items-center justify-center">
-        <p class="text-sm text-[var(--color-text-muted)]">+ {lang === 'ru' ? 'Скоро новые' : lang === 'es' ? 'Próximamente' : 'Coming soon'}</p>
+      <AgentCard emoji="⚙️" name={lang === 'ru' ? 'Мо' : 'Mo'} role="COO" description={t('features.mo')} />
+      <AgentCard emoji="🎬" name={lang === 'ru' ? 'Изя' : 'Izya'} role="SMM" description={t('features.izya')} />
+      <AgentCard emoji="🔨" name={lang === 'ru' ? 'Молот' : 'Molot'} role="Scout" description={t('features.molot')} />
+      <AgentCard emoji="📐" name={lang === 'ru' ? 'Лео' : 'Leo'} role="Design" description={t('features.leo')} />
+      <AgentCard emoji="🩺" name={lang === 'ru' ? 'Хаус' : 'House'} role="SRE" description={t('features.house')} />
+      <div class="card-hover p-6 rounded-xl border border-dashed border-border flex items-center justify-center">
+        <p class="text-sm text-text-muted">+ {lang === 'ru' ? 'Скоро новые' : 'Coming soon'}</p>
       </div>
     </div>
   </div>

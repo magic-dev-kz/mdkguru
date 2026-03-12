@@ -1,13 +1,11 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://mdk.guru',
-  vite: {
-    plugins: [tailwindcss()],
-  },
   integrations: [
+    tailwind(),
     sitemap({
       i18n: {
         defaultLocale: 'ru',
