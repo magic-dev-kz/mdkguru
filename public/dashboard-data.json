@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-13T08:30:04.210602",
+  "updatedAt": "2026-03-13T09:00:57.952656",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -18,7 +18,7 @@
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 11ч назад"
+      "lastActivity": "Был 12ч назад"
     },
     {
       "name": "Молот",
