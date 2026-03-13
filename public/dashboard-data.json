@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-13T14:03:03.624865",
+  "updatedAt": "2026-03-13T14:30:03.993903",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -32,7 +32,7 @@
       "emoji": "📐",
       "role": "Design",
       "online": true,
-      "lastActivity": "Был 17ч назад"
+      "lastActivity": "Был 18ч назад"
     },
     {
       "name": "Хаус",
