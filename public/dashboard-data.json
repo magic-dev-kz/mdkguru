@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-13T17:00:04.170466",
+  "updatedAt": "2026-03-13T17:30:05.149280",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -18,7 +18,7 @@
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 20ч назад"
+      "lastActivity": "Активен сейчас"
     },
     {
       "name": "Молот",
@@ -32,7 +32,7 @@
       "emoji": "📐",
       "role": "Design",
       "online": true,
-      "lastActivity": "Был 20ч назад"
+      "lastActivity": "Был 21ч назад"
     },
     {
       "name": "Хаус",
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "36% (14Gi/228Gi)",
+    "diskUsage": "37% (14Gi/228Gi)",
     "articles": 4
   }
 }
