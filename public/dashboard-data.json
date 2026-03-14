@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-14T21:30:04.675840",
+  "updatedAt": "2026-03-14T22:01:38.608706",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -11,14 +11,14 @@
       "emoji": "⚙️",
       "role": "COO",
       "online": true,
-      "lastActivity": "Был 2ч назад"
+      "lastActivity": "Активен сейчас"
     },
     {
       "name": "Изя",
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 2ч назад"
+      "lastActivity": "Был 3ч назад"
     },
     {
       "name": "Молот",
