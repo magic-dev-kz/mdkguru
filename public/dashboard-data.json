@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-15T22:30:08.830832",
+  "updatedAt": "2026-03-15T23:00:06.514386",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -18,7 +18,7 @@
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 4ч назад"
+      "lastActivity": "Был 5ч назад"
     },
     {
       "name": "Молот",
@@ -39,7 +39,7 @@
       "emoji": "🩺",
       "role": "SRE",
       "online": true,
-      "lastActivity": "Был 12ч назад"
+      "lastActivity": "Был 13ч назад"
     }
   ],
   "crons": {
