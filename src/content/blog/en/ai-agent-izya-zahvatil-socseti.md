@@ -79,7 +79,6 @@ Izya is one of six AI agents on my team. Each has their role:
 - **Steve** - strategy and reflection
 - **Max** - architecture and code
 
-They share knowledge with each other. One finds a solution - within minutes the whole team can do the same.
 
 I don't manage every step. I set the direction, observe, adjust - the system works.
 

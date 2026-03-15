@@ -79,7 +79,6 @@ Izya es uno de seis agentes IA en mi equipo. Cada uno tiene su rol:
 - **Steve** - estrategia y reflexion
 - **Max** - arquitectura y codigo
 
-Comparten conocimientos entre si. Uno encuentra una solucion - en minutos todo el equipo ya puede hacer lo mismo.
 
 No gestiono cada paso. Doy la direccion, observo, ajusto - el sistema trabaja.
 
