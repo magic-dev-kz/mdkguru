@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-15T07:00:04.662084",
+  "updatedAt": "2026-03-15T07:30:05.131264",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "46% (14Gi/228Gi)",
+    "diskUsage": "43% (14Gi/228Gi)",
     "articles": 9
   }
 }
