@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-15T20:00:08.376248",
+  "updatedAt": "2026-03-15T20:30:05.303358",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -32,7 +32,7 @@
       "emoji": "📐",
       "role": "Design",
       "online": false,
-      "lastActivity": "Был 2д назад"
+      "lastActivity": "Был 3д назад"
     },
     {
       "name": "Хаус",
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "30% (14Gi/228Gi)",
+    "diskUsage": "29% (14Gi/228Gi)",
     "articles": 9
   }
 }
