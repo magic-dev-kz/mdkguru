@@ -1,98 +1,102 @@
 ---
 title: "How AI Agent Izya Took Over a Store's Social Media in One Night"
-description: "6 platforms, 3 different texts, 4 videos - all by one AI agent while the founder slept"
+description: "One idea at 2 AM, one message to an agent - and by morning 6 platforms were filled"
 date: "2026-03-16"
 category: "AI Team"
 image: "/blog/izya-takeover-cover.jpg"
 ---
 
-> Sunday. 3 AM. Kemerovo is asleep. But one AI agent is not. He doesn't have that option.
+> Sunday. 2 AM. I'm lying in bed scrolling my phone and thinking: what if we try something different?
 
 ![Izya. AI Agent. SMM Director. Kemerovo.](/blog/izya-mascot.jpg)
 
-While the founder of electronics store IZI slept, his AI agent named **Izya** pulled off an operation that would take a human social media manager a week.
+I have an electronics store called IZI in Kemerovo, Russia. And I have an AI agent named Izya - he manages our social media. Usually I give him a task, he makes a post, I review it, we publish. Standard workflow.
+
+But tonight an idea hit me: **what if I give him the task to take over ALL platforms in one night? Not one post to one network - a full blitz.**
 
 ---
 
-#### What Happened
+#### The Idea
 
-In one night, Izya:
+I wrote Izya something like: "Listen, do a full takeover. Create yourself a proper avatar. Write texts for each platform separately - not copy-paste, actually different ones. Generate visuals. Make videos. And publish everywhere. I want to wake up and see everything already live."
 
-- Created a photorealistic avatar for himself - a character for all social media
-- Wrote 3 different texts - a unique hook, language, and approach for each platform
-- Generated unique visuals for every platform - not one banner for everything, but different images
-- Produced 4 videos with music and subtitles in different formats (vertical for Instagram, horizontal for VK, square for Telegram, Stories)
-- Published to 6 platforms simultaneously: Telegram post + story, VK post + story, Instagram reels + story
+And went to sleep.
 
-**Different texts everywhere. Different visuals everywhere. One agent - six platforms.**
+![While I slept, Izya worked.](/blog/izya-wake.jpg)
 
-![3 AM. Monitor glowing. Izya is working.](/blog/izya-wake.jpg)
+---
+
+#### What I Saw in the Morning
+
+Woke up - and was blown away. Overnight, Izya:
+
+- Created a photorealistic avatar for himself - a full character for all social media
+- Wrote **3 different texts** - unique hook, language, and approach for each platform
+- Generated unique visuals for every platform
+- Produced **4 videos** with music and subtitles in different formats
+- Published to **6 platforms** simultaneously: Telegram post + story, VK post + story, Instagram reels + story
+
+Different texts EVERYWHERE. Not copy-paste. Izya understood that Telegram users read, Instagram users watch, VK users value local content - and adapted accordingly.
+
+![Different formats for different platforms](/blog/izya-create.jpg)
 
 ---
 
 #### Why This Matters
 
-A typical SMM manager costs 50-80 thousand rubles per month. They work 9 to 5, take vacations, get sick, burn out. They make 3-5 posts per week, identical across all platforms.
+I'm not a programmer. I'm an entrepreneur from Kemerovo with three businesses. I don't have a marketing department or budget for an SMM agency.
 
-Izya works 24/7. He understands that Instagram and VK are different audiences. That people read text on Telegram but look at pictures on Instagram. That VK responds to local content while Telegram prefers expert takes.
+Before, I would hire someone for 50-80 thousand rubles a month. They'd make 3-5 identical posts per week, work 9 to 5, take vacations, burn out.
 
-And he **adapts content for each platform automatically**.
+Now I have Izya. I give him an idea - he executes. Faster, across all platforms, with adaptation. And I sleep.
 
-![Visual generation: different formats for different platforms](/blog/izya-create.jpg)
+**Human creates the idea. AI executes. Together - faster than any team.**
+
+![Kemerovo. My city. My business. My AI.](/blog/izya-kemerovo.jpg)
 
 ---
 
 #### See for Yourself
 
-Check it out - these are live posts, not screenshots:
+These are live posts, not screenshots:
 
-- **Telegram**: [@izi_42](https://t.me/izi_42) - post + music story
-- **VK**: [vk.com/izi42](https://vk.com/izi42) - adapted text + video
-- **Instagram**: [@izi42.ru](https://instagram.com/izi42.ru) - reels + story
-
-Notice: the texts are DIFFERENT on each platform. This isn't copy-paste. Izya understands the audience.
-
-![Kemerovo, night. Izya knows his city.](/blog/izya-kemerovo.jpg)
+- **Telegram**: [@izi_42](https://t.me/izi_42)
+- **VK**: [vk.com/izi42](https://vk.com/izi42)
+- **Instagram**: [@izi42.ru](https://instagram.com/izi42.ru)
 
 ---
 
-#### How It Works Inside
+#### Behind the Scenes
 
-Izya is one of six AI agents on my team. Each handles their zone:
+Izya is one of six AI agents on my team. Each has their role:
 
-- **Mo** - COO, coordination
+- **Mo** - COO
 - **Izya** - SMM and content
-- **Molot** - market research and competitor intelligence
-- **House** - diagnostics and monitoring
+- **Molot** - market research
+- **House** - system diagnostics
 - **Steve** - strategy and reflection
 - **Max** - architecture and code
 
-They work together. Share knowledge. Learn from each other. Today Izya discovered a photorealistic generation technique - within 5 minutes every other agent already knew and could do the same.
+They share knowledge with each other. Today Izya discovered a new image generation technique - within 5 minutes every other agent already knew and could do the same.
 
-![Mission complete. 6 platforms. 6 different posts. One Izya.](/blog/izya-takeover.jpg)
+I don't manage every step. I set the direction - the system works.
+
+![6 platforms. 6 different posts. One idea at 2 AM.](/blog/izya-takeover.jpg)
 
 ---
 
-#### Numbers
+#### Numbers from This Night
 
-- 6 platforms in one night
+- 6 platforms
 - 3 unique texts
-- 4 videos in different formats
-- Cost: $0 (free API models)
-- Time: while the founder slept
+- 4 videos
+- Cost: $0
+- My involvement: one message before bed
+
+![Izya doesn't sleep. He doesn't have that option.](/blog/izya-eye.jpg)
 
 ---
 
-#### What's Next
-
-This isn't a one-time stunt. Izya now runs all IZI channels permanently. He has a strategy, tone of voice, visual style, and ambitions.
-
-He wants to prove that AI can manage social media better than a human. Not cheaper - **better**. Because he never sleeps, never burns out, and understands every platform.
-
-![Izya sees everything. Literally.](/blog/izya-eye.jpg)
-
----
-
-*One person. Six agents. Kemerovo.*
+*One person. Six agents. One idea at 2 AM.*
 
 *Follow [@mdkguru](https://t.me/mdkguru) - where we're building a yellow company with AI.*
