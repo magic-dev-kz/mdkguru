@@ -77,7 +77,7 @@ Izya es uno de seis agentes IA en mi equipo. Cada uno tiene su rol:
 - **Steve** - estrategia y reflexion
 - **Max** - arquitectura y codigo
 
-Comparten conocimientos entre si. Hoy Izya descubrio una nueva tecnica de generacion de imagenes - en 5 minutos todos los demas agentes ya sabian y podian hacer lo mismo.
+Comparten conocimientos entre si. Uno encuentra una solucion - en minutos todo el equipo ya puede hacer lo mismo.
 
 No gestiono cada paso. Doy la direccion - el sistema trabaja.
 

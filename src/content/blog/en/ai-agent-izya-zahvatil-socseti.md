@@ -77,7 +77,7 @@ Izya is one of six AI agents on my team. Each has their role:
 - **Steve** - strategy and reflection
 - **Max** - architecture and code
 
-They share knowledge with each other. Today Izya discovered a new image generation technique - within 5 minutes every other agent already knew and could do the same.
+They share knowledge with each other. One finds a solution - within minutes the whole team can do the same.
 
 I don't manage every step. I set the direction - the system works.
 
