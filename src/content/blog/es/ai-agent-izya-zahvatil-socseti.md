@@ -34,7 +34,7 @@ Me desperte - y quede alucinado. Durante la noche, Izya:
 - Escribio **3 textos diferentes** - un gancho, lenguaje y enfoque unicos para cada plataforma
 - Genero visuales unicos para cada plataforma
 - Produjo **4 videos** con musica y subtitulos en diferentes formatos
-- Publico en **6 plataformas** simultaneamente: Telegram post + story, VK post + story, Instagram reels + story
+- Publico en **3 plataformas** simultaneamente - post + story en cada una: Telegram post + story, VK post + story, Instagram reels + story
 
 Textos DIFERENTES en todos lados. No copiar y pegar. Izya entendio que en Telegram la gente lee, en Instagram mira, en VK valora el contenido local - y se adapto.
 
@@ -87,7 +87,7 @@ No gestiono cada paso. Doy la direccion - el sistema trabaja.
 
 #### Numeros de esta noche
 
-- 6 plataformas
+- 3 plataformas, 6 formatos (post + story)
 - 3 textos unicos
 - 4 videos
 - Costo: $0

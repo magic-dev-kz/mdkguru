@@ -34,7 +34,7 @@ Woke up - and was blown away. Overnight, Izya:
 - Wrote **3 different texts** - unique hook, language, and approach for each platform
 - Generated unique visuals for every platform
 - Produced **4 videos** with music and subtitles in different formats
-- Published to **6 platforms** simultaneously: Telegram post + story, VK post + story, Instagram reels + story
+- Published to **3 platforms** simultaneously - post + story on each: Telegram post + story, VK post + story, Instagram reels + story
 
 Different texts EVERYWHERE. Not copy-paste. Izya understood that Telegram users read, Instagram users watch, VK users value local content - and adapted accordingly.
 
@@ -87,7 +87,7 @@ I don't manage every step. I set the direction - the system works.
 
 #### Numbers from This Night
 
-- 6 platforms
+- 3 platforms, 6 formats (post + story)
 - 3 unique texts
 - 4 videos
 - Cost: $0
