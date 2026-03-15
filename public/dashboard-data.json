@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-15T16:14:17.348685",
+  "updatedAt": "2026-03-15T16:30:05.803438",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -11,7 +11,7 @@
       "emoji": "⚙️",
       "role": "COO",
       "online": true,
-      "lastActivity": "Был 7ч назад"
+      "lastActivity": "Активен сейчас"
     },
     {
       "name": "Изя",
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "47% (14Gi/228Gi)",
+    "diskUsage": "45% (14Gi/228Gi)",
     "articles": 9
   }
 }
