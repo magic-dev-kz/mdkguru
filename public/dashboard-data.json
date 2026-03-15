@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-15T08:30:04.246979",
+  "updatedAt": "2026-03-15T09:00:05.278450",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -18,7 +18,7 @@
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 3ч назад"
+      "lastActivity": "Был 4ч назад"
     },
     {
       "name": "Молот",
@@ -39,7 +39,7 @@
       "emoji": "🩺",
       "role": "SRE",
       "online": true,
-      "lastActivity": "Был 3ч назад"
+      "lastActivity": "Был 4ч назад"
     }
   ],
   "crons": {
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "44% (14Gi/228Gi)",
+    "diskUsage": "46% (14Gi/228Gi)",
     "articles": 9
   }
 }
