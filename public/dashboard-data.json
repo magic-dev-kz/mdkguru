@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-16T02:30:04.645571",
+  "updatedAt": "2026-03-16T03:00:21.071945",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -11,14 +11,14 @@
       "emoji": "⚙️",
       "role": "COO",
       "online": true,
-      "lastActivity": "Был 2ч назад"
+      "lastActivity": "Был 3ч назад"
     },
     {
       "name": "Изя",
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 2ч назад"
+      "lastActivity": "Был 3ч назад"
     },
     {
       "name": "Молот",
@@ -32,14 +32,14 @@
       "emoji": "📐",
       "role": "Design",
       "online": true,
-      "lastActivity": "Был 2ч назад"
+      "lastActivity": "Был 3ч назад"
     },
     {
       "name": "Хаус",
       "emoji": "🩺",
       "role": "SRE",
       "online": true,
-      "lastActivity": "Был 2ч назад"
+      "lastActivity": "Был 3ч назад"
     }
   ],
   "crons": {
