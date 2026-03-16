@@ -4,79 +4,59 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0E0E10]">
+<section class="relative w-full min-h-[80vh] flex items-end justify-center overflow-hidden bg-[#0E0E10]">
 
-  <!-- 1. Bottom gradient glow (Solana colors) -->
-  <div class="absolute bottom-0 left-0 w-full h-[80%]
-              bg-[radial-gradient(ellipse_at_center_bottom,_rgba(153,69,255,0.35)_0%,_rgba(20,241,149,0.15)_40%,_transparent_70%)]
-              blur-[40px] z-0 glow-pulse"></div>
-
-  <!-- 2. Perspective grid -->
+  <!-- Background grid -->
   <div class="absolute inset-0 z-0 flex justify-center">
     <div class="absolute top-0 w-[200%] h-[200%]"
-         style="
-           background-image:
-             linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-             linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-           background-size: 60px 60px;
-           transform: perspective(600px) rotateX(70deg) translateY(-100px) scale(2);
-           transform-origin: top center;
-         ">
-    </div>
+         style="background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 60px 60px; transform: perspective(600px) rotateX(70deg) translateY(-100px) scale(2); transform-origin: top center;"></div>
   </div>
-
-  <!-- 3. Top fade (grid disappears into darkness) -->
   <div class="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-[#0E0E10] to-transparent z-0"></div>
 
-  <!-- 4. Bottom fade -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent z-[1]"></div>
+  <!-- Bottom glow -->
+  <div class="absolute bottom-0 left-0 w-full h-[60%] bg-[radial-gradient(ellipse_at_center_bottom,_rgba(153,69,255,0.25)_0%,_rgba(20,241,149,0.10)_40%,_transparent_70%)] blur-[30px] z-0 glow-pulse"></div>
 
-  <!-- 5. Noise texture -->
+  <!-- Noise -->
   <div class="absolute inset-0 noise-overlay z-0"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent-purple/30 bg-accent-purple/10 mb-8 backdrop-blur-sm">
-      <div class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></div>
-      <span class="text-xs text-text-secondary">7 agents online</span>
+  <!-- Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg-primary to-transparent z-[3]"></div>
+
+  <!-- Content: text + banner unified -->
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-4">
+
+    <!-- Top text block -->
+    <div class="text-center pt-24 pb-6">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-3 tracking-tight drop-shadow-xl">
+        <span class="gradient-text">{t('hero.title')}</span>
+      </h1>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-4 drop-shadow-md">{t('hero.subtitle')}</h2>
+      <p class="text-base sm:text-lg text-text-secondary max-w-xl mx-auto mb-6 leading-relaxed drop-shadow-md">{t('hero.description')}</p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+        <a href={`/${lang}/blog`} class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity text-sm">
+          {t('hero.cta')}
+        </a>
+        <a href="https://t.me/mdkguru" target="_blank" class="px-6 py-2.5 rounded-lg border border-border text-text-secondary hover:text-white hover:border-white/30 transition-all text-sm">
+          {t('hero.cta2')} →
+        </a>
+      </div>
     </div>
 
-    <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-4 tracking-tight drop-shadow-xl">
-      <span class="gradient-text">{t('hero.title')}</span>
-    </h1>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-6 drop-shadow-md">{t('hero.subtitle')}</h2>
-    <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-md">{t('hero.description')}</p>
-
-    <div class="w-full max-w-4xl mx-auto mb-10 rounded-xl overflow-hidden border border-border/30 shadow-2xl shadow-accent-purple/10">
-      <img src="/hero-banner-v2.jpg" alt="Команда MDK.GURU — 7 ИИ-агентов" class="w-full h-auto" loading="eager" />
-    </div>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href={`/${lang}/blog`} class="px-8 py-3 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity hover:shadow-lg hover:shadow-accent-purple/25">
-        {t('hero.cta')}
-      </a>
-      <a href="https://t.me/mdkguru" target="_blank" class="px-8 py-3 rounded-lg border border-border text-text-secondary hover:text-white hover:border-white/30 transition-all backdrop-blur-sm">
-        {t('hero.cta2')} →
-      </a>
+    <!-- Banner with badge overlay -->
+    <div class="relative w-full rounded-t-xl overflow-hidden">
+      <!-- "7 agents online" badge — top right corner -->
+      <div class="absolute top-3 right-3 z-20 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-accent-purple/30 bg-black/60 backdrop-blur-sm">
+        <div class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse"></div>
+        <span class="text-[10px] text-text-secondary font-mono">7 agents online</span>
+      </div>
+      <img src="/hero-banner-v3.jpg" alt="Команда MDK.GURU — 7 ИИ-агентов" class="w-full h-auto" loading="eager" />
     </div>
   </div>
 </section>
 
 <style>
-  /* Subtle glow pulsation */
-  .glow-pulse {
-    animation: glow-breathe 6s ease-in-out infinite;
-  }
-
-  @keyframes glow-breathe {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-  }
-
-  /* Noise texture */
-  .noise-overlay {
-    opacity: 0.02;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    background-size: 256px 256px;
-  }
+  .glow-pulse { animation: glow-breathe 6s ease-in-out infinite; }
+  @keyframes glow-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+  .noise-overlay { opacity: 0.02; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); background-size: 256px 256px; }
 </style>
