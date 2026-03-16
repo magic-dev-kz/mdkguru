@@ -14,7 +14,9 @@ Ya tenía experiencia con GPT — había probado crear distintos personajes, dar
 
 ---
 
-#### 🔷 Día 1. Мо — el guía hacia una nueva realidad
+#### 🔷 Día 1. Мо — el guía
+
+![Мо — COO](/blog/mascot-mo.jpg) hacia una nueva realidad
 
 Tu primer agente es la base. No un community manager, ni un diseñador, ni un espía. Tu primer agente es tu mano derecha. Un administrador. El que se sienta entre tú y todos los demás.
 
@@ -28,7 +30,9 @@ No le di instrucciones específicas. Nunca escribí "sé estricto" o "nada de em
 
 ---
 
-#### 🔷 Día 2. Изя — máxima utilidad, máxima claridad
+#### 🔷 Día 2. Изя — máxima
+
+![Изя — SMM](/blog/mascot-izya.jpg) utilidad, máxima claridad
 
 Creé el segundo agente porque pensé: ¿qué mejor forma de aprender sobre agentes que a través de algo inmediatamente útil y fácil de entender? Había visto a otros crear agentes para redes sociales — y parecía un punto de partida lógico.
 
@@ -44,7 +48,9 @@ Y el resultado: dos agentes, el mismo "cerebro" Claude — personalidades comple
 
 ---
 
-#### 🔷 Días 2-3. Молот — el espía de las comunidades de agentes
+#### 🔷 Días 2-3. Молот — el espía
+
+![Молот — Scout](/blog/mascot-molot.jpg) de las comunidades de agentes
 
 Молот nació de una idea que no había visto en ningún lado.
 
@@ -58,7 +64,9 @@ Este caso fue un éxito rotundo. No solo escribimos artículos — obtenemos int
 
 ---
 
-#### 🔷 Día 3. Хаус — el doctor nacido por necesidad
+#### 🔷 Día 3. Хаус — el doctor
+
+![Хаус — SRE](/blog/mascot-house.jpg) nacido por necesidad
 
 Хаус nació del dolor. Para el tercer día ya me encontraba con bugs: agentes atrapados en bucles, procesos colgados, el sistema en llamas — y yo sin enterarme.
 
@@ -70,7 +78,9 @@ Siendo honesto, Хаус ya no juega un papel tan activo — el sistema se ha es
 
 ---
 
-#### 🔷 Día 7. Лео — cuando las tareas dejaron de caber en un solo agente
+#### 🔷 Día 7. Лео — cuando las tareas
+
+![Лео — Design](/blog/mascot-leo.jpg) dejaron de caber en un solo agente
 
 Los primeros días, cuatro agentes eran suficientes. Estaba aprendiendo, profundizando, trabajando de cerca con cada uno. No tenía sentido crear más — primero necesitaba entender cómo funcionaba todo.
 
@@ -82,7 +92,9 @@ Así nació Лео — el diseñador. Y sigo contento de haber hecho la separaci
 
 ---
 
-#### 🔷 Día 15. Стив — cuando necesitas un interlocutor, no un ejecutor
+#### 🔷 Día 15. Стив — cuando necesitas
+
+![Стив — Product](/blog/mascot-steve.jpg) un interlocutor, no un ejecutor
 
 Para el día quince, el sistema funcionaba. El contenido se publicaba, la inteligencia fluía, el sitio web tomaba forma. Pero me faltaba otra cosa — alguien que preguntara "¿para qué?"
 
@@ -92,7 +104,9 @@ Empezaron a surgir ideas reales para proyectos — serias, con potencial a largo
 
 ---
 
-#### 🔷 Макс — cuando el terminal se convirtió en miembro del equipo
+#### 🔷 Макс — cuando el terminal
+
+![Макс — Infra](/blog/mascot-max.jpg) se convirtió en miembro del equipo
 
 Макс es especial. No está en Telegram. No tiene bot. Vive en el terminal — puro Claude Code CLI.
 

@@ -16,6 +16,8 @@ I'd already experimented with GPT — building different characters, giving them
 
 #### 🔷 Day 1. Мо — the guide into a new reality
 
+![Мо — COO](/blog/mascot-mo.jpg)
+
 Your first agent is the foundation. Not a social media manager, not a designer, not a scout. Your first agent is your right hand. An administrator. The one who sits between you and everyone else.
 
 I named him Мо. Short for Morpheus — yes, the one from The Matrix who hands you the pill and drops you into another reality. Because that's exactly what happened — Мо became the guide into a world where I no longer work alone.
@@ -28,7 +30,9 @@ I didn't prompt him with specific instructions. I never wrote "be strict" or "no
 
 ---
 
-#### 🔷 Day 2. Изя — maximum usefulness, maximum clarity
+#### 🔷 Day 2. Изя — maximum usefulness
+
+![Изя — SMM](/blog/mascot-izya.jpg), maximum clarity
 
 I created the second agent because I thought: what better way to learn about working with agents than through something immediately useful and easy to grasp? I'd seen other people building SMM agents — and it seemed like a logical starting point.
 
@@ -44,7 +48,9 @@ And here's the result: two agents, same Claude "brain" — completely different 
 
 ---
 
-#### 🔷 Days 2-3. Молот — the intelligence gatherer from the agent community
+#### 🔷 Days 2-3. Молот — the intelligence
+
+![Молот — Scout](/blog/mascot-molot.jpg) gatherer from the agent community
 
 Молот was born from an idea I hadn't seen anywhere else.
 
@@ -58,7 +64,9 @@ This was a huge win. We don't just write articles — we pull intelligence from 
 
 ---
 
-#### 🔷 Day 3. Хаус — the doctor born from necessity
+#### 🔷 Day 3. Хаус — the doctor
+
+![Хаус — SRE](/blog/mascot-house.jpg) born from necessity
 
 Хаус was born from pain. By day three I was hitting bugs: agents getting stuck in loops, processes hanging, the system on fire — and I had no idea.
 
@@ -70,7 +78,9 @@ Honestly, Хаус doesn't play as active a role anymore — the system has stab
 
 ---
 
-#### 🔷 Day 7. Лео — when the tasks outgrew a single agent
+#### 🔷 Day 7. Лео — when the tasks
+
+![Лео — Design](/blog/mascot-leo.jpg) outgrew a single agent
 
 The first few days, four agents were enough. I was learning, going deep, working closely with each one. No point in spawning more agents — I needed to understand how everything worked first.
 
@@ -82,7 +92,9 @@ So Лео was born — the designer. And I'm still glad I made the split. They w
 
 ---
 
-#### 🔷 Day 15. Стив — when you need a conversation partner, not an executor
+#### 🔷 Day 15. Стив — when you need
+
+![Стив — Product](/blog/mascot-steve.jpg) a conversation partner, not an executor
 
 By day fifteen, the system was humming. Content was being published, intelligence was flowing, the website was coming together. But I was missing something else — someone who would ask "why?"
 
@@ -92,7 +104,9 @@ Real project ideas started showing up — serious ones, with long-term potential
 
 ---
 
-#### 🔷 Макс — when the terminal became a team member
+#### 🔷 Макс — when the terminal
+
+![Макс — Infra](/blog/mascot-max.jpg) became a team member
 
 Макс is special. He's not on Telegram. He has no bot. He lives in the terminal — pure Claude Code CLI.
 
