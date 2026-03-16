@@ -1,98 +1,55 @@
 {
-  "updatedAt": "2026-03-16T23:30:03.865451",
   "system": {
-    "status": "Все системы работают",
-    "healthy": true,
-    "uptime": "Uptime: 5 days"
+    "healthy": true
   },
   "agents": [
     {
       "name": "Мо",
       "emoji": "⚙️",
       "role": "COO",
-      "online": true,
-      "lastActivity": "Активен сейчас"
+      "online": true
     },
     {
       "name": "Изя",
       "emoji": "🎬",
       "role": "SMM",
-      "online": true,
-      "lastActivity": "Активен сейчас"
+      "online": true
     },
     {
       "name": "Молот",
       "emoji": "🔨",
       "role": "Scout",
-      "online": false,
-      "lastActivity": "Нет данных"
+      "online": true
     },
     {
       "name": "Лео",
       "emoji": "📐",
       "role": "Design",
-      "online": true,
-      "lastActivity": "Активен сейчас"
+      "online": true
     },
     {
       "name": "Хаус",
       "emoji": "🩺",
       "role": "SRE",
-      "online": true,
-      "lastActivity": "Активен сейчас"
-    }
-  ],
-  "crons": {
-    "total": 26,
-    "active": 26,
-    "errors24h": 0
-  },
-  "apis": [
-    {
-      "name": "Claude (CCProxy)",
-      "ok": true,
-      "status": "OK"
+      "online": true
     },
     {
-      "name": "Gemini",
-      "ok": true,
-      "status": "OK"
+      "name": "Стив",
+      "emoji": "🧭",
+      "role": "Mentor",
+      "online": true
     },
     {
-      "name": "Telegram Bot",
-      "ok": true,
-      "status": "OK"
-    },
-    {
-      "name": "МойСклад IZI",
-      "ok": true,
-      "status": "OK"
-    },
-    {
-      "name": "МойСклад Imperia",
-      "ok": true,
-      "status": "OK"
-    },
-    {
-      "name": "Vercel",
-      "ok": true,
-      "status": "OK"
-    },
-    {
-      "name": "GitHub",
-      "ok": true,
-      "status": "OK"
-    },
-    {
-      "name": "ElevenLabs",
-      "ok": true,
-      "status": "OK"
+      "name": "Макс",
+      "emoji": "⚡",
+      "role": "Infra",
+      "online": false
     }
   ],
   "stats": {
-    "memoryEntries": 900,
-    "tasksPending": 0,
-    "diskUsage": "51% (14Gi/228Gi)",
-    "articles": 12
+    "memoryEntries": 0,
+    "articles": 12,
+    "knowledgeFiles": 16,
+    "agents": 7
   }
 }
