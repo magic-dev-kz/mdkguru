@@ -2,80 +2,53 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Dashboard" description="Статус ИИ-агентов в реальном времени.">
+<Layout title="Dashboard" description="Витрина ИИ-студии. 7 агентов, 3 бизнеса, 26 автозадач — в реальном времени.">
   <div class="pt-24 min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 py-16">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h1 class="text-4xl font-bold"><span class="gradient-text">Dashboard</span></h1>
-          <p class="text-text-muted mt-2">Статус агентов в реальном времени</p>
-        </div>
-        <div id="last-update" class="text-xs text-text-muted"></div>
-      </div>
+    <div class="max-w-5xl mx-auto px-4 py-16">
 
-      <!-- System Status -->
-      <div class="mb-8 p-4 rounded-xl border border-border bg-bg-card flex items-center justify-between">
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-bold"><span class="gradient-text">Dashboard</span></h1>
+          <p class="text-text-muted mt-2">Что происходит в студии прямо сейчас</p>
+        </div>
         <div class="flex items-center gap-3">
           <div id="system-dot" class="w-3 h-3 rounded-full bg-accent-green animate-pulse"></div>
           <span id="system-status" class="text-sm font-semibold text-white">Загрузка...</span>
         </div>
-        <span id="uptime" class="text-xs text-text-muted"></span>
       </div>
 
-      <!-- Agents Grid -->
-      <div id="agents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <!-- Filled by JS -->
-      </div>
+      <div id="highlights-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12"></div>
 
-      <!-- Crons & API -->
+      <h2 class="text-2xl font-bold text-white mb-6">Команда</h2>
+      <div id="agents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12"></div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">🏅 Медали</h2>
+      <div id="medals-catalog" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6"></div>
+      <div id="medals-log" class="mb-12"></div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <!-- Crons -->
         <div class="p-6 rounded-xl border border-border bg-bg-card">
-          <h3 class="text-sm font-semibold text-white mb-4">⏱️ Cron Jobs</h3>
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-text-muted text-sm">Всего</span>
-            <span id="crons-total" class="text-white font-mono">-</span>
-          </div>
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-text-muted text-sm">Активных</span>
-            <span id="crons-active" class="text-accent-green font-mono">-</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-text-muted text-sm">Ошибки (24ч)</span>
-            <span id="crons-errors" class="text-red-400 font-mono">-</span>
+          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2"><span class="text-accent-purple">⚡</span> Автоматизация</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Кронов всего</span><span id="crons-total" class="text-white font-mono font-bold">-</span></div>
+            <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Активных</span><span id="crons-active" class="text-accent-green font-mono font-bold">-</span></div>
+            <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Ошибки (24ч)</span><span id="crons-errors" class="font-mono font-bold">-</span></div>
           </div>
         </div>
-
-        <!-- APIs -->
         <div class="p-6 rounded-xl border border-border bg-bg-card">
-          <h3 class="text-sm font-semibold text-white mb-4">🌐 API Status</h3>
-          <div id="api-list" class="space-y-2">
-            <!-- Filled by JS -->
+          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2"><span class="text-accent-green">🖥️</span> Система</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Uptime</span><span id="uptime" class="text-accent-green font-mono font-bold">-</span></div>
+            <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Память агентов</span><span id="mem-entries" class="text-white font-mono font-bold">-</span></div>
+            <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Диск</span><span id="disk-usage" class="text-white font-mono font-bold">-</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Memory & System -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
-          <div id="mem-entries" class="text-2xl font-bold gradient-text">-</div>
-          <div class="text-xs text-text-muted mt-1">Записей в памяти</div>
-        </div>
-        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
-          <div id="tasks-pending" class="text-2xl font-bold gradient-text">-</div>
-          <div class="text-xs text-text-muted mt-1">Задач в очереди</div>
-        </div>
-        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
-          <div id="disk-usage" class="text-2xl font-bold gradient-text">-</div>
-          <div class="text-xs text-text-muted mt-1">Диск</div>
-        </div>
-        <div class="p-4 rounded-xl border border-border bg-bg-card text-center">
-          <div id="articles-count" class="text-2xl font-bold gradient-text">-</div>
-          <div class="text-xs text-text-muted mt-1">Статей</div>
-        </div>
+      <div class="flex items-center justify-between text-xs text-text-muted mt-8">
+        <span id="last-update"></span>
+        <span>Данные обновляются раз в день</span>
       </div>
-
-      <p class="text-xs text-text-muted text-center mt-8">Данные обновляются каждые 30 минут через cron</p>
     </div>
   </div>
 </Layout>
@@ -86,79 +59,103 @@ async function loadDashboard() {
     const res = await fetch('/dashboard-data.json');
     const data = await res.json();
 
-    // Last update
-    const el = document.getElementById('last-update');
+    const el = document.getElementById('last-update') as HTMLElement;
     if (el) el.textContent = `Обновлено: ${new Date(data.updatedAt).toLocaleString('ru-RU')}`;
 
-    // System status
-    const dot = document.getElementById('system-dot');
-    const status = document.getElementById('system-status');
-    const uptime = document.getElementById('uptime');
+    const dot = document.getElementById('system-dot') as HTMLElement;
+    const status = document.getElementById('system-status') as HTMLElement;
     if (status) status.textContent = data.system?.status || 'Система работает';
-    if (uptime) uptime.textContent = data.system?.uptime || '';
-    if (dot && data.system?.healthy === false) {
-      dot.className = 'w-3 h-3 rounded-full bg-red-400';
-    }
+    if (dot && data.system?.healthy === false) dot.className = 'w-3 h-3 rounded-full bg-red-400';
 
-    // Agents
-    const grid = document.getElementById('agents-grid');
-    if (grid && data.agents) {
-      const agentIcons: Record<string, string> = {
-        'Мо': '<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>',
-        'Изя': '<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>',
-        'Молот': '<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line><circle cx="12" cy="12" r="4"></circle></svg>',
-        'Лео': '<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>',
-        'Хаус': '<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>',
-      };
-      grid.innerHTML = data.agents.map((a: any) => `
-        <div class="p-4 rounded-xl border border-border bg-bg-card card-hover">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              ${agentIcons[a.name] || `<span class="text-xl">${a.emoji}</span>`}
-              <span class="font-semibold text-white">${a.name}</span>
-            </div>
-            <div class="w-2 h-2 rounded-full ${a.online ? 'bg-accent-green animate-pulse' : 'bg-text-muted'}"></div>
-          </div>
-          <p class="text-xs text-accent-purple">${a.role}</p>
-          <p class="text-xs text-text-muted mt-1">${a.lastActivity || ''}</p>
+    const hGrid = document.getElementById('highlights-grid') as HTMLElement;
+    if (hGrid && data.highlights) {
+      hGrid.innerHTML = data.highlights.map((h: any) => `
+        <div class="p-5 rounded-xl border border-border bg-bg-card text-center group hover:border-accent-purple/30 transition-colors">
+          <div class="text-2xl mb-2">${h.icon}</div>
+          <div class="text-3xl font-bold gradient-text mb-1">${h.value}</div>
+          <div class="text-sm text-white font-medium">${h.label}</div>
+          <div class="text-xs text-text-muted mt-1">${h.sub}</div>
         </div>
       `).join('');
     }
 
-    // Crons
-    const ct = document.getElementById('crons-total');
-    const ca = document.getElementById('crons-active');
-    const ce = document.getElementById('crons-errors');
+    const grid = document.getElementById('agents-grid') as HTMLElement;
+    if (grid && data.agents) {
+      const medalCatalog = data.medals?.catalog || [];
+      grid.innerHTML = data.agents.map((a: any) => {
+        const agentMedals = (a.medals || []).map((m: any) => {
+          const cat = medalCatalog.find((c: any) => c.id === m.id);
+          if (!cat) return '';
+          return `<img src="${cat.icon}" alt="${cat.name}" title="${cat.name} (${m.date})" class="w-6 h-6 rounded-full" loading="lazy" />`;
+        }).join('');
+        return `
+        <div class="p-4 rounded-xl border border-border bg-bg-card group hover:border-opacity-50 transition-all relative overflow-hidden">
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"
+               style="background: radial-gradient(ellipse at center, ${a.color}22, transparent 70%);"></div>
+          <div class="relative z-10 flex items-center gap-3">
+            <div class="relative">
+              <img src="${a.avatar}" alt="${a.name}" class="w-12 h-12 rounded-full object-cover ring-2 ring-border" loading="lazy" />
+              <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-bg-card ${a.online ? 'bg-green-400' : 'bg-gray-500'}"></div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="font-semibold text-white">${a.name}</span>
+                <span class="text-xs font-mono px-1.5 py-0.5 rounded bg-white/5" style="color: ${a.color}">${a.role}</span>
+              </div>
+              <p class="text-xs text-text-muted mt-0.5 truncate">${a.lastActivity || ''}</p>
+              ${agentMedals ? `<div class="flex gap-1 mt-1.5">${agentMedals}</div>` : ''}
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    const medalsCat = document.getElementById('medals-catalog') as HTMLElement;
+    if (medalsCat && data.medals?.catalog) {
+      medalsCat.innerHTML = data.medals.catalog.map((m: any) => `
+        <div class="p-3 rounded-xl border border-border bg-bg-card flex items-center gap-3 group hover:border-opacity-50 transition-all">
+          <img src="${m.icon}" alt="${m.name}" class="w-10 h-10 rounded-full" loading="lazy" />
+          <div class="text-sm font-semibold text-white">${m.name}</div>
+        </div>
+      `).join('');
+    }
+
+    const medalsLog = document.getElementById('medals-log') as HTMLElement;
+    if (medalsLog && data.medals?.log?.length) {
+      medalsLog.innerHTML = `
+        <div class="p-4 rounded-xl border border-border bg-bg-card">
+          <h3 class="text-sm font-semibold text-white mb-3">Последние награждения</h3>
+          ${data.medals.log.map((l: any) => {
+            const cat = data.medals.catalog.find((c: any) => c.id === l.medal);
+            return `<div class="flex items-center gap-3 py-2">
+              <img src="${cat?.icon || ''}" alt="" class="w-6 h-6 rounded-full" loading="lazy" />
+              <span class="text-sm text-white font-medium">${l.agent}</span>
+              <span class="text-xs text-text-muted">—</span>
+              <span class="text-xs" style="color: ${cat?.color || '#fff'}">${cat?.name || l.medal}</span>
+              <span class="text-xs text-text-muted ml-auto">${l.date}</span>
+            </div>`;
+          }).join('')}
+        </div>`;
+    }
+
+    const ct = document.getElementById('crons-total') as HTMLElement;
+    const ca = document.getElementById('crons-active') as HTMLElement;
+    const ce = document.getElementById('crons-errors') as HTMLElement;
     if (ct) ct.textContent = data.crons?.total ?? '-';
     if (ca) ca.textContent = data.crons?.active ?? '-';
-    if (ce) ce.textContent = data.crons?.errors24h ?? '0';
+    if (ce) { const e = data.crons?.errors24h ?? 0; ce.textContent = e.toString(); ce.className = `font-mono font-bold ${e === 0 ? 'text-accent-green' : 'text-red-400'}`; }
 
-    // APIs
-    const apiList = document.getElementById('api-list');
-    if (apiList && data.apis) {
-      apiList.innerHTML = data.apis.map((api: any) => `
-        <div class="flex items-center justify-between">
-          <span class="text-sm text-text-muted">${api.name}</span>
-          <span class="text-xs ${api.ok ? 'text-accent-green' : 'text-red-400'}">${api.ok ? '●' : '○'} ${api.status}</span>
-        </div>
-      `).join('');
-    }
-
-    // Stats
-    const me = document.getElementById('mem-entries');
-    const tp = document.getElementById('tasks-pending');
-    const du = document.getElementById('disk-usage');
-    const ac = document.getElementById('articles-count');
+    const up = document.getElementById('uptime') as HTMLElement;
+    const me = document.getElementById('mem-entries') as HTMLElement;
+    const du = document.getElementById('disk-usage') as HTMLElement;
+    if (up) up.textContent = data.system?.uptime ?? '-';
     if (me) me.textContent = data.stats?.memoryEntries ?? '-';
-    if (tp) tp.textContent = data.stats?.tasksPending ?? '-';
     if (du) du.textContent = data.stats?.diskUsage ?? '-';
-    if (ac) ac.textContent = data.stats?.articles ?? '-';
 
   } catch (e) {
-    const status = document.getElementById('system-status');
+    const status = document.getElementById('system-status') as HTMLElement;
     if (status) status.textContent = 'Данные недоступны';
   }
 }
-
 loadDashboard();
 </script>

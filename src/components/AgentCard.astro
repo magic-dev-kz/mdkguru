@@ -1,15 +1,20 @@
 ---
-interface Props { emoji: string; name: string; role: string; description: string; icon?: string; }
-const { emoji, name, role, description, icon } = Astro.props;
+interface Props { emoji: string; name: string; role: string; description: string; icon?: string; accentColor?: string; }
+const { emoji, name, role, description, icon, accentColor } = Astro.props;
+const glowColor = accentColor || 'rgba(153, 69, 255, 0.15)';
 ---
 
-<div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
-  {icon ? (
-    <div class="w-10 h-10 mb-3" set:html={icon} />
-  ) : (
-    <div class="text-3xl mb-3">{emoji}</div>
-  )}
-  <h3 class="text-lg font-bold text-white mb-1">{name}</h3>
-  <p class="text-sm text-accent-purple mb-2">{role}</p>
-  <p class="text-sm text-text-muted">{description}</p>
+<div class="agent-card card-hover p-6 rounded-xl border border-border bg-bg-card relative overflow-hidden group">
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"
+       style={`background: radial-gradient(ellipse at center, ${glowColor}, transparent 70%);`}></div>
+  <div class="relative z-10">
+    {icon ? (
+      <div class="w-16 h-16 mb-4 rounded-full overflow-hidden ring-2 ring-border group-hover:ring-accent-purple/50 transition-all duration-300" set:html={icon} />
+    ) : (
+      <div class="text-3xl mb-4">{emoji}</div>
+    )}
+    <h3 class="text-lg font-bold text-white mb-1">{name}</h3>
+    <p class="text-sm text-accent-purple mb-2 font-mono">{role}</p>
+    <p class="text-sm text-text-muted leading-relaxed">{description}</p>
+  </div>
 </div>
