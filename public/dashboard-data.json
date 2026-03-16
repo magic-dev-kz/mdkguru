@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-16T23:00:07.128879",
+  "updatedAt": "2026-03-16T23:30:03.865451",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -18,7 +18,7 @@
       "emoji": "🎬",
       "role": "SMM",
       "online": true,
-      "lastActivity": "Был 6ч назад"
+      "lastActivity": "Активен сейчас"
     },
     {
       "name": "Молот",
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "47% (14Gi/228Gi)",
+    "diskUsage": "51% (14Gi/228Gi)",
     "articles": 12
   }
 }
