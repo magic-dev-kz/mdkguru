@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-16T17:30:04.629688",
+  "updatedAt": "2026-03-16T18:00:04.742702",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -11,7 +11,7 @@
       "emoji": "⚙️",
       "role": "COO",
       "online": true,
-      "lastActivity": "Был 11ч назад"
+      "lastActivity": "Активен сейчас"
     },
     {
       "name": "Изя",
@@ -32,14 +32,14 @@
       "emoji": "📐",
       "role": "Design",
       "online": true,
-      "lastActivity": "Был 17ч назад"
+      "lastActivity": "Был 18ч назад"
     },
     {
       "name": "Хаус",
       "emoji": "🩺",
       "role": "SRE",
       "online": true,
-      "lastActivity": "Был 17ч назад"
+      "lastActivity": "Был 18ч назад"
     }
   ],
   "crons": {
@@ -92,7 +92,7 @@
   "stats": {
     "memoryEntries": 900,
     "tasksPending": 0,
-    "diskUsage": "48% (14Gi/228Gi)",
+    "diskUsage": "56% (14Gi/228Gi)",
     "articles": 12
   }
 }
