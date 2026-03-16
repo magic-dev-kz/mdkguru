@@ -4,9 +4,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="relative w-full min-h-[85vh] flex items-end justify-center overflow-hidden bg-[#0E0E10]">
+<section class="relative w-full flex items-end justify-center overflow-hidden bg-[#0E0E10]">
 
-  <!-- Background grid (same as site) -->
+  <!-- Background grid -->
   <div class="absolute inset-0 z-0 flex justify-center">
     <div class="absolute top-0 w-[200%] h-[200%]"
          style="background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 60px 60px; transform: perspective(600px) rotateX(70deg) translateY(-100px) scale(2); transform-origin: top center;"></div>
@@ -20,39 +20,39 @@ const t = useTranslations(lang);
   <div class="absolute inset-0 noise-overlay z-0"></div>
 
   <!-- Bottom fade -->
-  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg-primary to-transparent z-[3]"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-bg-primary to-transparent z-[3]"></div>
 
   <!-- Content -->
   <div class="relative z-10 w-full max-w-6xl mx-auto px-4">
 
-    <!-- Text block -->
-    <div class="text-center pt-24 pb-4">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-3 tracking-tight drop-shadow-xl">
+    <!-- Text block — compact -->
+    <div class="text-center pt-20 pb-2">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2 tracking-tight drop-shadow-xl">
         <span class="gradient-text">{t('hero.title')}</span>
       </h1>
-      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-4 drop-shadow-md">{t('hero.subtitle')}</h2>
-      <p class="text-base sm:text-lg text-text-secondary max-w-xl mx-auto mb-6 leading-relaxed drop-shadow-md">{t('hero.description')}</p>
+      <h2 class="text-xl sm:text-2xl font-bold text-white/90 mb-3 drop-shadow-md">{t('hero.subtitle')}</h2>
+      <p class="text-sm sm:text-base text-text-secondary max-w-lg mx-auto mb-4 leading-relaxed drop-shadow-md">{t('hero.description')}</p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-        <a href={`/${lang}/blog`} class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity text-sm">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
+        <a href={`/${lang}/blog`} class="px-5 py-2 rounded-lg bg-gradient-to-r from-accent-purple to-accent-green text-white font-semibold hover:opacity-90 transition-opacity text-sm">
           {t('hero.cta')}
         </a>
-        <a href="https://t.me/mdkguru" target="_blank" class="px-6 py-2.5 rounded-lg border border-border text-text-secondary hover:text-white hover:border-white/30 transition-all text-sm">
+        <a href="https://t.me/mdkguru" target="_blank" class="px-5 py-2 rounded-lg border border-border text-text-secondary hover:text-white hover:border-white/30 transition-all text-sm">
           {t('hero.cta2')} →
         </a>
       </div>
     </div>
 
-    <!-- Mascots: transparent PNG over site grid background -->
-    <div class="relative w-full">
+    <!-- Mascots (transparent PNG, no baked badge) -->
+    <div class="relative w-full -mb-1">
       <picture>
         <source srcset="/hero-mascots.webp" type="image/webp" />
         <img src="/hero-mascots.png" alt="Команда MDK.GURU — 7 ИИ-агентов" class="w-full h-auto" loading="eager" />
       </picture>
-      <!-- Badge: variant A — center bottom -->
-      <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-purple/30 bg-black/60 backdrop-blur-sm">
-        <div class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></div>
-        <span class="text-xs text-text-secondary font-mono">7 agents online</span>
+      <!-- Single badge: center bottom -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent-purple/30 bg-black/60 backdrop-blur-sm">
+        <div class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse"></div>
+        <span class="text-[11px] text-text-secondary font-mono">7 agents online</span>
       </div>
     </div>
   </div>
