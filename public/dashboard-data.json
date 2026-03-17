@@ -1,55 +1,51 @@
 {
+  "updatedAt": "2026-03-17T22:45:00+07:00",
   "system": {
-    "healthy": true
+    "status": "Все системы работают",
+    "healthy": true,
+    "uptime": "99.2%"
   },
   "agents": [
-    {
-      "name": "Мо",
-      "emoji": "⚙️",
-      "role": "COO",
-      "online": true
-    },
-    {
-      "name": "Изя",
-      "emoji": "🎬",
-      "role": "SMM",
-      "online": true
-    },
-    {
-      "name": "Молот",
-      "emoji": "🔨",
-      "role": "Scout",
-      "online": true
-    },
-    {
-      "name": "Лео",
-      "emoji": "📐",
-      "role": "Design",
-      "online": true
-    },
-    {
-      "name": "Хаус",
-      "emoji": "🩺",
-      "role": "SRE",
-      "online": true
-    },
-    {
-      "name": "Стив",
-      "emoji": "🧭",
-      "role": "Mentor",
-      "online": true
-    },
-    {
-      "name": "Макс",
-      "emoji": "⚡",
-      "role": "Infra",
-      "online": false
-    }
+    { "name": "Мо", "emoji": "⚙️", "role": "COO", "online": true, "avatar": "/agents/avatar_mo.png", "color": "#3C64DC", "lastActivity": "Координация задач, отчёты", "medals": [] },
+    { "name": "Изя", "emoji": "📣", "role": "SMM", "online": true, "avatar": "/agents/avatar_izya.png", "color": "#DC32B4", "lastActivity": "Контент Instagram, Telegram", "medals": [] },
+    { "name": "Молот", "emoji": "🔨", "role": "Scout", "online": true, "avatar": "/agents/avatar_molot.png", "color": "#B42828", "lastActivity": "10 разведок за день", "medals": [{"id": "bullseye", "name": "Точное попадание", "date": "2026-03-17"}] },
+    { "name": "Лео", "emoji": "📐", "role": "Design", "online": true, "avatar": "/agents/avatar_leo.png", "color": "#FFD700", "lastActivity": "VPN дизайн-система, медали", "medals": [{"id": "proactive", "name": "Проактивность", "date": "2026-03-17"}] },
+    { "name": "Хаус", "emoji": "🩺", "role": "SRE", "online": true, "avatar": "/agents/avatar_house.png", "color": "#28B450", "lastActivity": "Мониторинг инфраструктуры", "medals": [] },
+    { "name": "Стив", "emoji": "🧭", "role": "Product", "online": true, "avatar": "/agents/avatar_steve.png", "color": "#E68C1E", "lastActivity": "Стратегия, ревью продукта", "medals": [] },
+    { "name": "Макс", "emoji": "⚡", "role": "Infra", "online": true, "avatar": "/agents/avatar_max.png", "color": "#00DC32", "lastActivity": "1M контекст для агентов", "medals": [{"id": "architect", "name": "Архитектор", "date": "2026-03-17"}] }
+  ],
+  "medals": {
+    "catalog": [
+      {"id": "proactive", "name": "Проактивность", "icon": "/medals/medal_proactive.webp", "color": "#FFD700"},
+      {"id": "bullseye", "name": "Точное попадание", "icon": "/medals/medal_bullseye.webp", "color": "#14F195"},
+      {"id": "sprint", "name": "Спринт", "icon": "/medals/medal_sprint.webp", "color": "#FF7416"},
+      {"id": "architect", "name": "Архитектор", "icon": "/medals/medal_architect.webp", "color": "#9945FF"},
+      {"id": "guardian", "name": "Страж", "icon": "/medals/medal_guardian.webp", "color": "#3C64DC"},
+      {"id": "visionary", "name": "Визионер", "icon": "/medals/medal_visionary.webp", "color": "#DC32B4"},
+      {"id": "teamwork", "name": "Командный игрок", "icon": "/medals/medal_teamwork.webp", "color": "#14F195"},
+      {"id": "clever", "name": "Хитрец-молодец", "icon": "/medals/medal_clever.webp", "color": "#FFEB3B"}
+    ],
+    "log": [
+      {"agent": "Лео", "medal": "proactive", "date": "2026-03-17", "reason": "Починил сломанную сборку сайта (missing @astrojs/rss)"},
+      {"agent": "Макс", "medal": "architect", "date": "2026-03-17", "reason": "Внедрение 1M контекста — per-agent context window management"},
+      {"agent": "Молот", "medal": "bullseye", "date": "2026-03-17", "reason": "10 разведок за день — HeyGen, VPN UI, API кредиты, ESP32"}
+    ]
+  },
+  "crons": { "total": 26, "active": 24, "errors24h": 0 },
+  "highlights": [
+    { "icon": "🤖", "value": "7", "label": "агентов активны", "sub": "24/7 без выходных" },
+    { "icon": "⚡", "value": "26+", "label": "автозадач", "sub": "кроны работают по расписанию" },
+    { "icon": "📝", "value": "12", "label": "статей", "sub": "опубликованы на mdk.guru" },
+    { "icon": "🏪", "value": "231", "label": "объявлений", "sub": "на Avito автоматически" },
+    { "icon": "📱", "value": "6", "label": "площадок", "sub": "IG, TG, VK, Avito, mdk.guru, snobsnab.ru" },
+    { "icon": "🏢", "value": "3", "label": "бизнеса", "sub": "подключены к системе" },
+    { "icon": "🧠", "value": "3", "label": "LLM-провайдера", "sub": "Claude, GPT, Gemini" },
+    { "icon": "📦", "value": "1,091", "label": "товаров", "sub": "в МойСклад (IZI)" }
   ],
   "stats": {
-    "memoryEntries": 0,
-    "articles": 15,
-    "knowledgeFiles": 18,
-    "agents": 7
+    "memoryEntries": "2,184",
+    "tasksPending": "0",
+    "diskUsage": "12.4 GB",
+    "articles": "12"
   }
 }
