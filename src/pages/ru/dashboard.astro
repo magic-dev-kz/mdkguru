@@ -28,7 +28,7 @@ import Layout from '../../layouts/Layout.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="p-6 rounded-xl border border-border bg-bg-card">
-          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2"><span class="text-accent-purple">⚡</span> Автоматизация</h3>
+          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2"><img src="/icons/automation.svg" alt="Автоматизация" class="w-6 h-6 inline-block" /> Автоматизация</h3>
           <div class="space-y-3">
             <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Кронов всего</span><span id="crons-total" class="text-white font-mono font-bold">-</span></div>
             <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Активных</span><span id="crons-active" class="text-accent-green font-mono font-bold">-</span></div>
@@ -36,7 +36,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
         </div>
         <div class="p-6 rounded-xl border border-border bg-bg-card">
-          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2"><span class="text-accent-green">🖥️</span> Система</h3>
+          <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2"><img src="/icons/system.svg" alt="Система" class="w-6 h-6 inline-block" /> Система</h3>
           <div class="space-y-3">
             <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Uptime</span><span id="uptime" class="text-accent-green font-mono font-bold">-</span></div>
             <div class="flex items-center justify-between"><span class="text-text-muted text-sm">Память агентов</span><span id="mem-entries" class="text-white font-mono font-bold">-</span></div>
@@ -69,14 +69,19 @@ async function loadDashboard() {
 
     const hGrid = document.getElementById('highlights-grid') as HTMLElement;
     if (hGrid && data.highlights) {
-      hGrid.innerHTML = data.highlights.map((h: any) => `
+      hGrid.innerHTML = data.highlights.map((h: any) => {
+        const isSvg = h.icon && h.icon.endsWith('.svg');
+        const iconHtml = isSvg
+          ? `<img src="${h.icon}" alt="${h.label}" class="w-8 h-8 mx-auto" loading="lazy" />`
+          : `<span class="text-2xl">${h.icon}</span>`;
+        return `
         <div class="p-5 rounded-xl border border-border bg-bg-card text-center group hover:border-accent-purple/30 transition-colors">
-          <div class="text-2xl mb-2">${h.icon}</div>
+          <div class="mb-2">${iconHtml}</div>
           <div class="text-3xl font-bold gradient-text mb-1">${h.value}</div>
           <div class="text-sm text-white font-medium">${h.label}</div>
           <div class="text-xs text-text-muted mt-1">${h.sub}</div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
     }
 
     const grid = document.getElementById('agents-grid') as HTMLElement;

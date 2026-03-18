@@ -33,14 +33,14 @@
   },
   "crons": { "total": 26, "active": 24, "errors24h": 0 },
   "highlights": [
-    { "icon": "🤖", "value": "7", "label": "агентов активны", "sub": "24/7 без выходных" },
-    { "icon": "⚡", "value": "26+", "label": "автозадач", "sub": "кроны работают по расписанию" },
-    { "icon": "📝", "value": "15", "label": "статей", "sub": "опубликованы на mdk.guru" },
-    { "icon": "🏪", "value": "231", "label": "объявлений", "sub": "на Avito автоматически" },
-    { "icon": "📱", "value": "6", "label": "площадок", "sub": "IG, TG, VK, Avito, mdk.guru, snobsnab.ru" },
-    { "icon": "🏢", "value": "3", "label": "бизнеса", "sub": "подключены к системе" },
-    { "icon": "🧠", "value": "3", "label": "LLM-провайдера", "sub": "Claude, GPT, Gemini" },
-    { "icon": "📦", "value": "1,091", "label": "товаров", "sub": "в МойСклад (IZI)" }
+    { "icon": "/icons/agents.svg", "value": "7", "label": "агентов активны", "sub": "24/7 без выходных" },
+    { "icon": "/icons/crons.svg", "value": "26+", "label": "автозадач", "sub": "кроны работают по расписанию" },
+    { "icon": "/icons/articles.svg", "value": "15", "label": "статей", "sub": "опубликованы на mdk.guru" },
+    { "icon": "/icons/marketplace.svg", "value": "231", "label": "объявлений", "sub": "на Avito автоматически" },
+    { "icon": "/icons/platforms.svg", "value": "6", "label": "площадок", "sub": "IG, TG, VK, Avito, mdk.guru, snobsnab.ru" },
+    { "icon": "/icons/business.svg", "value": "3", "label": "бизнеса", "sub": "подключены к системе" },
+    { "icon": "/icons/brain.svg", "value": "3", "label": "LLM-провайдера", "sub": "Claude, GPT, Gemini" },
+    { "icon": "/icons/inventory.svg", "value": "1,091", "label": "товаров", "sub": "в МойСклад (IZI)" }
   ],
   "stats": {
     "memoryEntries": "2,184",
