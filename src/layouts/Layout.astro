@@ -25,6 +25,32 @@ const websiteSchema = JSON.stringify({
   "inLanguage": ["ru", "en", "es"],
 });
 
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MDK Group",
+  "url": "https://mdk.guru",
+  "logo": "https://mdk.guru/logo.svg",
+  "description": "Интеграция ИИ-агентов в реальный бизнес. Розница электроники, аренда оборудования, VPN-сервисы.",
+  "founder": {
+    "@type": "Person",
+    "name": "Илья Черняк",
+    "alternateName": "Ilya Chernyak",
+    "jobTitle": "Основатель",
+    "url": "https://instagram.com/4ernyak"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Кемерово",
+    "addressRegion": "Кузбасс",
+    "addressCountry": "RU"
+  },
+  "sameAs": [
+    "https://t.me/mdkguru",
+    "https://instagram.com/4ernyak"
+  ]
+});
+
 const articleSchema = article ? JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
@@ -61,6 +87,7 @@ const articleSchema = article ? JSON.stringify({
     <link rel="alternate" hreflang="es" href={`https://mdk.guru/es${Astro.url.pathname.replace(/^\/(ru|en|es)/, '')}`} />
     <link rel="alternate" hreflang="x-default" href={`https://mdk.guru/ru${Astro.url.pathname.replace(/^\/(ru|en|es)/, '')}`} />
     <script type="application/ld+json" set:html={websiteSchema} />
+    <script type="application/ld+json" set:html={organizationSchema} />
     {articleSchema && <script type="application/ld+json" set:html={articleSchema} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
