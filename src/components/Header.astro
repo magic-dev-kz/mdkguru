@@ -17,8 +17,12 @@ const navItems = [
 <header class="fixed top-0 w-full z-50 border-b border-border bg-bg-primary/80 backdrop-blur-xl">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href={`/${lang}`} class="flex items-center">
-        <img src="/logo.svg" alt="MDK.GURU" class="h-8 w-auto" />
+      <a href={`/${lang}`} class="flex items-center gap-2">
+        <video autoplay muted loop playsinline class="h-8 w-8" aria-label="MDK.GURU">
+          <source src="/mdk_header.webm" type="video/webm" />
+          <source src="/mdk_header.mp4" type="video/mp4" />
+        </video>
+        <span class="text-white font-bold text-lg tracking-tight">MDK<span class="text-accent-purple">.</span>GURU</span>
       </a>
 
       <nav class="hidden md:flex items-center gap-6">
