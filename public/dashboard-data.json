@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-23T08:45:05.257559+07:00",
+  "updatedAt": "2026-03-24T08:45:05.504463+07:00",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -248,7 +248,7 @@
   "stats": {
     "memoryEntries": "2,184",
     "articles": 18,
-    "knowledgeFiles": 27,
+    "knowledgeFiles": 28,
     "agents": 7
   }
 }
