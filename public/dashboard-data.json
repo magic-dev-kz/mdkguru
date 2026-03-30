@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-29T08:45:05.262026+07:00",
+  "updatedAt": "2026-03-30T08:45:07.061145+07:00",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -10,7 +10,7 @@
       "name": "Мо",
       "emoji": "⚙️",
       "role": "COO",
-      "online": false,
+      "online": true,
       "avatar": "/agents/avatar_mo.png",
       "color": "#3C64DC",
       "lastActivity": "Координация задач, отчёты",
