@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="PollenPal - Прогноз пыльцы" description="Персональный прогноз пыльцы. Safety Score по твоим аллергенам. Лучший час для прогулки. Бесплатно.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/ru/apps" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; Все приложения</a>
+
+      <div class="mt-8 mb-12">
+        <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">PollenPal</span></h1>
+        <p class="text-xl text-text-muted">Персональный прогноз пыльцы</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <p class="text-text-muted leading-relaxed mb-6">
+          Узнай до того, как чихнёшь. PollenPal даёт персональный Safety Score по ТВОИМ аллергенам — не средний прогноз для всех. Покажет лучший час для прогулки.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Возможности</h2>
+        <ul class="space-y-3 text-text-muted">
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Персональный Safety Score</strong> — 0-10 только по твоим аллергенам: берёза, трава, амброзия, полынь, ольха, олива</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Лучший час для прогулки</strong> — почасовой прогноз, когда уровень пыльцы падает</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Прогноз на 5 дней</strong> — планируй неделю, знай какие дни безопасны</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Виджеты</strong> — Safety Score на домашнем экране и экране блокировки</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Без рекламы и фармкомпаний</strong> — бесплатно, независимо, данные не покидают устройство</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Скоро в App Store</h2>
+        <p class="text-text-muted">PollenPal готовится к публикации. Бесплатно для iOS.</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Конфиденциальность</h2>
+        <p class="text-text-muted mb-3">Геолокация используется только для прогноза пыльцы и не сохраняется на серверах. Можно ввести город вручную.</p>
+        <a href="/apps/pollenpal/privacy" class="text-sm text-accent-purple hover:underline">Privacy Policy &rarr;</a>
+      </div>
+
+      <div class="text-sm text-text-muted">
+        <p>Вопросы или обратная связь: <a href="mailto:support@mdk.guru" class="text-accent-purple hover:underline">support@mdk.guru</a></p>
+      </div>
+    </div>
+  </div>
+</Layout>

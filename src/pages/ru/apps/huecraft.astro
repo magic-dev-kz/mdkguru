@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="DualTone - Дизайн-система из одного цвета" description="Один HEX — полная дизайн-система. 40+ токенов, light + dark mode, WCAG auto-fix. Бесплатно.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/ru/apps" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; Все приложения</a>
+
+      <div class="mt-8 mb-12">
+        <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">DualTone</span></h1>
+        <p class="text-xl text-text-muted">Дизайн-система из одного цвета</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <p class="text-text-muted leading-relaxed mb-6">
+          Один цвет — полная дизайн-система. Введи HEX-код бренда — получи палитру из 40+ токенов: шкала оттенков, semantic-токены, light + dark mode. Готово за 10 секунд.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Возможности</h2>
+        <ul class="space-y-3 text-text-muted">
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">40+ дизайн-токенов</strong> — primary scale, neutral scale, semantic tokens из одного HEX</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Light + Dark mode</strong> — генерация обеих тем из одного цвета, split-view</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">WCAG auto-fix</strong> — проверка контраста AA/AAA, исправление в один тап</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Экспорт кода</strong> — CSS Variables, SwiftUI Colors, Tailwind Config, JSON Tokens</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Бесплатно, офлайн</strong> — без аккаунта, без рекламы, без интернета</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Скоро в App Store</h2>
+        <p class="text-text-muted">DualTone готовится к публикации. Бесплатно для iOS.</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Конфиденциальность</h2>
+        <p class="text-text-muted mb-3">Все данные на устройстве. Нет сервера, нет облака, нет аналитики.</p>
+        <a href="/apps/huecraft/privacy" class="text-sm text-accent-purple hover:underline">Privacy Policy &rarr;</a>
+      </div>
+
+      <div class="text-sm text-text-muted">
+        <p>Вопросы или обратная связь: <a href="mailto:support@mdk.guru" class="text-accent-purple hover:underline">support@mdk.guru</a></p>
+      </div>
+    </div>
+  </div>
+</Layout>

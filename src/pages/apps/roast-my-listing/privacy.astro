@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const lastUpdated = '2026-03-31';
+---
+<Layout title="Roast My Listing - Privacy Policy" description="Privacy Policy for Roast My Listing iOS app.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/en/apps/roast-my-listing" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; Roast My Listing</a>
+
+      <h1 class="text-3xl font-bold mt-8 mb-2 text-white">Privacy Policy</h1>
+      <p class="text-text-muted mb-8">Roast My Listing - AI Listing Critic</p>
+      <p class="text-xs text-text-muted mb-8">Last updated: {lastUpdated}</p>
+
+      <div class="prose prose-invert max-w-none space-y-6 text-text-muted">
+        <p>OpenClaw ("we", "us", "our") built Roast My Listing as a free application. This page is used to inform users regarding our policies with the collection, use, and disclosure of personal information.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Information Collection and Use</h2>
+        <p>Roast My Listing does not collect or store personal data on our servers.</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>No personal information is collected by us</li>
+          <li>No usage analytics or tracking</li>
+          <li>No advertising identifiers</li>
+          <li>No account or registration required</li>
+        </ul>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">AI Text Analysis</h2>
+        <p>Roast My Listing uses AI to analyze listing text you provide. The text is processed as follows:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>On supported devices:</strong> Text is analyzed on-device using Apple Foundation Models (Apple Intelligence). Your listing text never leaves your device.</li>
+          <li><strong>On unsupported devices:</strong> With your explicit permission, text may be sent to Google Gemini API for analysis. In this case, text is sent over an encrypted connection, used solely for generating the analysis response, and is not stored by us. Google's data handling is governed by <a href="https://ai.google.dev/gemini-api/terms" class="text-accent-purple hover:underline" target="_blank">Google's API Terms of Service</a>.</li>
+        </ul>
+        <p>You are always informed before any data is sent externally, and you can choose to use only on-device processing.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Data Storage</h2>
+        <p>Analysis results and preferences are stored locally on your device. No listing data is stored on our servers.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Third-Party Services</h2>
+        <p>On devices without Apple Intelligence support, Google Gemini API may be used with your explicit consent for text analysis only. No personal identifiers are transmitted.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Children's Privacy</h2>
+        <p>Roast My Listing does not collect any personal information from anyone, including children under the age of 13.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. Changes will be posted on this page with an updated date.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@mdk.guru" class="text-accent-purple hover:underline">support@mdk.guru</a>.</p>
+      </div>
+    </div>
+  </div>
+</Layout>

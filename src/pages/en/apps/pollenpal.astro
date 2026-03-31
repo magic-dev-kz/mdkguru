@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="PollenPal - Pollen Forecast" description="Personal pollen forecast. Safety Score by YOUR allergens. Best hour to go outside. Free.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/en/apps" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; All apps</a>
+
+      <div class="mt-8 mb-12">
+        <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">PollenPal</span></h1>
+        <p class="text-xl text-text-muted">Personal Pollen Forecast</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <p class="text-text-muted leading-relaxed mb-6">
+          Know before you sneeze. PollenPal gives you a personal Safety Score based on YOUR allergens — not a generic forecast for everyone. See the best hour to go outside today.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Features</h2>
+        <ul class="space-y-3 text-text-muted">
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Personal Safety Score</strong> — 0-10 based on YOUR allergens: birch, grass, ragweed, mugwort, alder, olive</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Best Hour to Go Outside</strong> — hourly forecast shows when pollen levels drop</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">5-Day Forecast</strong> — plan your week, know which days are safe</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Widgets</strong> — Safety Score on your Home Screen and Lock Screen</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Independent and Private</strong> — free, no drug company, data stays on device</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Coming to App Store</h2>
+        <p class="text-text-muted">PollenPal is preparing for release. Free for iOS.</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Privacy</h2>
+        <p class="text-text-muted mb-3">Location is used only for local pollen data and is not stored on any server. You can enter your city manually instead.</p>
+        <a href="/apps/pollenpal/privacy" class="text-sm text-accent-purple hover:underline">Privacy Policy &rarr;</a>
+      </div>
+
+      <div class="text-sm text-text-muted">
+        <p>Questions or feedback: <a href="mailto:support@mdk.guru" class="text-accent-purple hover:underline">support@mdk.guru</a></p>
+      </div>
+    </div>
+  </div>
+</Layout>

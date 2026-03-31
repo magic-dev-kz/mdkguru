@@ -1,42 +1,95 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const appIcons = {
+const appIcons: Record<string, string> = {
   snobsnab: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>`,
   mdkguru: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`,
   kazakvpn: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`,
   qr: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line><line x1="5" y1="10" x2="19" y2="10"></line></svg>`,
+  roomcalc: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="10" y2="10"></line><line x1="14" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="10" y2="14"></line><line x1="14" y1="14" x2="16" y2="14"></line><line x1="8" y1="18" x2="16" y2="18"></line></svg>`,
+  drift: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>`,
+  pollenpal: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2a5 5 0 0 1 5 5c0 2-1.5 3.5-3 4.5V14h-4v-2.5C8.5 10.5 7 9 7 7a5 5 0 0 1 5-5z"></path><path d="M10 14v4a2 2 0 1 0 4 0v-4"></path><line x1="12" y1="22" x2="12" y2="18"></line></svg>`,
+  winlog: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"></path></svg>`,
+  wificard: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><circle cx="12" cy="20" r="1"></circle></svg>`,
+  huecraft: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="13.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="10.5" r="2.5"></circle><circle cx="8.5" cy="7.5" r="2.5"></circle><circle cx="6.5" cy="12.5" r="2.5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.5-.63 1.5-1.5 0-.39-.14-.74-.39-1.04-.24-.3-.39-.65-.39-1.04C12.72 17.14 13.86 16 15.28 16H18c3.31 0 6-2.69 6-6 0-5.5-5.37-10-12-10z"></path></svg>`,
+  currencysnap: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>`,
+  roast: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>`,
+  decode: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="9" y1="10" x2="15" y2="10"></line></svg>`,
 };
 
-const apps = [
-  { iconKey: 'snobsnab', title: 'SnobSnab', desc: 'Auto-generated content site for construction materials. Gemini research → Claude text → Imagen covers.', status: 'live', url: 'https://www.snobsnab.ru', stack: 'Astro + Vercel + AI Pipeline' },
+interface AppItem {
+  iconKey: string;
+  title: string;
+  desc: string;
+  status: string;
+  url?: string;
+  slug?: string;
+  stack: string;
+}
+
+const webApps: AppItem[] = [
+  { iconKey: 'snobsnab', title: 'SnobSnab', desc: 'Auto-generated content site for construction materials. Gemini research, Claude text, Imagen covers.', status: 'live', url: 'https://www.snobsnab.ru', stack: 'Astro + Vercel + AI Pipeline' },
   { iconKey: 'mdkguru', title: 'MDK.GURU', desc: 'This site. One-person studio + AI. Blog, apps, skills. Three languages.', status: 'live', url: 'https://mdk.guru', stack: 'Astro + Tailwind + Decap CMS' },
   { iconKey: 'kazakvpn', title: 'KazakVPN', desc: 'iOS VPN client on WireGuard. Simple UI, fast connection.', status: 'development', stack: 'SwiftUI + WireGuardKit' },
-  { iconKey: 'qr', title: 'QR Payment', desc: 'Photo of invoice → OCR → QR code for bank app payment.', status: 'development', stack: 'Python + qrcode + OCR' },
+  { iconKey: 'qr', title: 'QR Payment', desc: 'Photo of invoice to OCR to QR code for bank app payment.', status: 'development', stack: 'Python + qrcode + OCR' },
+];
+
+const iosApps: AppItem[] = [
+  { iconKey: 'roomcalc', title: 'RoomCalc', desc: '8 construction calculators + shopping list. Tile, paint, wallpaper, concrete. Free forever, no ads, offline.', status: 'beta', slug: 'roomcalc', stack: 'SwiftUI' },
+  { iconKey: 'drift', title: 'Drift', desc: 'Gentle habit tracker. Momentum instead of streaks. Rest days built in. One habit at a time.', status: 'beta', slug: 'drift', stack: 'SwiftUI + iCloud' },
+  { iconKey: 'pollenpal', title: 'PollenPal', desc: 'Personal pollen forecast. Safety Score by YOUR allergens. Best hour to go outside. Widgets.', status: 'beta', slug: 'pollenpal', stack: 'SwiftUI + Open-Meteo API' },
+  { iconKey: 'winlog', title: 'WinLog', desc: 'Success diary in 30 seconds. Voice input, insights, calendar heatmap, Face ID. Bodo Schafer method.', status: 'beta', slug: 'winlog', stack: 'SwiftUI + Apple Speech' },
+  { iconKey: 'wificard', title: 'WifiCard', desc: 'Beautiful WiFi QR cards. Guests scan and connect. 6 templates, print, offline.', status: 'beta', slug: 'wificard', stack: 'SwiftUI + CoreImage' },
+  { iconKey: 'huecraft', title: 'DualTone', desc: 'One HEX, full design system. 40+ tokens, light + dark mode, WCAG auto-fix. CSS, Swift, Tailwind, JSON.', status: 'beta', slug: 'huecraft', stack: 'SwiftUI + OKLCH' },
+  { iconKey: 'currencysnap', title: 'CurrencySnap', desc: 'Point camera at a price tag, see it in your currency. 30 currencies, offline, built for travelers.', status: 'beta', slug: 'currencysnap', stack: 'SwiftUI + VisionKit' },
+  { iconKey: 'roast', title: 'Roast My Listing', desc: 'AI listing critic. Paste text, get a score, flaw breakdown, and a ready rewrite. On-device AI.', status: 'beta', slug: 'roast-my-listing', stack: 'SwiftUI + Apple Intelligence' },
+  { iconKey: 'decode', title: 'Decode My Boss', desc: 'Corporate speak decoder. Paste a message from your boss, get the real meaning and toxicity score.', status: 'beta', slug: 'decode-my-boss', stack: 'SwiftUI + Apple Intelligence' },
 ];
 
 const statusLabels: Record<string, { text: string; color: string }> = {
   live: { text: 'Live', color: 'bg-accent-green/20 text-accent-green' },
+  beta: { text: 'Coming Soon', color: 'bg-accent-blue/20 text-accent-blue' },
   development: { text: 'In development', color: 'bg-accent-purple/20 text-accent-purple' },
 };
 ---
 
-<Layout title="Apps" description="Projects by MDK.GURU studio.">
+<Layout title="Apps" description="iOS apps and web projects by MDK.GURU studio. Free utilities with no ads.">
   <div class="pt-24 min-h-screen">
     <div class="max-w-4xl mx-auto px-4 py-16">
       <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">Apps</span></h1>
       <p class="text-text-muted mb-12">Built by one person + AI team.</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {apps.map(app => (
-          <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
+
+      <h2 class="text-2xl font-bold text-white mb-6">iOS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        {iosApps.map(app => (
+          <a href={`/en/apps/${app.slug}`} class="card-hover p-6 rounded-xl border border-border bg-bg-card block transition-transform hover:scale-[1.02]">
             <div class="flex items-start justify-between mb-3">
               <div class="w-10 h-10" set:html={appIcons[app.iconKey]} />
-              <span class={`text-xs px-2 py-1 rounded-full ${statusLabels[app.status].color}`}>{statusLabels[app.status].text}</span>
+              <span class={`text-xs px-2 py-1 rounded-full ${statusLabels[app.status].color}`}>
+                {statusLabels[app.status].text}
+              </span>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">{app.title}</h3>
             <p class="text-sm text-text-muted mb-3">{app.desc}</p>
             <p class="text-xs text-text-muted">{app.stack}</p>
-            {app.url && <a href={app.url} target="_blank" class="inline-block mt-3 text-sm text-accent-purple hover:underline">Open →</a>}
+          </a>
+        ))}
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Web Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {webApps.map(app => (
+          <div class="card-hover p-6 rounded-xl border border-border bg-bg-card">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10" set:html={appIcons[app.iconKey]} />
+              <span class={`text-xs px-2 py-1 rounded-full ${statusLabels[app.status].color}`}>
+                {statusLabels[app.status].text}
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">{app.title}</h3>
+            <p class="text-sm text-text-muted mb-3">{app.desc}</p>
+            <p class="text-xs text-text-muted">{app.stack}</p>
+            {app.url && <a href={app.url} target="_blank" class="inline-block mt-3 text-sm text-accent-purple hover:underline">Open &rarr;</a>}
           </div>
         ))}
       </div>

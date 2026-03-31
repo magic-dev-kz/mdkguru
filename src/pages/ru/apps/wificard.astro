@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="WifiCard - WiFi QR карточки" description="Красивые карточки с QR-кодом для WiFi. Гость сканирует — подключается. 6 шаблонов, печать, офлайн.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/ru/apps" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; Все приложения</a>
+
+      <div class="mt-8 mb-12">
+        <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">WifiCard</span></h1>
+        <p class="text-xl text-text-muted">WiFi QR карточки</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <p class="text-text-muted leading-relaxed mb-6">
+          Введи название сети и пароль — получи красивую карточку с QR-кодом. Гость сканирует — подключается. Больше никаких «пароль с большой S, потом цифра 7...»
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Возможности</h2>
+        <ul class="space-y-3 text-text-muted">
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">6 дизайнерских шаблонов</strong> — Minimal, Warm, Hotel, Airbnb, Tech, Kids</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">QR-код</strong> — гость наводит камеру, подключается без ввода пароля</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Печать и шэринг</strong> — AirPrint, AirDrop, Сообщения, Почта</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">100% офлайн</strong> — пароль не покидает устройство, интернет не нужен</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">Бесплатно навсегда</strong> — без рекламы, без подписки, без регистрации</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Скоро в App Store</h2>
+        <p class="text-text-muted">WifiCard готовится к публикации. Бесплатно для iOS.</p>
+      </div>
+
+      <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
+        <h2 class="text-lg font-bold text-white mb-4">Конфиденциальность</h2>
+        <p class="text-text-muted mb-3">Пароль WiFi не покидает устройство. Нет сети, нет сервера, нет аналитики.</p>
+        <a href="/apps/wificard/privacy" class="text-sm text-accent-purple hover:underline">Privacy Policy &rarr;</a>
+      </div>
+
+      <div class="text-sm text-text-muted">
+        <p>Вопросы или обратная связь: <a href="mailto:support@mdk.guru" class="text-accent-purple hover:underline">support@mdk.guru</a></p>
+      </div>
+    </div>
+  </div>
+</Layout>
