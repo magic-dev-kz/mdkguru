@@ -13,14 +13,21 @@ import Layout from '../../../layouts/Layout.astro';
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
         <p class="text-text-muted leading-relaxed mb-6">
-          Один цвет — полная дизайн-система. Введи HEX-код бренда — получи палитру из 40+ токенов: шкала оттенков, semantic-токены, light + dark mode. Готово за 10 секунд.
+          Один цвет — полная дизайн-система. Введи HEX-код бренда — получи палитру из 40+ токенов: шкала оттенков, нейтральные тона, semantic-токены, light + dark mode. Контрасты проверены по WCAG. Одна кнопка чинит accessibility. Копируй CSS, Swift, Tailwind или JSON — вставляй в проект.
+        </p>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Без аккаунта. Без интернета. Без дизайнера. Готово за 10 секунд.
         </p>
 
-        <h2 class="text-lg font-bold text-white mb-4">Возможности</h2>
-        <ul class="space-y-3 text-text-muted">
+        <h2 class="text-lg font-bold text-white mb-4">Что делает Палитра Цветов</h2>
+        <ul class="space-y-3 text-text-muted mb-6">
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">40+ дизайн-токенов</strong> — primary scale, neutral scale, semantic tokens из одного HEX</span>
+            <span><strong class="text-white">40+ дизайн-токенов</strong> — primary scale, neutral scale, semantic tokens из одного brand color</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent-green mt-1">&#10003;</span>
+            <span><strong class="text-white">OKLCH-палитра</strong> — перцептуально корректная, не выцветший HSL</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
@@ -36,9 +43,19 @@ import Layout from '../../../layouts/Layout.astro';
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Бесплатно, офлайн</strong> — без аккаунта, без рекламы, без интернета</span>
+            <span><strong class="text-white">Semantic tokens</strong> — background, surface, text, primary, border, ring, error, success</span>
           </li>
         </ul>
+
+        <h2 class="text-lg font-bold text-white mb-4">Для кого</h2>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Инди-хакеры, разработчики-одиночки, фрилансеры, фаундеры стартапов — все, кто делает продукт без дизайнера. Если ты тратил 2 часа на подбор цветов и ручной dark mode — Палитра Цветов заменяет это за 10 секунд.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">vs. Альтернативы</h2>
+        <p class="text-text-muted leading-relaxed">
+          Coolors: 5 случайных полосок, нет dark mode, нет WCAG, нет кода. ColorSlurp: $4.99 freemium, нет дизайн-системы. Pastel: $3.99, нет генерации dark mode. Палитра Цветов: Бесплатно. Полная система. Dark mode. WCAG. Код. Готово.
+        </p>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
