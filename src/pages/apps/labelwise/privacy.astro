@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const lastUpdated = '2026-04-02';
+---
+<Layout title="LabelWise - Privacy Policy" description="Privacy Policy for LabelWise iOS app.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+      <a href="/en/apps/labelwise" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; LabelWise</a>
+
+      <h1 class="text-3xl font-bold mt-8 mb-2 text-white">Privacy Policy</h1>
+      <p class="text-text-muted mb-8">LabelWise - Food Label Scanner</p>
+      <p class="text-xs text-text-muted mb-8">Last updated: {lastUpdated}</p>
+
+      <div class="prose prose-invert max-w-none space-y-6 text-text-muted">
+        <p>OpenClaw ("we", "us", "our") built LabelWise as a free application. This page is used to inform users regarding our policies with the collection, use, and disclosure of personal information.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Information Collection and Use</h2>
+        <p>LabelWise does not collect or store personal data on external servers. All processing happens entirely on your device.</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>No personal information is collected or transmitted</li>
+          <li>No usage analytics or tracking</li>
+          <li>No third-party analytics services</li>
+          <li>No advertising identifiers</li>
+          <li>No account or registration required</li>
+        </ul>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Camera Usage</h2>
+        <p>LabelWise uses your device's camera to scan food labels via Apple VisionKit (on-device OCR). Camera data is:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Processed entirely on your device using Apple's built-in OCR</li>
+          <li>Never saved as photos or images</li>
+          <li>Never transmitted to any server</li>
+          <li>Never shared with any third party</li>
+        </ul>
+        <p>The camera is used solely to read text from food labels. No images are stored or leave your device.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">AI Analysis</h2>
+        <p>LabelWise uses Apple Foundation Models to analyze scanned label text. This AI processing:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Runs entirely on your device (on-device AI)</li>
+          <li>Does not send any data to external servers</li>
+          <li>Does not use cloud-based AI services</li>
+          <li>Does not transmit your food or health data anywhere</li>
+        </ul>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Data Storage</h2>
+        <p>Your scan history and preferences are stored locally on your device using SwiftData. This data never leaves your device and is not accessible to us or any third party.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Third-Party Services</h2>
+        <p>LabelWise does not use any third-party services, APIs, or SDKs. All functionality is powered by built-in Apple frameworks (VisionKit, Foundation Models, SwiftData).</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Children's Privacy</h2>
+        <p>LabelWise does not collect any personal information from anyone, including children under the age of 13.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. Changes will be posted on this page with an updated date.</p>
+
+        <h2 class="text-lg font-bold text-white mt-8 mb-3">Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:magic4e@gmail.com" class="text-accent-purple hover:underline">magic4e@gmail.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</Layout>
