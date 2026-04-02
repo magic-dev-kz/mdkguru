@@ -15,6 +15,8 @@ const appIcons: Record<string, string> = {
   currencysnap: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>`,
   roast: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>`,
   decode: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="9" y1="10" x2="15" y2="10"></line></svg>`,
+  labelwise: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line><line x1="11" y1="8" x2="11" y2="14"></line></svg>`,
+  ghostkitchen: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2C9 2 6 3.5 6 6c0 1.5.5 2.5 1.5 3.5"></path><path d="M12 2c3 0 6 1.5 6 4 0 1.5-.5 2.5-1.5 3.5"></path><path d="M8.5 9.5C7 11 6 12 6 14h12c0-2-1-3-2.5-4.5"></path><rect x="5" y="14" width="14" height="4" rx="1"></rect><path d="M8 18v3"></path><path d="M16 18v3"></path></svg>`,
 };
 
 interface AppItem {
@@ -41,9 +43,11 @@ const iosApps: AppItem[] = [
   { iconKey: 'winlog', title: 'MyWins', desc: 'Success diary in 30 seconds. Voice input, insights, calendar heatmap, Face ID. Bodo Schafer method.', status: 'beta', slug: 'winlog', stack: 'SwiftUI + Apple Speech' },
   { iconKey: 'wificard', title: 'WifiCard', desc: 'Beautiful WiFi QR cards. Guests scan and connect. 6 templates, print, offline.', status: 'beta', slug: 'wificard', stack: 'SwiftUI + CoreImage' },
   { iconKey: 'huecraft', title: 'HueCraft', desc: 'One HEX, full design system. 40+ tokens, light + dark mode, WCAG auto-fix. CSS, Swift, Tailwind, JSON.', status: 'beta', slug: 'huecraft', stack: 'SwiftUI + OKLCH' },
-  { iconKey: 'currencysnap', title: 'PriceLens', desc: 'Point camera at a price tag, see it in your currency. 30 currencies, offline, built for travelers.', status: 'beta', slug: 'currencysnap', stack: 'SwiftUI + VisionKit' },
+  { iconKey: 'currencysnap', title: 'PriceLens', desc: 'Point camera at a price tag, see it in your currency. 150+ currencies, offline, built for travelers.', status: 'beta', slug: 'currencysnap', stack: 'SwiftUI + VisionKit' },
   { iconKey: 'roast', title: 'Roast My Listing', desc: 'AI listing critic. Paste text, get a score, flaw breakdown, and a ready rewrite. On-device AI.', status: 'beta', slug: 'roast-my-listing', stack: 'SwiftUI + Apple Intelligence' },
   { iconKey: 'decode', title: 'Decode My Boss', desc: 'Corporate speak decoder. Paste a message from your boss, get the real meaning and toxicity score.', status: 'beta', slug: 'decode-my-boss', stack: 'SwiftUI + Apple Intelligence' },
+  { iconKey: 'labelwise', title: 'LabelWise', desc: 'Food label scanner. 236 E-numbers decoded, dietary alerts, ingredient safety ratings. On-device AI.', status: 'beta', slug: 'labelwise', stack: 'SwiftUI + VisionKit + Foundation Models' },
+  { iconKey: 'ghostkitchen', title: 'GhostKitchen', desc: 'AI cooking assistant. 40 built-in recipes, voice-guided cooking mode, pantry management. On-device AI.', status: 'beta', slug: 'ghostkitchen', stack: 'SwiftUI + Foundation Models + Speech' },
 ];
 
 const statusLabels: Record<string, { text: string; color: string }> = {
