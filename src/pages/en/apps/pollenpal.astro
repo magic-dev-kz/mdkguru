@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 ---
-<Layout title="PollenPal - Pollen Forecast" description="Personal pollen forecast. Safety Score by YOUR allergens. Best hour to go outside. Free.">
+<Layout title="PollenPal: Allergy Forecast — Real Help for Allergy Sufferers" description="Personal Safety Score by YOUR allergens. Pollen + air quality on one screen. Best hour to go outside. Free, no ads.">
   <div class="pt-24 min-h-screen">
     <div class="max-w-3xl mx-auto px-4 py-16">
       <a href="/en/apps" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; All apps</a>
@@ -9,56 +9,77 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="flex items-center gap-6 mt-8 mb-12">
         <img src="/apps/pollenpal-icon.png" alt="PollenPal icon" width="128" height="128" class="rounded-[28px] shadow-lg" />
         <div>
-          <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">PollenPal</span></h1>
-          <p class="text-xl text-text-muted">Personal Pollen Forecast</p>
+          <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">PollenPal: Allergy Forecast</span></h1>
+          <p class="text-xl text-text-muted">Real help for allergy season</p>
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <div class="mb-12 overflow-x-auto">
+        <div class="flex gap-4 pb-4" style="min-width: max-content;">
+          <img src="/apps/pollenpal/screenshots/en/screenshot_1_today.png" alt="Safety Score dashboard" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_2_airquality.png" alt="Air quality index" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_3_forecast.png" alt="5-day forecast" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_4_onboarding.png" alt="Choose your allergens" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_5_symptoms.png" alt="Symptom diary" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_6_darkmode.png" alt="Dark mode" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_7_allergens.png" alt="Allergen details" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
         </div>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
         <p class="text-text-muted leading-relaxed mb-6">
-          Know before you sneeze. PollenPal gives you a personal Safety Score based on YOUR allergens — not a generic forecast for everyone. See the best hour to go outside today.
-        </p>
-        <p class="text-text-muted leading-relaxed mb-6">
-          Most allergy apps show the same pollen count for everyone. But if you're only allergic to birch, why should high grass pollen ruin your day? PollenPal calculates your Safety Score (0-10) based only on the allergens that affect YOU. Set up once, get personal forecasts forever.
+          Know before you sneeze. PollenPal gives you a personal Safety Score based on YOUR allergens — not a generic forecast for everyone. See the best hour to go outside, factoring in both pollen and air quality.
         </p>
 
-        <h2 class="text-lg font-bold text-white mb-4">Your Morning Answer</h2>
+        <h2 class="text-lg font-bold text-white mb-4">Personal, Not Generic</h2>
         <p class="text-text-muted leading-relaxed mb-6">
-          Every morning the same question: park or stay home? PollenPal answers it with a number. Score 8+? Grab the stroller. Score 3? Maybe an indoor day. No guessing, no googling "pollen count [city]".
+          Most allergy apps show the same number for everyone. But if you're only allergic to birch, why worry about grass? PollenPal calculates your Safety Score (0–10) based only on the allergens that affect YOU. Set up once — use it forever.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Pollen + Air Quality = The Full Picture</h2>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Pollen is only half the problem. Poor air quality makes allergies far worse. PollenPal shows both pollen levels and air quality (AQI, PM2.5) on one screen — so you see the real situation, not just part of it.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Park or Stay Home?</h2>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Every morning, the same question: is it safe to go out? PollenPal answers with a number. Score 8+? Grab the stroller. Score 3? Better stay in. No guessing, no googling.
         </p>
 
         <h2 class="text-lg font-bold text-white mb-4">Features</h2>
         <ul class="space-y-3 text-text-muted mb-6">
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Personal Safety Score</strong> — 0-10 based on YOUR allergens: birch, grass, ragweed, mugwort, alder, olive</span>
+            <span><strong class="text-white">Personal Safety Score</strong> — 0–10 by your allergens: birch, grass, ragweed, mugwort, alder, olive</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Best Hour to Go Outside</strong> — hourly pollen forecast shows when levels drop. Plan your walk around your safest window</span>
+            <span><strong class="text-white">Best Hour to Go Outside</strong> — when both pollen and air are safe. Plan your walk around that window</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">5-Day Forecast</strong> — plan your week, know which days are safe and which to avoid</span>
+            <span><strong class="text-white">5-Day Forecast</strong> — see which days are safe and which to avoid</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Symptom Diary</strong> — log sneezing, congestion, itchy eyes daily. PollenPal shows which pollen types correlate with YOUR worst days</span>
+            <span><strong class="text-white">Symptom Diary</strong> — log sneezing, congestion, itchy eyes. See which pollen type is ruining your day</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Air Quality Index</strong> — AQI, PM2.5, and ozone levels. Full picture beyond pollen — know when air pollution makes it worse</span>
+            <span><strong class="text-white">Air Quality</strong> — AQI, PM2.5 in real time. Full picture beyond pollen</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Independent & Private</strong> — no drug company behind us. No ads. No account required. No data leaves your phone</span>
+            <span><strong class="text-white">Private & Independent</strong> — no drug company behind us. No ads. No sign-up. Your data never leaves your phone</span>
           </li>
         </ul>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
-        <h2 class="text-lg font-bold text-white mb-4">Coming to App Store</h2>
-        <p class="text-text-muted">PollenPal is preparing for release. Free for iOS.</p>
+        <h2 class="text-lg font-bold text-white mb-4">Available on the App Store</h2>
+        <p class="text-text-muted mb-4">Free for iOS. No ads, no subscription.</p>
+        <p class="text-sm text-text-muted">Built by a team of AI agents and one human with a simple goal — to finally give allergy sufferers an app that actually helps.</p>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">

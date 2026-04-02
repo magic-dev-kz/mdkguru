@@ -1,70 +1,91 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 ---
-<Layout title="Прогноз Пыльцы - Прогноз пыльцы" description="Персональный прогноз пыльцы. Балл безопасности по твоим аллергенам. Лучший час для прогулки. Бесплатно.">
+<Layout title="PollenPal: Allergy Forecast — Реальная помощь аллергикам" description="Персональный балл безопасности по твоим аллергенам. Пыльца + воздух на одном экране. Лучший час для прогулки. Бесплатно, без рекламы.">
   <div class="pt-24 min-h-screen">
     <div class="max-w-3xl mx-auto px-4 py-16">
       <a href="/ru/apps" class="text-sm text-text-muted hover:text-accent-purple transition-colors">&larr; Все приложения</a>
 
       <div class="flex items-center gap-6 mt-8 mb-12">
-        <img src="/apps/pollenpal-icon.png" alt="Прогноз Пыльцы icon" width="128" height="128" class="rounded-[28px] shadow-lg" />
+        <img src="/apps/pollenpal-icon.png" alt="PollenPal icon" width="128" height="128" class="rounded-[28px] shadow-lg" />
         <div>
-          <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">Прогноз Пыльцы</span></h1>
-          <p class="text-xl text-text-muted">Персональный прогноз пыльцы</p>
+          <h1 class="text-4xl font-bold mb-3"><span class="gradient-text">PollenPal — Прогноз Аллергии</span></h1>
+          <p class="text-xl text-text-muted">Реальная помощь аллергикам</p>
+        </div>
+      </div>
+
+      <!-- Скриншоты -->
+      <div class="mb-12 overflow-x-auto">
+        <div class="flex gap-4 pb-4" style="min-width: max-content;">
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_1_airquality.png" alt="Качество воздуха" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_2_today.png" alt="Балл безопасности" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_3_forecast.png" alt="Прогноз на 5 дней" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_4_onboarding.png" alt="Выбор аллергенов" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_5_symptoms.png" alt="Дневник симптомов" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_6_darkmode.png" alt="Тёмная тема" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/ru/screenshot_7_allergens.png" alt="Детали аллергенов" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
         </div>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
         <p class="text-text-muted leading-relaxed mb-6">
-          Узнай до того, как чихнёшь. Прогноз Пыльцы даёт персональный Балл безопасности по ТВОИМ аллергенам — не средний прогноз для всех. Покажет лучший час для прогулки.
-        </p>
-        <p class="text-text-muted leading-relaxed mb-6">
-          Большинство приложений показывают один и тот же уровень пыльцы для всех. Но если у тебя аллергия только на берёзу, зачем переживать из-за высокой травы? Прогноз Пыльцы считает твой Балл безопасности (0-10) только по тем аллергенам, которые влияют на ТЕБЯ. Настрой один раз — получай личный прогноз всегда.
+          Узнай до того, как чихнёшь. PollenPal даёт персональный балл безопасности по ТВОИМ аллергенам — не средний прогноз для всех. Покажет лучший час для прогулки с учётом пыльцы и качества воздуха.
         </p>
 
-        <h2 class="text-lg font-bold text-white mb-4">Твой утренний ответ</h2>
+        <h2 class="text-lg font-bold text-white mb-4">Персональный, не общий</h2>
         <p class="text-text-muted leading-relaxed mb-6">
-          Каждое утро один вопрос: парк или дома? Прогноз Пыльцы отвечает числом. Балл 8+? Берём коляску. Балл 3? Лучше остаться дома. Без гадания, без гугления "уровень пыльцы [город]".
+          Большинство приложений показывают одну и ту же цифру для всех. Но если у тебя аллергия на берёзу — зачем тебе бояться травы? PollenPal считает Балл безопасности (0–10) только по твоим аллергенам. Настрой один раз — пользуйся всегда.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Пыльца + воздух = полная картина</h2>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Пыльца — только половина проблемы. Грязный воздух усиливает аллергию в разы. PollenPal показывает и пыльцу, и качество воздуха (AQI, PM2.5) на одном экране — чтобы ты видел реальную картину, а не часть её.
+        </p>
+
+        <h2 class="text-lg font-bold text-white mb-4">Парк или дома?</h2>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Каждое утро одно и то же: можно гулять или лучше не рисковать? PollenPal отвечает числом. Балл 8+? Берём коляску. Балл 3? Остаёмся дома. Никаких гаданий.
         </p>
 
         <h2 class="text-lg font-bold text-white mb-4">Возможности</h2>
         <ul class="space-y-3 text-text-muted mb-6">
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Персональный Балл безопасности</strong> — 0-10 только по твоим аллергенам: берёза, трава, амброзия, полынь, ольха, олива</span>
+            <span><strong class="text-white">Персональный Балл безопасности</strong> — 0–10 по твоим аллергенам: берёза, трава, амброзия, полынь, ольха, олива</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Лучший час для прогулки</strong> — почасовой прогноз, когда уровень пыльцы падает. Планируй прогулку на самое безопасное окно</span>
+            <span><strong class="text-white">Лучший час для прогулки</strong> — когда и пыльца, и воздух в норме. Планируй прогулку на самое безопасное окно</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Прогноз на 5 дней</strong> — планируй неделю, знай какие дни безопасны, а каких лучше избежать</span>
+            <span><strong class="text-white">Прогноз на 5 дней</strong> — смотри наперёд, какие дни безопасны, а каких лучше избежать</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Дневник симптомов</strong> — отмечай чихание, заложенность, зуд ежедневно. Покажет, какие типы пыльцы совпадают с твоими худшими днями</span>
+            <span><strong class="text-white">Дневник симптомов</strong> — отмечай чихание, заложенность, зуд. Увидишь, какая пыльца портит тебе жизнь</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Индекс качества воздуха</strong> — AQI, PM2.5 и озон. Полная картина не только по пыльце, но и по загрязнению воздуха</span>
+            <span><strong class="text-white">Качество воздуха</strong> — AQI, PM2.5 в реальном времени. Полная картина, не только пыльца</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-accent-green mt-1">&#10003;</span>
-            <span><strong class="text-white">Независимый и приватный</strong> — за нами нет фармкомпании. Без рекламы. Без регистрации. Данные не покидают телефон</span>
+            <span><strong class="text-white">Приватный и независимый</strong> — за нами нет фармкомпании. Без рекламы. Без регистрации. Данные не покидают телефон</span>
           </li>
         </ul>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
-        <h2 class="text-lg font-bold text-white mb-4">Скоро в App Store</h2>
-        <p class="text-text-muted">Прогноз Пыльцы готовится к публикации. Бесплатно для iOS.</p>
+        <h2 class="text-lg font-bold text-white mb-4">Доступно в App Store</h2>
+        <p class="text-text-muted mb-4">Бесплатно для iOS. Без рекламы, без подписок.</p>
+        <p class="text-sm text-text-muted">Сделано командой ИИ-агентов и одним человеком с простой целью — чтобы аллергики наконец получили приложение, которое реально помогает.</p>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
         <h2 class="text-lg font-bold text-white mb-4">Конфиденциальность</h2>
         <p class="text-text-muted mb-3">Геолокация используется только для прогноза пыльцы и не сохраняется на серверах. Можно ввести город вручную.</p>
-        <a href="/apps/pollenpal/privacy" class="text-sm text-accent-purple hover:underline">Privacy Policy &rarr;</a>
+        <a href="/apps/pollenpal/privacy" class="text-sm text-accent-purple hover:underline">Политика конфиденциальности &rarr;</a>
       </div>
 
       <div class="text-sm text-text-muted">
