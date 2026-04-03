@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-02T08:45:18.036518+07:00",
+  "updatedAt": "2026-04-03T08:45:51.891514+07:00",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -36,7 +36,7 @@
       "name": "Молот",
       "emoji": "🔨",
       "role": "Scout",
-      "online": true,
+      "online": false,
       "avatar": "/agents/avatar_molot.png",
       "color": "#B42828",
       "lastActivity": "10 разведок за день",
