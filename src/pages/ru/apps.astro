@@ -6,6 +6,7 @@ const appIcons: Record<string, string> = {
   mdkguru: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`,
   kazakvpn: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`,
   qr: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line><line x1="5" y1="10" x2="19" y2="10"></line></svg>`,
+  elvira: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><circle cx="9" cy="10" r="1" fill="url(#solanaGrad)"></circle><circle cx="15" cy="10" r="1" fill="url(#solanaGrad)"></circle></svg>`,
   roomcalc: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="10" y2="10"></line><line x1="14" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="10" y2="14"></line><line x1="14" y1="14" x2="16" y2="14"></line><line x1="8" y1="18" x2="16" y2="18"></line></svg>`,
   drift: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>`,
   pollenpal: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#solanaGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 2a5 5 0 0 1 5 5c0 2-1.5 3.5-3 4.5V14h-4v-2.5C8.5 10.5 7 9 7 7a5 5 0 0 1 5-5z"></path><path d="M10 14v4a2 2 0 1 0 4 0v-4"></path><line x1="12" y1="22" x2="12" y2="18"></line></svg>`,
@@ -37,6 +38,7 @@ const webApps: AppItem[] = [
 ];
 
 const iosApps: AppItem[] = [
+  { iconKey: 'elvira', title: 'Эльвира — AI-нутрициолог', desc: 'Персональный AI-нутрициолог. Считает КБЖУ по фото и тексту, ведёт дневник питания, составляет меню. Голосовой ввод.', status: 'live', url: '/ru/elvira', stack: 'SwiftUI + Claude + Telegram Bot' },
   { iconKey: 'roomcalc', title: 'Калькулятор Ремонта', desc: '8 строительных калькуляторов + список покупок. Плитка, краска, обои, бетон. Бесплатно навсегда, без рекламы, офлайн.', status: 'beta', slug: 'roomcalc', stack: 'SwiftUI' },
   { iconKey: 'drift', title: 'Мягкие Привычки', desc: 'Трекер привычек без наказания. Momentum вместо серий. День отдыха — полноценная функция. Одна привычка за раз.', status: 'beta', slug: 'drift', stack: 'SwiftUI + iCloud' },
   { iconKey: 'pollenpal', title: 'PollenPal — Прогноз Аллергии', desc: 'Реальная помощь аллергикам. Персональный балл безопасности по твоим аллергенам. Пыльца + воздух. Лучший час для прогулки.', status: 'live', slug: 'pollenpal', stack: 'SwiftUI + Open-Meteo API' },
@@ -66,7 +68,7 @@ const statusLabels: Record<string, { text: string; color: string }> = {
       <h2 class="text-2xl font-bold text-white mb-6">iOS</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {iosApps.map(app => (
-          <a href={`/ru/apps/${app.slug}`} class="card-hover p-6 rounded-xl border border-border bg-bg-card block transition-transform hover:scale-[1.02]">
+          <a href={app.url || `/ru/apps/${app.slug}`} class="card-hover p-6 rounded-xl border border-border bg-bg-card block transition-transform hover:scale-[1.02]">
             <div class="flex items-start justify-between mb-3">
               <div class="w-10 h-10" set:html={appIcons[app.iconKey]} />
               <span class={`text-xs px-2 py-1 rounded-full ${statusLabels[app.status].color}`}>

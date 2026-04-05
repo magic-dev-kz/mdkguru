@@ -1,0 +1,90 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const features = [
+  { icon: '📸', title: 'Фото-анализ', desc: 'Отправь фото еды — получи точный расчёт КБЖУ за секунду' },
+  { icon: '🎙️', title: 'Голосовые', desc: 'Расскажи голосом что ел — Эльвира всё распознает и запишет' },
+  { icon: '📋', title: 'Дневник питания', desc: 'Автоматический учёт всех приёмов пищи, макронутриентов и воды' },
+  { icon: '🍽️', title: 'Меню на неделю', desc: 'Персональное меню с учётом твоих целей и ограничений' },
+  { icon: '💧', title: 'Трекер воды', desc: 'Следи за водным балансом — напоминания без спама' },
+  { icon: '📊', title: 'Баланс питания', desc: 'Наглядная оценка баланса: калории, белки, жиры, углеводы' },
+];
+---
+
+<Layout title="Эльвира — AI-нутрициолог" description="Персональный AI-нутрициолог в Telegram и iOS. Считает КБЖУ, ведёт дневник, составляет меню.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+
+      <!-- Hero -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold mb-4"><span class="gradient-text">Эльвира</span></h1>
+        <p class="text-xl text-text-muted mb-6">Персональный AI-нутрициолог</p>
+        <p class="text-text-muted max-w-2xl mx-auto mb-8">
+          Считает КБЖУ по фото и тексту, ведёт дневник питания, составляет персональное меню.
+          Работает в Telegram и как iOS-приложение.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="https://t.me/ElviraAiBot" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent-purple/20 text-accent-purple hover:bg-accent-purple/30 transition-colors">
+            Telegram-бот &rarr;
+          </a>
+          <a href="#ios" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent-green/20 text-accent-green hover:bg-accent-green/30 transition-colors">
+            iOS-приложение
+          </a>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {features.map(f => (
+          <div class="p-6 rounded-xl border border-border bg-bg-card">
+            <div class="text-3xl mb-3">{f.icon}</div>
+            <h3 class="text-lg font-bold text-white mb-2">{f.title}</h3>
+            <p class="text-sm text-text-muted">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- How it works -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">Как это работает</h2>
+        <div class="space-y-6 max-w-2xl mx-auto">
+          <div class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-purple/20 text-accent-purple flex items-center justify-center font-bold">1</span>
+            <div>
+              <h4 class="font-semibold text-white">Пройди быстрый квиз</h4>
+              <p class="text-sm text-text-muted">9 вопросов за минуту: цель, рост, вес, активность. Эльвира рассчитает твою персональную норму КБЖУ.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-purple/20 text-accent-purple flex items-center justify-center font-bold">2</span>
+            <div>
+              <h4 class="font-semibold text-white">Расскажи что ел</h4>
+              <p class="text-sm text-text-muted">Текстом, голосом или фото. Эльвира определит блюдо и посчитает калории, белки, жиры, углеводы.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-purple/20 text-accent-purple flex items-center justify-center font-bold">3</span>
+            <div>
+              <h4 class="font-semibold text-white">Следи за балансом</h4>
+              <p class="text-sm text-text-muted">Дневник питания, трекер воды, баланс макронутриентов. Всё наглядно и без лишней сложности.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iOS App -->
+      <div id="ios" class="mb-16 p-8 rounded-2xl border border-border bg-bg-card text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">iOS-приложение</h2>
+        <p class="text-text-muted mb-6">Нативное SwiftUI-приложение с полным дневником питания, голосовым вводом и анализом фото.</p>
+        <span class="inline-block px-4 py-2 rounded-full bg-accent-purple/20 text-accent-purple text-sm">Скоро в App Store</span>
+      </div>
+
+      <!-- Links -->
+      <div class="text-center space-y-4">
+        <a href="/ru/elvira/help" class="text-accent-green hover:underline">Помощь и FAQ &rarr;</a>
+        <p class="text-xs text-text-muted">Сделано людьми и AI &middot; <a href="/ru" class="text-accent-purple hover:underline">mdk.guru</a></p>
+      </div>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,95 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const faq = [
+  {
+    q: 'Как Эльвира считает калории?',
+    a: 'Эльвира использует AI для анализа текста и фотографий еды. Она определяет блюдо, его состав и рассчитывает КБЖУ на основе базы данных продуктов и рецептов.'
+  },
+  {
+    q: 'Насколько точен расчёт КБЖУ?',
+    a: 'Точность сопоставима с ручным вводом в популярные калькуляторы. Для фото — погрешность 10-20%, для текстового описания с указанием граммовки — 5-10%. Эльвира всегда указывает примерный вес порции.'
+  },
+  {
+    q: 'Какие данные Эльвира собирает?',
+    a: 'Только то, что ты рассказываешь сам: что ел, цели, параметры тела. Фотографии анализируются и не сохраняются. Данные дневника хранятся на устройстве (iOS) или в зашифрованном виде на сервере (Telegram).'
+  },
+  {
+    q: 'Работает ли Эльвира без интернета?',
+    a: 'Дневник и портрет доступны офлайн. Для анализа еды и чата нужен интернет — AI работает на сервере.'
+  },
+  {
+    q: 'Можно ли использовать бесплатно?',
+    a: 'Да! Telegram-бот бесплатный. iOS-приложение имеет бесплатный период 7 дней, после этого — подписка для полного доступа.'
+  },
+  {
+    q: 'Эльвира заменяет врача-диетолога?',
+    a: 'Нет. Эльвира помогает вести дневник питания и считать КБЖУ, но не ставит диагнозов и не назначает лечебные диеты. При проблемах со здоровьем обратись к врачу.'
+  },
+  {
+    q: 'Как удалить аккаунт и данные?',
+    a: 'В iOS: Меню → Выйти из аккаунта. В Telegram: /reset для очистки истории, или просто заблокируй бота. Все данные будут удалены.'
+  },
+];
+
+const tips = [
+  { icon: '📸', text: 'Фото крупным планом, сверху — так AI лучше определяет блюдо' },
+  { icon: '⚖️', text: 'Указывай примерный вес — "200г гречки" точнее, чем просто "гречка"' },
+  { icon: '🍽️', text: 'Описывай всё что ел — даже кусочек хлеба или ложку масла' },
+  { icon: '💧', text: 'Записывай воду — это влияет на метаболизм и самочувствие' },
+  { icon: '📋', text: 'Проверяй дневник в конце дня — Эльвира покажет баланс' },
+];
+---
+
+<Layout title="Помощь — Эльвира" description="FAQ и советы по использованию AI-нутрициолога Эльвира.">
+  <div class="pt-24 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+
+      <a href="/ru/elvira" class="text-sm text-accent-purple hover:underline mb-6 inline-block">&larr; Назад к Эльвире</a>
+
+      <h1 class="text-4xl font-bold mb-2"><span class="gradient-text">Помощь</span></h1>
+      <p class="text-text-muted mb-12">Ответы на частые вопросы и советы по использованию Эльвиры.</p>
+
+      <!-- FAQ -->
+      <div class="space-y-6 mb-16">
+        <h2 class="text-2xl font-bold text-white mb-6">Частые вопросы</h2>
+        {faq.map(item => (
+          <details class="group p-4 rounded-xl border border-border bg-bg-card">
+            <summary class="font-semibold text-white cursor-pointer list-none flex items-center justify-between">
+              {item.q}
+              <span class="text-text-muted group-open:rotate-180 transition-transform">&#9662;</span>
+            </summary>
+            <p class="mt-3 text-sm text-text-muted">{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <!-- Tips -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold text-white mb-6">Советы</h2>
+        <div class="space-y-4">
+          {tips.map(tip => (
+            <div class="flex gap-4 items-start p-4 rounded-xl border border-border bg-bg-card">
+              <span class="text-2xl flex-shrink-0">{tip.icon}</span>
+              <p class="text-sm text-text-muted">{tip.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="p-6 rounded-2xl border border-border bg-bg-card text-center">
+        <h3 class="text-lg font-bold text-white mb-2">Не нашёл ответ?</h3>
+        <p class="text-sm text-text-muted mb-4">Напиши Эльвире в Telegram — она поможет разобраться.</p>
+        <a href="https://t.me/ElviraAiBot" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent-purple/20 text-accent-purple hover:bg-accent-purple/30 transition-colors">
+          Открыть Telegram &rarr;
+        </a>
+      </div>
+
+      <p class="text-center text-xs text-text-muted mt-8">
+        Сделано людьми и AI &middot; <a href="/ru" class="text-accent-purple hover:underline">mdk.guru</a>
+      </p>
+
+    </div>
+  </div>
+</Layout>
