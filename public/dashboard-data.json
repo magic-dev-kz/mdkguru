@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-04T08:45:09.970592+07:00",
+  "updatedAt": "2026-04-07T00:45:47.216967+07:00",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -10,7 +10,7 @@
       "name": "Мо",
       "emoji": "⚙️",
       "role": "COO",
-      "online": false,
+      "online": true,
       "avatar": "/agents/avatar_mo.png",
       "color": "#3C64DC",
       "lastActivity": "Координация задач, отчёты",
@@ -20,7 +20,7 @@
       "name": "Изя",
       "emoji": "📣",
       "role": "SMM",
-      "online": true,
+      "online": false,
       "avatar": "/agents/avatar_izya.png",
       "color": "#DC32B4",
       "lastActivity": "Логотип Only Original v5 Chrome",
