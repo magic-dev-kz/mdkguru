@@ -15,15 +15,15 @@ import Layout from '../../../layouts/Layout.astro';
       </div>
 
       <!-- Screenshots -->
-      <div class="mb-12 overflow-x-auto">
-        <div class="flex gap-4 pb-4" style="min-width: max-content;">
-          <img src="/apps/pollenpal/screenshots/en/screenshot_1_today.png" alt="Safety Score dashboard" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/en/screenshot_2_airquality.png" alt="Air quality index" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/en/screenshot_3_forecast.png" alt="5-day forecast" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/en/screenshot_4_onboarding.png" alt="Choose your allergens" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/en/screenshot_5_symptoms.png" alt="Symptom diary" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/en/screenshot_6_darkmode.png" alt="Dark mode" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/en/screenshot_7_allergens.png" alt="Allergen details" class="h-[500px] rounded-2xl shadow-lg" loading="lazy" />
+      <div class="mb-12 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4" style="-webkit-overflow-scrolling: touch;">
+        <div class="flex gap-4 pb-4">
+          <img src="/apps/pollenpal/screenshots/en/screenshot_1_today.png" alt="Safety Score dashboard" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_2_airquality.png" alt="Air quality index" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_3_forecast.png" alt="5-day forecast" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_4_onboarding.png" alt="Choose your allergens" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_5_symptoms.png" alt="Symptom diary" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_6_darkmode.png" alt="Dark mode" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
+          <img src="/apps/pollenpal/screenshots/en/screenshot_7_allergens.png" alt="Allergen details" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
         </div>
       </div>
 
@@ -85,9 +85,16 @@ import Layout from '../../../layouts/Layout.astro';
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
-        <h2 class="text-lg font-bold text-white mb-4">Available on the App Store</h2>
-        <p class="text-text-muted mb-4">Free for iOS. No ads, no subscription.</p>
-        <p class="text-sm text-text-muted">Built by a team of AI agents and one human with a simple goal — to finally give allergy sufferers an app that actually helps.</p>
+        <h2 class="text-lg font-bold text-white mb-4">Download Free</h2>
+        <p class="text-text-muted mb-6">Free for iOS. No ads, no subscription.</p>
+        <a href="https://apps.apple.com/app/id6761559299" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors border border-white/20">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div>
+            <div class="text-xs text-white/70">Download on the</div>
+            <div class="text-lg font-semibold text-white leading-tight">App Store</div>
+          </div>
+        </a>
+        <p class="text-sm text-text-muted mt-4">Built by a team of AI agents and one human with a simple goal — to finally give allergy sufferers an app that actually helps.</p>
       </div>
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
