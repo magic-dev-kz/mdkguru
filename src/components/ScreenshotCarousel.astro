@@ -10,17 +10,17 @@ interface Props {
 const { screenshots, id = 'carousel' } = Astro.props;
 ---
 
-<div class="mb-12 relative group" data-carousel={id}>
+<div class="mb-12 relative group" data-carousel={id} data-total={screenshots.length}>
   <!-- Carousel container -->
   <div class="overflow-hidden rounded-2xl">
     <div class="flex transition-transform duration-300 ease-out" data-carousel-track>
       {screenshots.map((s, i) => (
-        <div class="w-full flex-shrink-0 flex justify-center px-4" data-carousel-slide>
+        <div class="carousel-slide flex-shrink-0 flex justify-center px-2" data-carousel-slide>
           <img
             src={s.src}
             alt={s.alt}
             class="h-[420px] sm:h-[520px] rounded-2xl shadow-lg select-none"
-            loading={i === 0 ? 'eager' : 'lazy'}
+            loading={i < 3 ? 'eager' : 'lazy'}
             draggable="false"
           />
         </div>
@@ -31,14 +31,14 @@ const { screenshots, id = 'carousel' } = Astro.props;
   <!-- Arrow buttons -->
   <button
     data-carousel-prev
-    class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/80 disabled:opacity-0 z-10"
+    class="absolute left-1 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-white flex items-center justify-center sm:opacity-0 sm:group-hover:opacity-100 opacity-70 transition-opacity duration-200 hover:bg-black/80 disabled:opacity-0 z-10"
     aria-label="Previous"
   >
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
   </button>
   <button
     data-carousel-next
-    class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/80 disabled:opacity-0 z-10"
+    class="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-white flex items-center justify-center sm:opacity-0 sm:group-hover:opacity-100 opacity-70 transition-opacity duration-200 hover:bg-black/80 disabled:opacity-0 z-10"
     aria-label="Next"
   >
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -56,6 +56,19 @@ const { screenshots, id = 'carousel' } = Astro.props;
   </div>
 </div>
 
+<style>
+  /* Mobile: 1 slide */
+  .carousel-slide {
+    width: 100%;
+  }
+  /* Desktop: 3 slides */
+  @media (min-width: 640px) {
+    .carousel-slide {
+      width: 33.333%;
+    }
+  }
+</style>
+
 <script>
   document.querySelectorAll('[data-carousel]').forEach(carousel => {
     const track = carousel.querySelector('[data-carousel-track]') as HTMLElement;
@@ -66,17 +79,28 @@ const { screenshots, id = 'carousel' } = Astro.props;
     let current = 0;
     const total = slides.length;
 
+    function getPerView(): number {
+      return window.innerWidth >= 640 ? 3 : 1;
+    }
+
+    function getSlideWidth(): number {
+      return 100 / getPerView();
+    }
+
+    function getMaxIndex(): number {
+      return Math.max(0, total - getPerView());
+    }
+
     // Touch/drag state
     let startX = 0;
     let isDragging = false;
     let dragOffset = 0;
 
     function goTo(index: number) {
-      current = Math.max(0, Math.min(index, total - 1));
-      track.style.transform = `translateX(-${current * 100}%)`;
+      current = Math.max(0, Math.min(index, getMaxIndex()));
+      track.style.transform = `translateX(-${current * getSlideWidth()}%)`;
       prevBtn.disabled = current === 0;
-      nextBtn.disabled = current === total - 1;
-      // On mobile, always show arrows slightly
+      nextBtn.disabled = current >= getMaxIndex();
       dots.forEach((dot, i) => {
         const el = dot as HTMLElement;
         if (i === current) {
@@ -108,7 +132,7 @@ const { screenshots, id = 'carousel' } = Astro.props;
       if (!isDragging) return;
       dragOffset = e.touches[0].clientX - startX;
       const pct = (dragOffset / (carousel as HTMLElement).offsetWidth) * 100;
-      track.style.transform = `translateX(calc(-${current * 100}% + ${pct}%))`;
+      track.style.transform = `translateX(calc(-${current * getSlideWidth()}% + ${pct}%))`;
     }, { passive: true });
 
     track.addEventListener('touchend', () => {
@@ -135,7 +159,7 @@ const { screenshots, id = 'carousel' } = Astro.props;
       if (!isDragging) return;
       dragOffset = e.clientX - startX;
       const pct = (dragOffset / (carousel as HTMLElement).offsetWidth) * 100;
-      track.style.transform = `translateX(calc(-${current * 100}% + ${pct}%))`;
+      track.style.transform = `translateX(calc(-${current * getSlideWidth()}% + ${pct}%))`;
     });
 
     window.addEventListener('mouseup', () => {
@@ -157,6 +181,9 @@ const { screenshots, id = 'carousel' } = Astro.props;
       if (key === 'ArrowLeft') goTo(current - 1);
       if (key === 'ArrowRight') goTo(current + 1);
     });
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => goTo(current));
 
     goTo(0);
   });
