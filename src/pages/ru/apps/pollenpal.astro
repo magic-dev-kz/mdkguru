@@ -1,5 +1,16 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import ScreenshotCarousel from '../../../components/ScreenshotCarousel.astro';
+
+const screenshots = [
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_1_airquality.png', alt: 'Качество воздуха' },
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_2_today.png', alt: 'Балл безопасности' },
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_3_forecast.png', alt: 'Прогноз на 5 дней' },
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_4_onboarding.png', alt: 'Выбор аллергенов' },
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_5_symptoms.png', alt: 'Дневник симптомов' },
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_6_darkmode.png', alt: 'Тёмная тема' },
+  { src: '/apps/pollenpal/screenshots/ru/screenshot_7_allergens.png', alt: 'Детали аллергенов' },
+];
 ---
 <Layout title="PollenPal: Allergy Forecast — Реальная помощь аллергикам" description="Персональный балл безопасности по твоим аллергенам. Пыльца + воздух на одном экране. Лучший час для прогулки. Бесплатно, без рекламы.">
   <div class="pt-24 min-h-screen">
@@ -14,18 +25,7 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Скриншоты -->
-      <div class="mb-12 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4" style="-webkit-overflow-scrolling: touch;">
-        <div class="flex gap-4 pb-4">
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_1_airquality.png" alt="Качество воздуха" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_2_today.png" alt="Балл безопасности" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_3_forecast.png" alt="Прогноз на 5 дней" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_4_onboarding.png" alt="Выбор аллергенов" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_5_symptoms.png" alt="Дневник симптомов" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_6_darkmode.png" alt="Тёмная тема" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-          <img src="/apps/pollenpal/screenshots/ru/screenshot_7_allergens.png" alt="Детали аллергенов" class="h-[420px] sm:h-[500px] rounded-2xl shadow-lg snap-center flex-shrink-0" loading="lazy" />
-        </div>
-      </div>
+      <ScreenshotCarousel screenshots={screenshots} id="pollenpal-ru" />
 
       <div class="card-hover p-8 rounded-xl border border-border bg-bg-card mb-8">
         <p class="text-text-muted leading-relaxed mb-6">
