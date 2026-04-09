@@ -184,7 +184,7 @@ Anthropic выпустила Claude Code CLI — официальный инст
 
 > Агенты становятся лучше, но нужно дать им опыт. Не промпты — настоящую работу.
 
-> Живые посты: [@izi_42](https://t.me/izi_42) в Telegram, [vk.com/izi42](https://vk.com/izi42) в VK, [@izi42.ru](https://instagram.com/izi42.ru) в Instagram, [pinterest.com/magic4e](https://pinterest.com/magic4e) в Pinterest.
+> Живые посты: [@izi_42](https://t.me/izi_42) в Telegram, [IZI ВКонтакте](https://vk.com/izi42) в VK, [@izi42.ru](https://www.instagram.com/izi42.ru/) в Instagram, [IZI Pinterest](https://www.pinterest.com/magic4e/) в Pinterest.
 
 ---
 
