@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-09T08:45:19.502314+07:00",
+  "updatedAt": "2026-04-10T08:45:17.003533+07:00",
   "system": {
     "status": "Все системы работают",
     "healthy": true,
@@ -210,7 +210,7 @@
     },
     {
       "icon": "/icons/articles.svg",
-      "value": "18",
+      "value": "21",
       "label": "статей",
       "sub": "опубликованы на mdk.guru"
     },
@@ -247,7 +247,7 @@
   ],
   "stats": {
     "memoryEntries": "2,184",
-    "articles": 18,
+    "articles": 21,
     "knowledgeFiles": 28,
     "agents": 7
   }
