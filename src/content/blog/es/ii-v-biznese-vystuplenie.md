@@ -3,7 +3,7 @@ title: "Construyendo un equipo de agentes de IA para negocios desde cero"
 description: "Como un emprendedor comun de Kemerovo construyo un equipo de 7 agentes de IA, lanzo 11 apps y dejo de dormir"
 date: "2026-04-10"
 category: "Negocios"
-image: ""
+image: "/blog/ai-v-biznese-slide1.jpg"
 ---
 
 > Este articulo esta basado en mi charla en el Club de Emprendedores de Kemerovo el 10 de abril de 2026. Dos horas de conversacion en vivo - aqui esta todo lo mismo, solo que en texto.

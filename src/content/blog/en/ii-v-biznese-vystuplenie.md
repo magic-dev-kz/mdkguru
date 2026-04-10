@@ -3,7 +3,7 @@ title: "Building a Team of AI Agents for Business from Scratch"
 description: "How an ordinary entrepreneur from Kemerovo built a team of 7 AI agents, shipped 11 apps, and stopped sleeping"
 date: "2026-04-10"
 category: "Business"
-image: ""
+image: "/blog/ai-v-biznese-slide1.jpg"
 ---
 
 > This article is based on my talk at the Kemerovo Entrepreneurs Club on April 10, 2026. Two hours of live conversation — everything here is the same, just in text form.
