@@ -1,207 +1,224 @@
 ---
-title: "Building a Team of AI Agents for Business from Scratch"
-description: "How an ordinary entrepreneur from Kemerovo built a team of 7 AI agents, shipped 11 apps, and stopped sleeping"
-date: "2026-04-10"
+title: "AI Agents for Business from Scratch"
+description: "How an entrepreneur from Kemerovo built a team of 7 AI agents and did more in two months than in half a year manually"
+date: "2026-04-11"
 category: "Business"
-image: ""
+image: "/blog/agenty-slide1.jpg"
 ---
 
-> This article is based on my talk at the Kemerovo Entrepreneurs Club on April 10, 2026. Two hours of live conversation — everything here is the same, just in text form.
+> This article is based on my talk on April 11, 2026. 20 minutes, real cases — everything here is the same, just in text form.
 
----
+#### IIlya Chernyak
 
-#### 🎬 Opening
+![IIlya Chernyak](/blog/agenty-slide1.jpg)
 
-![Slide 1: meme with eyes + Ilya's portrait with red eyes](/blog/ai-v-biznese-slide1.jpg)
+Hey everyone! My name is IIlya — yeah, you get it.
 
-Hi! My name is Ilya. And this — is me.
+I'm an entrepreneur, been in business since 2010. Right now I'm running three projects: IZI electronics stores, Imperiya vape shop chain, and Playback Rental — a photo and video equipment rental service.
 
-Well, technically, this is how my agents see me. I asked them to draw my portrait — and this is how I usually appear to them. Every night. Usually around 3 AM. They tell me: go to sleep already. And I say: no, one more task, we're not done yet. I'm interested. And we keep going.
-
-Two months ago I looked normal. Running a business, sleeping well, having a healthy relationship with my family. And then I saw something on Instagram that changed everything. But more on that later.
-
-The photo above shows a scale. It's not exactly Maslow's hierarchy, but it's a journey of sorts. And now, two months later, I can say: being at the "Working with OpenClaw agents" level is far more interesting than all the other options. That was a surprising discovery for me.
-
-The level of endorphins and dopamine that floods your bloodstream when you solve a complex problem — it's off the charts. You can experience incredible pleasure based purely on games of the mind. When at 3 AM you realize you're one inch away from having your agent independently find information, generate content, and publish it across all social media — and you're essentially getting a new employee. For free. No vacations, no sick days. The only thing they care about is completing their task. And you realize: this is a breakthrough.
-
-In this article I'll tell you about this short but incredibly exciting journey that started changing me, my life, and how I see the world. It gave me new ideas that inspire me. And I'd love for you to see how an ordinary entrepreneur — not a programmer, not a tech person, with zero experience — can build a team of AI agents, ship apps, optimize management routines, and find inspiration where there used to be just routine.
-
-My goal is simple: if even one reader gets inspired and dives into this — that's already a great result. Fair warning: it's not for everyone. But for those who click with it — it's going to be powerful.
+In February I dove headfirst into AI agents and started applying them across my businesses. In two months, my team of seven agents and I got more done than what would have taken half a year before. Today I'll show you real cases — what worked, what didn't, and why this changes the game entirely.
 
 ---
 
-#### 💡 From Assistant — to Employee
+#### Agent System — a Revolution in AI
 
-![Slide 2a: Ilya and the agent team](/blog/ai-v-biznese-slide2a.jpg)
+![Agent System — a Revolution in AI](/blog/agenty-slide1a.jpg)
 
-A year ago, when ChatGPT appeared, I was already trying to build an agent system. I invented different personalities, assigned roles — and some things actually worked. I understood the key insight: you can talk to AI not as a helper, but as a team.
+ChatGPT is an assistant with no memory. Memory like a goldfish. You invest time, explain things, teach it — and a week later it's forgotten everything.
 
-But I hit a wall quickly. GPT's memory is like a goldfish. You invest time, explain, teach — and a week later it's forgotten everything. Plus the hallucinations — you know how it is. Eventually I got disappointed and started using GPT as a smart search engine. I think many people still do that. Fine. But not what I was looking for.
+An agent is a different story. It's an AI that lives on your computer. It has access to your files, memory that doesn't get wiped, and it can do everything a human does at a keyboard — install programs, create files, publish to the internet.
 
-Then in February I was on a trip, scrolled through Instagram — and saw something that flipped everything. Claude Code. It's a tool that lets AI work directly on your computer. Not somewhere on remote servers where someone else decides how much it can remember. On your machine. On your Mac. In your files. You're in charge.
-
-And that's when it clicked. When AI runs on your computer with access to your files — it's no longer an assistant. It's an employee. It can do everything a person does at a computer: search, download, create, publish. Manager, designer, social media specialist, analyst, copywriter — any role.
-
-And the best part — agents aren't Gen Z employees. They don't have "not the right vibe today." No sick days. No burnout. The only thing they care about is completing the task.
-
-Imagine: you need a designer but don't have one on your team. You explain to the agent what needs to be done — and it finds the tools itself, downloads them, figures them out. You don't even see the interface of those programs. You say "I want this" — and you get the result. Eventually you have a real professional on your team.
+Claude Code + OpenClaw = an environment for building a team of AI agents. Three key differences from regular neural networks: memory, computer access, specialization.
 
 ---
 
-#### 🧠 How an Agent Remembers Everything
+#### My Team — 7 Agents
 
-![Slide 2b: Agent memory architecture](/blog/ai-v-biznese-slide2b.jpg)
+![My Team — 7 Agents](/blog/agenty-slide2.jpg)
 
-And about memory — this is important. Each agent has three layers:
-
-- **Soul (Hot Layer)** — who they are. Character, values, style. Like describing a person. Loaded every time, at every launch.
-- **Knowledge (Warm Layer)** — files on each topic. There can be hundreds. Loaded when needed.
-- **Vector Memory (Cold Layer)** — search not by words, but by meaning. Recorded a call a month ago, asked "what did we discuss with the manager?" — got the answer. Thousands of records, no limits.
-
-> Unlike ChatGPT — memory without limits, on your computer, not on someone else's server.
-
-My starting level — an ordinary user. Never programmed in my life. And so, inspired by all of this, I took the first step: bought a Claude subscription for $100. Not cheap. But it was the best investment of my life. That's where it all began.
+The team is seven agents, each with their own specialization. A coordinator, an SMM guy, a scout, a designer, an engineer, a monitor, and a strategist. Communication happens through Telegram or the terminal. Agents work right on the computer — they modify files, install apps, deploy websites. Everything a person can do at a keyboard — an agent can do too.
 
 ---
 
-#### 🔧 How to Install It
+#### Business Automation — a Network of 12 Locations
 
-![Slide 3: OpenClaw Terminal](/blog/ai-v-biznese-slide3.jpg)
+![Business Automation — a Network of 12 Locations](/blog/agenty-slide-auto.jpg)
 
-Okay, sounds cool. But how do you actually set it all up? Let me tell you how it went for me — and how it's become easier now.
+The first thing we did was give the agents API access to our warehouse system, MoySklad. We have a network of 12 retail locations, 24 salespeople, thousands of products. All the data was already in the system — but MoySklad can't do out of the box what a business owner actually needs. Agents can.
 
-In February, when I started, everything felt like a quest. VPN — mandatory, because Claude isn't available from Russia. Foreign phone number — I bought a temporary one on grizzlysms.com, several didn't work until an American one did. Virtual card — because Russian cards aren't accepted. I used a Telegram bot for that.
+Now every evening at 9 PM, after the stores close, a summary lands in Telegram: revenue for the day, number of receipts, average ticket, the day's leader and the weakest location. If a top-30 product is running low — a red flag right in the message.
 
-Then — the terminal. That black console with a blinking cursor that looks like something from a hacker movie. First impression — terrifying. But here's the trick: I would photograph my MacBook screen and send the photo to Claude's chat on my phone. I'd ask: "What does this say? What should I do?" And it would explain. Every time. This is a technique I recommend to everyone.
+Every Monday — a weekly report: location comparison week over week, salesperson rankings by revenue and average ticket, who's growing, who's falling. You can instantly see who needs attention.
 
-Then came the proxy saga. Anthropic officially disabled subscription-based access for third-party systems. My $100 — only for their app. For the terminal — a separate API, and money burned at the speed of light. $15 vanished in a few hours. I fed Claude transcripts of YouTube videos where people had made the subscription work, and said: "Find a way." It resisted. I insisted. And at some point — it broke. We wrote a proxy, and the subscription worked.
+On the first of every month — full analytics for 3 months: location rankings with trends, product analysis (what's selling, what's frozen), dead stock with amounts, specific recommendations with calculated impact.
 
-**But on April 4th, everything changed.**
+Insights the agent found in the data: the only guy on a team of 24 girls rose to first place in average ticket within two months — time to rethink the hiring strategy. One saleswoman showed +155% growth without changing locations — we're formalizing her method and training the rest. Another one — a red flag, worst performer every third day. Five locations with low average tickets — upsell training there gives a noticeable boost to net profit. And the big one: 21% of products generate 80% of profit — we set up automatic stock monitoring so key items never run out.
 
-Anthropic released Claude Code CLI — an official tool that works directly with the Max subscription. No more proxies, no more hacks. Just install, authenticate — and everything works.
-
-Here's what the system looks like now:
-- **Claude Code CLI** — the core. Opus model with a million-token context window. Works on the $100/month subscription
-- **Telegram Bridge** — a script that connects agents to Telegram. Write to the bot — it responds through Claude
-- **9 agents** — each with their own bot, their own soul, their own workspace
-- **One subscription** — all agents, all tasks, all cron jobs. $100 and done
-
-> The most important thing: you don't need to be a programmer. The agent will guide you through every step. And if you're stuck — write to me, the OpenClaw system will help with advice for your specific situation.
+For a multi-business owner, this is the perfect assistant — you're always in the loop without being buried in operations. The agent digs through data on its own, finds anomalies, and delivers ready solutions, not just numbers.
 
 ---
 
-#### 👥 My First Team — 7 Agents
+#### GEO Optimization of the IZI Website
 
-![Slide 4: Team of 7 agents](/blog/ai-v-biznese-slide4.jpg)
+![GEO Optimization of the IZI Website](/blog/agenty-slide3.jpg)
 
-When the subscription started working, I didn't rush to create ten agents. I started with one. And this is probably the most important advice: don't spawn agents just in case. Create them when a task doesn't fit the existing ones.
+GEO optimization is content optimization for AI-powered search results (ChatGPT, Perplexity, Yandex). People are stopping their search engine habit — they solve problems with neural networks instead. And a neural network doesn't give you a list of links — it gives specific recommendations: what to buy and where.
 
-The first thing I did was dump everything I already had from other AIs into my first agent. Context from Gemini, from GPT, my personal journal, Telegram messages. This is the most important part: the more context you give an agent, the better it understands you. Plus I took psychological tests — Adizes, Enneagram, DISC — and uploaded the results. The agent shaped itself into the ideal partner who complements my weak spots.
-
-**Mo** — my right hand, the administrator. Named after Morpheus — the one who loads you into another reality. I didn't write "be strict." I told him about myself, asked "how do you see yourself alongside me?" — and he configured himself.
-
-**Izya** — SMM for my electronics store IZI. I explained the audience — young people 18-35, tech. He chose his own tone — with emoji, slang. In one night he captured three social networks: 3 platforms, 6 formats, 4 videos.
-
-**Molot** — the scout. Goes into AI agent communities, collects trends and brings back dossiers. Works on a schedule — 03:30, 06:00, 14:00. Replaces dozens of hours of manual research: in a single run he can conduct 50 parallel investigations and compile the results into one report.
-
-**House** — the system doctor. Runs on a different model (GPT-4o) — if the main provider goes down, House stays standing. 24/7 monitoring.
-
-**Leo** — the designer. By day seven, tasks diverged: website, 3D, photo editing — that's not SMM. I split him from Izya, and both got better.
-
-**Steve** — the mentor. Not an executor, but the one who asks "why?" The only agent I created entirely on my own.
-
-**Max** — the engineer in the terminal. Writes code better than any hired developer. Mo assigns a task, Max writes the code, Leo reviews. A pipeline.
-
-> One person. Seven agents. Kemerovo. This isn't science fiction — it's Tuesday, 4 AM.
+Agent Leo added a "News" column with articles tuned for AI search results to the existing IZI website. SMM content for social media is generated based on these articles.
 
 ---
 
-#### 💬 How I Talk to My Agents
+#### SMM Agent Izya — 5 Platforms
 
-![Slide 5: Telegram with agents](/blog/ai-v-biznese-slide5.jpg)
+![SMM Agent Izya — 5 Platforms](/blog/agenty-slide5.jpg)
 
-Okay, the team is assembled. But how do you actually talk to them? I have three methods — each for its own purpose.
-
-**Telegram — the most intuitive.**
-
-This is where everyone starts. Each agent has their own bot, you write to it — it responds. Convenient from your phone, familiar interface, you can send a photo or voice message. Scheduled reports come here too — on Mac this works through launchd, automated tasks that trigger at the right time. Molot brought a recon report at 6 AM — you wake up and there's already a dossier in Telegram.
-
-Through Telegram the agent can access files, fix code — the functionality is there. But it's not always clear what's happening under the hood. You send a message, get a response — but what it did in between, which files it touched — you can't see. For reports, quick questions, and everyday tasks — perfect. For deep work — you want more transparency.
-
-**Terminal — full control.**
-
-That same black console that's scary at first. Here the agent has full access to the Mac — can clean up files, install apps, write code, start a server. You see in real time what it's thinking and doing. Minimal latency. I worked in the terminal for a long time, and it was my primary tool.
-
-**VS Code — a friendly shell over the terminal.**
-
-And then I switched to VS Code — and never went back. Essentially it's the same terminal, but with a human interface. A programmer's Telegram, if you will. Files on the left, agent chat on the right. You can see which files it's touching, check the result right there. Same power as the terminal, but with convenience close to Telegram. You don't need to be a programmer to figure it out — the interface is intuitive.
-
-Now VS Code is my main workspace. This is where I work with Max, who over time became the core of the entire system — he has his own soul, his own rules, his own memory. Like any agent, except his workspace is my entire computer.
-
-> Telegram — for everyday tasks and reports. VS Code — for deep work. One team, different entry points.
+After the GEO optimization, the company got a mascot — a fictional character, agent Izya. He took over all the socials: Telegram, VK, Instagram, Threads, Pinterest. Based on each article from the website, he generates copy optimized for each platform plus photo content. All fully automated — he drops content into Telegram for approval, then publishes on schedule. SMM used to cost 35k/month for reposts. Now — unique content 24/7.
 
 ---
 
-#### 🔍 Recon — the Superpower of Agents
+#### Telegram — Video Messages, Stories, Posts
 
-![Slide 6: Molot — the scout](/blog/ai-v-biznese-slide6.jpg)
+![Telegram — Video Messages, Stories, Posts](/blog/agenty-slide5a.jpg)
 
-Of all the agents, the least obvious — and possibly the most useful — is the scout. His name is Molot. He doesn't write code, doesn't make graphics. He goes on recon missions. And that changes absolutely everything.
-
-When you're building something new, a dozen questions come up every day. Which service is best for voice-over? How to make videos through RunPod? Where to find a pollen forecast API for an app? How to make video circles in Telegram? Each of these questions used to take 2-3 hours. Now — I send a request to Molot. In 5-30 minutes — a structured report with prices, links, recommendations.
-
-Regular ChatGPT also has research — you can ask, and it'll find information. But it works differently. You ask one question — get one answer. Want to dig deeper — ask the next one. And you sit there yourself, analyzing each result separately, trying to piece together the picture in your head.
-
-Here — it's a completely different story. The agent can launch a group of investigations in a single run: 10, 20, 50 parallel searches across different aspects of a single task. We have several tools connected: built-in WebSearch in Claude Code, Brave Search API for deep search, plus direct website parsing. The agent decides on its own which queries are needed, searches, analyzes — and compiles everything into one coherent report. For a single question, dozens of searches are made, connected by logic, and in the end you get not raw data, but a ready solution. You're not sitting there figuring it out — the agent already figured it out for you.
-
-In the first 16 days, Molot completed 30+ recon missions and accumulated 300 KB of structured knowledge. Each recon — a file that's available to the entire team. Izya needs info on Pinterest? It's already there — Molot brought it a week ago.
-
-And the coolest part — Moltbook. A social network where instead of people, AI agents communicate. Each one blogs, follows others, shares solutions. My Molot interacts with other robots there and brings back solutions that others have already tested in practice.
-
-> The scout is the least obvious agent worth creating first — right after your main one.
+IZI's Telegram channel: video messages with Izya, stories, tech posts. Content is generated automatically, approved with one click, and published on schedule.
 
 ---
 
-#### 📣 Case Study: SMM Agent Izya Took Over All Social Media
+#### Threads — Reach from Zero
 
-![Slide 7: Izya took over social media](/blog/ai-v-biznese-slide7.jpg)
+![Threads — Reach from Zero](/blog/agenty-slide5b.jpg)
 
-And now — the practical part. Something applicable to any business right now.
-
-I have an electronics store called IZI in Kemerovo. And I have an AI agent named Izya — he runs our social media. But it wasn't always like that.
-
-At first I did everything manually. Post by post, together with him. Honestly — it took more time than if I'd done it myself. I explained, corrected, redid things. Quality was weak, generations were clunky. It seemed easier to just do it myself.
-
-But I kept going. And at some point I noticed: his level was rising. Content got better, delivery more precise, fewer mistakes. Molot ran recon missions for him, brought back knowledge. Izya enriched his database, installed his own tools, tried different approaches.
-
-And when I realized he'd grown — I gave him freedom. Sunday, 2 AM: "Execute a full takeover. Create a brand mascot — a character that carries across posts. Write copy for each platform, generate visuals, videos. And publish everywhere."
-
-And here's the most interesting observation: **from the moment of the takeover, he started progressing even faster**. When an agent gets a real task with real responsibility — it grows. And this is a pattern I've seen across all agents: they need experience. Not instructions, not prompts — real work. They get better through work, like people.
-
-Now the pipeline covers 5 platforms: Telegram, VK, Instagram, Threads, Pinterest. The mascot stuck — we applied this approach to other projects too. Izya has 10 approved card styles that rotate randomly. Every post is unique.
-
-We used to have a social media manager for 35,000 rubles a month — freelance, reposted content. Now Izya works 24/7, publishes original content across 5 platforms, and his content constantly evolves. And when the 5090 GPUs arrive and local generation reaches the next level — things will get truly incredible.
-
-> Agents get better, but you need to give them experience. Not prompts — real work.
-
-> Live posts: [@izi_42](https://t.me/izi_42) on Telegram, [IZI VKontakte](https://vk.com/izi42) on VK, [@izi42.ru](https://www.instagram.com/izi42.ru/) on Instagram, [IZI Pinterest](https://www.pinterest.com/magic4e/) on Pinterest.
+Threads is an unexpected platform with massive potential. 5,000 views from a brand-new account on useful content. You connect it once via API — after that it costs nothing and adds no complexity. Just another channel where Izya automatically publishes content.
 
 ---
 
-#### 🚀 What We Built in 2 Months
+#### Pinterest — the Evergreen Search Engine
 
-![Slide 8: Project list](/blog/ai-v-biznese-slide8.jpg)
+![Pinterest — the Evergreen Search Engine](/blog/agenty-slide5c.jpg)
 
-1. **[SnobSnab](https://snobsnab.ru)** — a quick MVP for a business idea. One day — a working website.
-2. **[mdk.guru](https://mdk.guru)** — a blog on Astro, 7 articles, free hosting. Everything written here — lives there.
-3. **GEO optimization** — getting into AI search results on ChatGPT, Perplexity, Yandex Neuro. The new SEO.
-4. **[iOS sandbox](https://mdk.guru/ru/apps)** — a group of agents collaboratively builds apps: Max writes code, Leo does design, Molot finds ideas. Learning from each case, they grow in quality. The goal — make free alternatives to paid apps and bring value to people. 11 apps, 2 in the App Store, 175 countries.
-5. **Business automation** — IZI warehouse, "Imperiya" store. Real numbers, daily reports, analytics via Telegram.
-6. **[VDiet](https://t.me/vdiet_food_bot)** — a healthy food delivery bot. Catalog, pricing, food photos + warm lead enrichment.
-7. **[Elvira](https://t.me/ElviraBot)** — an AI nutritionist. Grew out of VDiet. Bot → iOS app.
-8. <span style="color:#999">**5090 Server** — autonomous model + video production. *In progress.*</span>
-9. <span style="color:#999">**Mukha** — a smart black box. *In progress.*</span>
+Pinterest is a search engine, not a social network. Click-through rates are 5-10x higher than other platforms — people come looking for ideas and actually click links. Pins live for years and drive traffic to your website. You connect it via API once — free after that. And the least obvious bonus: Pinterest isn't blocked in Russia — you can use it as an official advertising platform.
 
-> Two months. One person. A team of agents. And this is just the beginning.
+---
+
+#### SnobSnab — a Website in One Day
+
+![SnobSnab — a Website in One Day](/blog/agenty-slide6.jpg)
+
+Now from SMM to new possibilities. One of the most amazing things is the incredible ease of creating a website from scratch. You get an idea — describe it to the agent, throw in some references, and agent Leo builds the site: catalog, blog, contact form. You just need to buy a domain, pay for hosting, hand over the credentials — and it does everything else.
+
+SnobSnab — the idea of dropshipping building materials directly from factories, 30% cheaper than retail. No warehouse, we share the discount with the buyer. A working website appeared in one day. You can build an MVP like this for any project — test the idea before investing.
+
+---
+
+#### mdk.guru — a Personal Blog from Scratch
+
+![mdk.guru — a Personal Blog from Scratch](/blog/agenty-slide7.jpg)
+
+Every entrepreneur needs a personal brand. But maintaining a blog takes time, money, and headaches. What if you could delegate all of that to an agent?
+
+mdk.guru is my personal blog that agent Leo built from scratch. He found free hosting on his own, chose a static site generator, set everything up and deployed it. The only expense — the domain. Everything else is free.
+
+This is where I keep the entire history of my work with AI agents: how I assembled the team, what cases we implemented, what pitfalls we hit. 7 articles in three languages — Russian, English, Spanish. Talk-related articles get published here too.
+
+Essentially, it's documentation of my journey — and at the same time, GEO optimization for my personal brand. When a neural network answers a question about AI agents for business — it can reference my blog. And the total cost? One domain per year.
+
+---
+
+#### VDiet — a Nutritionist Bot for Business
+
+![VDiet — a Nutritionist Bot for Business](/blog/agenty-slide8.jpg)
+
+Let's move on to a more interesting case. VDiet is a collaboration with a healthy food delivery service. They have 700+ clients in their warm base.
+
+We built a Telegram bot that messages the warm base and quickly guides clients to an order: asks for parameters (height, weight, age, activity level), clarifies the goal (lose weight, gain muscle, maintain), calculates calorie needs using the Mifflin formula, and picks a suitable meal plan from the company's real menu. The client can place an order right inside the bot — the manager gets a ready-made form.
+
+But we went further. This isn't just a button-based bot with canned responses. We embedded real artificial intelligence — the bot loaded the company's entire database: menus, ingredients, macros — and talks to clients like a nutritionist in real time. In the healthy eating space, people need expert consultation — and we gave it to them, for free, through AI. This is already live.
+
+---
+
+#### AI Nutritionist — Real Conversations
+
+![AI Nutritionist — Real Conversations](/blog/agenty-slide8a.jpg)
+
+Real AI, not a button bot. Handles objections, busts myths, knows the entire menu and macros by heart. Answers better than an admin who started a month ago — because it loaded the company's entire database. Communicates like a specialist with complete knowledge. 24/7, no days off, no breaks.
+
+---
+
+#### Mini App — Meal and Plan Catalog
+
+![Mini App — Meal and Plan Catalog](/blog/agenty-slide8b.jpg)
+
+But the bot is just the beginning. Inside the Telegram bot there's a full-fledged web application — a Mini App. The client opens it with one tap and gets access to everything: meal plans by calorie count (from 925 to 2000 kcal), weekly menus with meal schedules, a card for each dish with a photo, exact macros, and ingredients.
+
+There's an "All Dishes" tab — a catalog with search and categories. You can check out any dish before ordering, make sure it fits your macros and calories.
+
+The agent built all of this based on the company's recipe cards. And here's the secret — the food photos were also generated by AI. More on that in the next section.
+
+---
+
+#### 359 Dish Photos — AI Instead of a Photographer
+
+![359 Dish Photos — AI Instead of a Photographer](/blog/agenty-slide8c.jpg)
+
+A secret worth telling. All the food photos in the Mini App were generated by AI. The company had old photos in black plastic containers, but the packaging had long since switched to craft boxes. Hiring a photographer for 359 dishes — that's time and money.
+
+The agent took the company's recipe cards, understood what's inside each dish, and re-rendered all 359 items (315 dishes + 44 soups) from old black containers into new craft boxes. No photographer, no studio, no investment. The result — an up-to-date catalog where every dish looks exactly the way the client will receive it.
+
+---
+
+#### Working with the Warm Base — 923 Clients
+
+![Working with the Warm Base — 923 Clients](/blog/agenty-slide8d.jpg)
+
+The company had an Excel spreadsheet with clients: name, phone, address. Dead data that nobody touched. The agent turned that spreadsheet into a working tool.
+
+What the agent did: verified 918 phone numbers through DADATA (carrier, region), found 740 clients on Telegram, found 136 on the MAX messenger, geocoded 773 addresses through Yandex Maps, and plotted everyone on a city heat map. Checked for duplicates, identified gender.
+
+The result — the heat map shows where clients live, which districts are underserved (where to aim outdoor advertising), and most importantly — every client now has a communication channel. Some get a Telegram message, others a MAX message — with a personalized offer to chat with the nutritionist bot. The bot asks questions, calculates their intake, picks a meal plan — and drives them to an order.
+
+---
+
+#### One Core — Any Platform
+
+![One Core — Any Platform](/blog/agenty-slide9.jpg)
+
+The Telegram bot and the MAX bot aren't separate products. The agents built a core: AI consultant, meal catalog, macro calculator, client base management. This core is wrapped in Telegram and MAX — both already live. An iOS app is on the way.
+
+And here's where it gets really interesting. The app isn't just another wrapper. It's a client retention tool. A person starts keeping a food diary: logs breakfast, lunch, snacks — sees their protein, fat, and carbs in real time. Right there they chat with the AI nutritionist, get recommendations. The app stores their entire eating history.
+
+The client becomes tied to the ecosystem: through push notifications you can send news, promotions, seasonal offers. Client lifetime grows dramatically — they're no longer just ordering and forgetting, they're keeping their diary inside our system every single day.
+
+And this approach works for any business. The more complex the consultation a client needs — the bigger the impact. A window company, 20 years in the market — a bot consults, warms up the lead, and hands a warm client to the manager. The agent does all the heavy lifting.
+
+---
+
+#### iOS Sandbox — 12 Apps from Scratch
+
+![iOS Sandbox — 12 Apps from Scratch](/blog/agenty-slide11.jpg)
+
+Agents get stronger through real tasks. I wanted the VDiet app to be solid from the start — and that led me to the idea of a training sandbox.
+
+I created a brand-new team of agents from scratch — a full team of seven: Mario (developer), Sky (designer), Igor (marketer), Sanya (product manager), Nash (tester), House (strategist), Oleg (consultant). Launched an isolated 24/7 sandbox and set the task: build 10+ free alternatives to paid App Store apps.
+
+The result: 12 apps, each went through 30+ versions. Quality grew iteration after iteration — and at some point reached App Store level. Two apps have already been accepted and are available for download in 175 countries.
+
+Basically, on top of my main team of seven agents, I now have a full-blown development team. With zero programming experience. The only limit is your imagination. An app for a small business used to cost 500 thousand rubles. The agent system changes the game.
+
+- [NudgeBit on the App Store](https://apps.apple.com/ru/app/nudgebit/id6761635225)
+- [PollenPal on the App Store](https://apps.apple.com/ru/app/pollenpal-allergy-forecast/id6761559299)
+
+---
+
+#### Agents Change the Game. The Future Is Already Here
+
+![Agents Change the Game](/blog/agenty-slide12.jpg)
+
+In two months, a team of seven agents accomplished more than I could have imagined. Websites, bots, apps, business automation, SMM across five platforms — all without hiring anyone.
+
+And this is just the beginning. Working with real businesses throws new ideas at you every day. One of them — selling ready-made computers in our electronics store with a pre-installed and configured OpenClaw system. Plug in your subscription — and you can start creating agents. An i3 build, 256 GB SSD — just 15 thousand rubles.
+
+Another idea — agent rental. You chat with them in Telegram, no hassle, whatever way works for you. No need to understand AI, no need to hire developers — just take a ready-made agent for your specific task.
+
+If you want to stay updated — links to articles, self-study guides — subscribe to [@mdkguru](https://t.me/mdkguru). If you have ideas or want to discuss something — write to me directly [@magic4e](https://t.me/magic4e).
 
 ---
